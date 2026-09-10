@@ -44,8 +44,9 @@ leave `slug` out and they render with an empty cover slot.
 - **Listed on tierra.dk** (2026-09-10) as the fifth name in the projects act of the hub
   (`Frankitoman/web-portfolio`, `index.html`). A fifth row overflowed that pinned one-viewport
   section, so the hub commit also re-fits it — measured at 12 viewport sizes.
-- **Git repo** initialised here, remote `https://github.com/Frankitoman/meeple-map.git` (public,
-  like the other project repos). Pushed once the empty repo exists on GitHub.
+- **GitHub:** https://github.com/Frankitoman/meeple-map (public, like the other project repos).
+  `_source/` stays out of git (`.gitignore`); OneDrive backs it up. Deploys are still manual —
+  pushing does not deploy; run `npx wrangler deploy`.
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
