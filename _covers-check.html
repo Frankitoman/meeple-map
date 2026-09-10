@@ -1,0 +1,38 @@
+<meta charset="utf-8"><title>Meeple Map — cover audit</title>
+<style>
+ body{background:#f6f7fb;font-family:"DM Sans",system-ui;margin:0;padding:24px;color:#282e3e}
+ h1{font-size:20px;margin:0 0 4px}#sum{color:#586380;font-size:14px;margin-bottom:20px}
+ .cat{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#4255ff;font-weight:600;margin:28px 0 10px}
+ .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+ .c{background:#fff;border:1px solid #d9dde8;border-radius:8px;padding:12px}
+ .c.miss{border-style:dashed;opacity:.55}
+ .t{aspect-ratio:1/1;border-radius:6px;background:#f6f7fb;display:grid;place-items:center;overflow:hidden;padding:8px}
+ .t img{width:100%;height:100%;object-fit:contain}
+ .t span{font-size:11px;color:#939bb4}
+ h3{font-size:13px;margin:8px 0 2px;font-weight:600;line-height:1.3}
+ small{color:#939bb4;font-size:11px}
+</style>
+<h1>Cover audit</h1><div id="sum">loading…</div><div id="out"></div>
+<script>
+const EXT=["webp","png","jpg","jpeg"];
+const probe=s=>new Promise(res=>{let i=0;const t=()=>{if(i>=EXT.length)return res(null);
+  const im=new Image();im.onload=()=>res({src:im.src,w:im.naturalWidth,h:im.naturalHeight});
+  im.onerror=()=>{i++;t()};im.src=`assets/covers/${s}.${EXT[i]}`;};t();});
+(async()=>{
+  const d=await fetch('data/games.json').then(r=>r.json());
+  const cats=["family","party","strategy","thematic","abstract"];
+  let have=0; const out=[];
+  for(const c of cats){
+    const gs=d.games.filter(g=>g.category===c);
+    const cards=[];
+    for(const g of gs){
+      const r=await probe(g.slug); if(r)have++;
+      cards.push(`<div class="c${r?'':' miss'}"><div class="t">${r?`<img src="${r.src}">`:'<span>missing</span>'}</div>
+        <h3>${g.name}</h3><small>${r?r.w+'×'+r.h:g.slug}</small></div>`);
+    }
+    out.push(`<div class="cat">${c} — ${gs.length}</div><div class="g">${cards.join('')}</div>`);
+  }
+  document.getElementById('out').innerHTML=out.join('');
+  document.getElementById('sum').textContent=`${have} of ${d.games.length} covers downloaded · ${d.games.length-have} missing`;
+})();
+</script>

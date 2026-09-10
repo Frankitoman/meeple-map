@@ -1,0 +1,11 @@
+# Dev-only files — never deployed (Cloudflare Workers static assets)
+_source
+_covers-check.html
+_audit-big.html
+PROGRESS.md
+Meeple Map v0.html
+.assetsignore
+wrangler.jsonc
+.wrangler
+node_modules
+README.md

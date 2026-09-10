@@ -1,0 +1,6 @@
+<meta charset="utf-8"><title>big audit</title>
+<style>body{margin:0;background:#f6f7fb;font:12px system-ui}.g{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:6px}
+.c{background:#fff;border-radius:6px;padding:4px}.c img{width:100%;height:300px;object-fit:contain}.c b{display:block;font-size:12px;padding:2px 4px}</style>
+<div class="g" id="g"></div><script>
+fetch('data/games.json').then(r=>r.json()).then(d=>{const p=new URLSearchParams(location.search),a=+p.get('a')||0;
+g.innerHTML=d.games.slice(a,a+10).map((x,i)=>`<div class="c"><img src="assets/covers/${x.slug}.webp?v=3"><b>${a+i+1}. ${x.name}</b></div>`).join('')})</script>

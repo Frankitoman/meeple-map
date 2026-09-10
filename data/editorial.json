@@ -1,0 +1,22 @@
+{
+ "_meta": {
+  "note": "Hand-written editorial content. Lists are Meeple Map's judgement, not a ranking scraped from anywhere.",
+  "the20": "Franco's own list. Empty until he supplies it — the page renders 20 reserved slots. Entry shape: { slug?, name, year, standout, note }. If slug matches a game in games.json, that card gets the 'Franco played this' mark."
+ },
+ "anchors": {
+  "aoe":       { "name": "Age of Empires",    "kind": "Strategy",          "why": "you like building an economy and outgrowing your rivals" },
+  "amongus":   { "name": "Among Us",          "kind": "Social deduction",  "why": "you like lying, reading faces, and being lied to" },
+  "darksouls": { "name": "Dark Souls",        "kind": "Hard & punishing",  "why": "you like games that beat you — and the win that comes after" },
+  "stardew":   { "name": "Stardew Valley",    "kind": "Cozy building",     "why": "you like building something calm, at your own pace" },
+  "wow":       { "name": "World of Warcraft", "kind": "Build a character", "why": "you like building something up and watching it get stronger" },
+  "lol":       { "name": "League of Legends", "kind": "Team vs team",      "why": "you like winning — or losing — together with your friends" }
+ },
+ "picks": [
+  { "title": "Best for people who “don't like board games”", "category": "family",   "games": ["ticket-to-ride","kingdomino","sushi-go","azul","cascadia"] },
+  { "title": "Best when there are eight of you",             "category": "party",    "games": ["codenames","wavelength","one-night-werewolf","telestrations","avalon"] },
+  { "title": "Worth the whole evening",                      "category": "strategy", "games": ["arnak","dune-imperium","scythe","terraforming-mars","ark-nova"] },
+  { "title": "Best if you'd rather work together",           "category": "thematic", "games": ["pandemic","the-crew","sky-team","jaws-of-the-lion","spirit-island"] },
+  { "title": "Best for a quiet puzzle",                      "category": "abstract", "games": ["patchwork","onitama","santorini","hive","sagrada"] }
+ ],
+ "the20": []
+}

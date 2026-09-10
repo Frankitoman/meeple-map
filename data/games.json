@@ -1,0 +1,1354 @@
+{
+ "_meta": {
+  "note": "Editorial dataset. Player counts, durations and ages are publishers' figures. Category placement, complexity (1-5) and analogies are Meeple Map editorial judgement — not BoardGameGeek's. BGG ids verified 2026-09-09 against their search; they exist only to build the outbound link.",
+  "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
+  "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
+  "publisher": "kept for cover-art sourcing only — never displayed",
+  "count": 50,
+  "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
+  "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol — editorial"
+ },
+ "games": [
+  {
+   "slug": "catan",
+   "name": "Catan",
+   "bgg": 13,
+   "year": 1995,
+   "category": "family",
+   "players": [
+    3,
+    4
+   ],
+   "minutes": [
+    60,
+    90
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Kosmos",
+   "analogy": {
+    "kind": "video",
+    "ref": "Age of Empires",
+    "text": "Age of Empires, but everyone shares one map and you have to ask your rivals for wood."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "ticket-to-ride",
+   "name": "Ticket to Ride",
+   "bgg": 9209,
+   "year": 2004,
+   "category": "family",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Days of Wonder",
+   "analogy": {
+    "kind": "video",
+    "ref": "Mini Metro",
+    "text": "Mini Metro, if three other people could block your line on purpose."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "carcassonne",
+   "name": "Carcassonne",
+   "bgg": 822,
+   "year": 2000,
+   "category": "family",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    35,
+    35
+   ],
+   "age": 7,
+   "complexity": 2,
+   "publisher": "Z-Man Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Islanders",
+    "text": "You build the map as you play, like Islanders — except someone else keeps finishing your city."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "azul",
+   "name": "Azul",
+   "bgg": 230802,
+   "year": 2017,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Next Move Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Tetris",
+    "text": "Tetris, but you draft the pieces from a shared pool and your neighbour takes the one you needed."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "splendor",
+   "name": "Splendor",
+   "bgg": 148228,
+   "year": 2014,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Space Cowboys",
+   "analogy": {
+    "kind": "video",
+    "ref": "idle games",
+    "text": "An idle clicker in the best way — every turn your engine gets faster, and it's over in 30 minutes."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe",
+    "wow"
+   ]
+  },
+  {
+   "slug": "kingdomino",
+   "name": "Kingdomino",
+   "bgg": 204583,
+   "year": 2016,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    15,
+    20
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Blue Orange Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "dominoes",
+    "text": "Dominoes crossed with city-building. The whole game takes twenty minutes."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "sushi-go",
+   "name": "Sushi Go!",
+   "bgg": 133473,
+   "year": 2013,
+   "category": "family",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Gamewright",
+   "analogy": {
+    "kind": "video",
+    "ref": "auto-battler drafting",
+    "text": "The draft phase of an auto-battler: take one, pass the rest, watch your combo fall apart."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "cascadia",
+   "name": "Cascadia",
+   "bgg": 295947,
+   "year": 2021,
+   "category": "family",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "AEG / Flatout Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Dorfromantik",
+    "text": "Dorfromantik on a table. Quiet tile-laying, nobody attacks anybody."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "wingspan",
+   "name": "Wingspan",
+   "bgg": 266192,
+   "year": 2019,
+   "category": "family",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    40,
+    70
+   ],
+   "age": 10,
+   "complexity": 3,
+   "publisher": "Stonemaier Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Slay the Spire",
+    "text": "The engine-building feeling of Slay the Spire, but calm, and the cards are birds."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew",
+    "wow"
+   ]
+  },
+  {
+   "slug": "el-dorado",
+   "name": "The Quest for El Dorado",
+   "bgg": 217372,
+   "year": 2017,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Ravensburger",
+   "analogy": {
+    "kind": "video",
+    "ref": "Mario Kart",
+    "text": "Mario Kart with a deck of cards — you upgrade your own movement mid-race."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "quacks",
+   "name": "The Quacks of Quedlinburg",
+   "bgg": 244521,
+   "year": 2018,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    45,
+    45
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Schmidt Spiele",
+   "analogy": {
+    "kind": "video",
+    "ref": "blackjack",
+    "text": "Blackjack, if going bust made your potion explode in front of everyone."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "heat",
+   "name": "Heat: Pedal to the Metal",
+   "bgg": 366013,
+   "year": 2022,
+   "category": "family",
+   "players": [
+    1,
+    6
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Days of Wonder",
+   "analogy": {
+    "kind": "video",
+    "ref": "F1 games",
+    "text": "An F1 game where the skill is gear management, not reflexes."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "everdell",
+   "name": "Everdell",
+   "bgg": 199792,
+   "year": 2018,
+   "category": "family",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    40,
+    80
+   ],
+   "age": 13,
+   "complexity": 3,
+   "publisher": "Starling Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "Stardew Valley: you build a small town across four seasons, and the seasons run out."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "codenames",
+   "name": "Codenames",
+   "bgg": 178900,
+   "year": 2015,
+   "category": "party",
+   "players": [
+    4,
+    8
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Czech Games Edition",
+   "analogy": {
+    "kind": "video",
+    "ref": "charades",
+    "text": "Charades, except you only get one word and your team has to read your mind."
+   },
+   "mode": "teams",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "just-one",
+   "name": "Just One",
+   "bgg": 254640,
+   "year": 2018,
+   "category": "party",
+   "players": [
+    3,
+    7
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Repos Production",
+   "analogy": {
+    "kind": "video",
+    "ref": "group chat",
+    "text": "A group chat where everyone types the same joke and it cancels out."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "decrypto",
+   "name": "Decrypto",
+   "bgg": 225694,
+   "year": 2018,
+   "category": "party",
+   "players": [
+    3,
+    8
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Le Scorpion Masqué",
+   "analogy": {
+    "kind": "board",
+    "ref": "codenames",
+    "text": "Codenames, but you're the one writing the code and a rival team is listening in."
+   },
+   "mode": "teams",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "so-clover",
+   "name": "So Clover!",
+   "bgg": 329839,
+   "year": 2021,
+   "category": "party",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Repos Production",
+   "analogy": {
+    "kind": "board",
+    "ref": "codenames",
+    "text": "Codenames where everyone is on the same side."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "avalon",
+   "name": "The Resistance: Avalon",
+   "bgg": 128882,
+   "year": 2012,
+   "category": "party",
+   "players": [
+    5,
+    10
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 13,
+   "complexity": 2,
+   "publisher": "Indie Boards & Cards",
+   "analogy": {
+    "kind": "video",
+    "ref": "Among Us",
+    "text": "Among Us at a table, with no tasks to hide behind — only what you say."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "wavelength",
+   "name": "Wavelength",
+   "bgg": 262543,
+   "year": 2019,
+   "category": "party",
+   "players": [
+    2,
+    12
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 14,
+   "complexity": 1,
+   "publisher": "Palm Court",
+   "analogy": {
+    "kind": "board",
+    "ref": "just-one",
+    "text": "The shared-brain feeling of Just One, aimed at opinions instead of words."
+   },
+   "mode": "teams",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "one-night-werewolf",
+   "name": "One Night Ultimate Werewolf",
+   "bgg": 147949,
+   "year": 2014,
+   "category": "party",
+   "players": [
+    3,
+    10
+   ],
+   "minutes": [
+    10,
+    10
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Bézier Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Among Us",
+    "text": "One round of Among Us, start to finish, in ten minutes — and nobody gets eliminated."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "telestrations",
+   "name": "Telestrations",
+   "bgg": 46213,
+   "year": 2009,
+   "category": "party",
+   "players": [
+    4,
+    8
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 12,
+   "complexity": 1,
+   "publisher": "USAopoly",
+   "analogy": {
+    "kind": "video",
+    "ref": "broken telephone",
+    "text": "Broken telephone, but drawn — and you keep the evidence."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "dixit",
+   "name": "Dixit",
+   "bgg": 39856,
+   "year": 2008,
+   "category": "party",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Libellud",
+   "analogy": {
+    "kind": "board",
+    "ref": "codenames",
+    "text": "Codenames with surreal paintings instead of words — too obvious and too obscure both lose."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "camel-up",
+   "name": "Camel Up",
+   "bgg": 260605,
+   "year": 2018,
+   "category": "party",
+   "players": [
+    3,
+    8
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Pretzel Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Mario Party",
+    "text": "Betting on a camel race that will not stay still. Mario Party's chaos, with money on it."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "skull",
+   "name": "Skull",
+   "bgg": 92415,
+   "year": 2011,
+   "category": "party",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    15,
+    45
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Lui-même",
+   "analogy": {
+    "kind": "video",
+    "ref": "poker",
+    "text": "Poker's bluffing with none of poker's mathematics. Four cards, one nerve."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "7-wonders",
+   "name": "7 Wonders",
+   "bgg": 316377,
+   "year": 2020,
+   "category": "strategy",
+   "players": [
+    3,
+    7
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Repos Production",
+   "analogy": {
+    "kind": "video",
+    "ref": "Civilization",
+    "text": "Civilization compressed into thirty minutes, because everyone plays at once."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "7-wonders-duel",
+   "name": "7 Wonders Duel",
+   "bgg": 173346,
+   "year": 2015,
+   "category": "strategy",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Repos Production",
+   "analogy": {
+    "kind": "board",
+    "ref": "7-wonders",
+    "text": "The same civilisation arc as 7 Wonders, rebuilt so that two people can fight over it."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "dominion",
+   "name": "Dominion",
+   "bgg": 36218,
+   "year": 2008,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 13,
+   "complexity": 2,
+   "publisher": "Rio Grande Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "deckbuilding roguelikes",
+    "text": "The original deckbuilder. Every roguelike deckbuilder you've played descends from this one."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "terraforming-mars",
+   "name": "Terraforming Mars",
+   "bgg": 167791,
+   "year": 2016,
+   "category": "strategy",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    120,
+    120
+   ],
+   "age": 12,
+   "complexity": 4,
+   "publisher": "FryxGames",
+   "analogy": {
+    "kind": "video",
+    "ref": "Factorio",
+    "text": "Factorio's production chains, on Mars, with rivals racing you to the same milestones."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "ark-nova",
+   "name": "Ark Nova",
+   "bgg": 342942,
+   "year": 2021,
+   "category": "strategy",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    90,
+    150
+   ],
+   "age": 14,
+   "complexity": 4,
+   "publisher": "Feuerland Spiele",
+   "analogy": {
+    "kind": "video",
+    "ref": "Planet Zoo",
+    "text": "Planet Zoo rebuilt as a card engine — and conservation actually scores."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe",
+    "stardew"
+   ]
+  },
+  {
+   "slug": "brass-birmingham",
+   "name": "Brass: Birmingham",
+   "bgg": 224517,
+   "year": 2018,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 14,
+   "complexity": 4,
+   "publisher": "Roxley",
+   "analogy": {
+    "kind": "video",
+    "ref": "Anno 1800",
+    "text": "Anno 1800's logistics distilled — you build the network, rivals use it, everyone profits."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "scythe",
+   "name": "Scythe",
+   "bgg": 169786,
+   "year": 2016,
+   "category": "strategy",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    90,
+    115
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Stonemaier Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "real-time strategy",
+    "text": "An RTS where the fighting almost never happens — the threat does the work."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "root",
+   "name": "Root",
+   "bgg": 237182,
+   "year": 2018,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    60,
+    90
+   ],
+   "age": 10,
+   "complexity": 3,
+   "publisher": "Leder Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "asymmetric heroes",
+    "text": "Every player is running different rules on the same board, like picking wildly different heroes."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe",
+    "lol"
+   ]
+  },
+  {
+   "slug": "dune-imperium",
+   "name": "Dune: Imperium",
+   "bgg": 316554,
+   "year": 2020,
+   "category": "strategy",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Dire Wolf",
+   "analogy": {
+    "kind": "board",
+    "ref": "dominion",
+    "text": "Dominion's deck feeding 7 Wonders' worker placement — your cards decide where you can go."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe",
+    "wow"
+   ]
+  },
+  {
+   "slug": "concordia",
+   "name": "Concordia",
+   "bgg": 124361,
+   "year": 2013,
+   "category": "strategy",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    90,
+    90
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "PD-Verlag",
+   "analogy": {
+    "kind": "board",
+    "ref": "7-wonders",
+    "text": "7 Wonders' card engine stretched across a map of the Mediterranean. No dice, no luck, no excuses."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "castles-of-burgundy",
+   "name": "The Castles of Burgundy",
+   "bgg": 84876,
+   "year": 2011,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    90,
+    90
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "Ravensburger",
+   "analogy": {
+    "kind": "board",
+    "ref": "azul",
+    "text": "Azul's tile puzzle carrying the depth of a full strategy game underneath it."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "arnak",
+   "name": "Lost Ruins of Arnak",
+   "bgg": 312484,
+   "year": 2020,
+   "category": "strategy",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    90,
+    120
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "Czech Games Edition",
+   "analogy": {
+    "kind": "video",
+    "ref": "Indiana Jones",
+    "text": "Indiana Jones made playable — explore ruins, fight guardians, build a deck while you do it."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "pandemic",
+   "name": "Pandemic",
+   "bgg": 30549,
+   "year": 2008,
+   "category": "thematic",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    45,
+    45
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Z-Man Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "co-op raids",
+    "text": "A co-op raid — everyone against the board, and the board is winning."
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls",
+    "lol"
+   ]
+  },
+  {
+   "slug": "the-crew",
+   "name": "The Crew: The Quest for Planet Nine",
+   "bgg": 284083,
+   "year": 2019,
+   "category": "thematic",
+   "players": [
+    3,
+    5
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "KOSMOS",
+   "analogy": {
+    "kind": "video",
+    "ref": "Portal 2 co-op",
+    "text": "Portal 2's co-op — one shared puzzle, fifty levels, and you're barely allowed to talk."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "sky-team",
+   "name": "Sky Team",
+   "bgg": 373106,
+   "year": 2023,
+   "category": "thematic",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Le Scorpion Masqué",
+   "analogy": {
+    "kind": "video",
+    "ref": "flight sims",
+    "text": "Landing a plane with one other person, in near silence, in twenty minutes."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "jaws-of-the-lion",
+   "name": "Gloomhaven: Jaws of the Lion",
+   "bgg": 291457,
+   "year": 2020,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Cephalofair Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Diablo",
+    "text": "A Diablo campaign in a box — twenty-five scenarios, and your character keeps levelling."
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls",
+    "wow"
+   ]
+  },
+  {
+   "slug": "spirit-island",
+   "name": "Spirit Island",
+   "bgg": 162886,
+   "year": 2017,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    90,
+    120
+   ],
+   "age": 13,
+   "complexity": 4,
+   "publisher": "Greater Than Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "tower defence",
+    "text": "Tower defence where you are the island, and the invaders keep landing anyway."
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls"
+   ]
+  },
+  {
+   "slug": "arkham-horror-lcg",
+   "name": "Arkham Horror: The Card Game",
+   "bgg": 205637,
+   "year": 2016,
+   "category": "thematic",
+   "players": [
+    1,
+    2
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Fantasy Flight Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "narrative RPGs",
+    "text": "A narrative RPG you can play alone, where losing writes itself into the next chapter."
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls",
+    "wow"
+   ]
+  },
+  {
+   "slug": "betrayal",
+   "name": "Betrayal at House on the Hill",
+   "bgg": 358504,
+   "year": 2022,
+   "category": "thematic",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    60,
+    60
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Avalon Hill",
+   "analogy": {
+    "kind": "video",
+    "ref": "horror films",
+    "text": "A horror film where, halfway through, one of you turns out to be the monster."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "nemesis",
+   "name": "Nemesis",
+   "bgg": 167355,
+   "year": 2018,
+   "category": "thematic",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    90,
+    180
+   ],
+   "age": 14,
+   "complexity": 4,
+   "publisher": "Awaken Realms",
+   "analogy": {
+    "kind": "video",
+    "ref": "Alien: Isolation",
+    "text": "Alien: Isolation, with someone at the table quietly working against you."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus",
+    "darksouls"
+   ]
+  },
+  {
+   "slug": "hive",
+   "name": "Hive",
+   "bgg": 2655,
+   "year": 2001,
+   "category": "abstract",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 9,
+   "complexity": 2,
+   "publisher": "Gen42 Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "chess",
+    "text": "Chess with insects and no board — the pieces are the board."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "onitama",
+   "name": "Onitama",
+   "bgg": 160477,
+   "year": 2014,
+   "category": "abstract",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Arcane Wonders",
+   "analogy": {
+    "kind": "video",
+    "ref": "chess",
+    "text": "Pocket chess where the legal moves change every single game."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "santorini",
+   "name": "Santorini",
+   "bgg": 194655,
+   "year": 2016,
+   "category": "abstract",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Roxley",
+   "analogy": {
+    "kind": "board",
+    "ref": "onitama",
+    "text": "Onitama's two-minute rules, on a board you build upward as you play."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "patchwork",
+   "name": "Patchwork",
+   "bgg": 163412,
+   "year": 2014,
+   "category": "abstract",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    15,
+    30
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Lookout Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Tetris",
+    "text": "Tetris for two, where you pay for every piece with time you don't have."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "sagrada",
+   "name": "Sagrada",
+   "bgg": 199561,
+   "year": 2017,
+   "category": "abstract",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "Floodgate Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Sudoku",
+    "text": "Sudoku with dice and stained glass — and the dice you need keep getting taken."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "project-l",
+   "name": "Project L",
+   "bgg": 260180,
+   "year": 2020,
+   "category": "abstract",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    20,
+    40
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Boardcubator",
+   "analogy": {
+    "kind": "video",
+    "ref": "Tetris",
+    "text": "Tetris pieces that you spend to earn better Tetris pieces."
+   },
+   "mode": "competitive",
+   "anchors": []
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+# Full-size cover originals (23 MB). Kept locally, backed up by OneDrive.
+_source/
+
+# Tooling
+.wrangler/
+node_modules/

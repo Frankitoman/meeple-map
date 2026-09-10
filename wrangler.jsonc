@@ -1,0 +1,9 @@
+{
+  // Static site: Cloudflare Workers with static assets, same pattern as the other portfolio sites.
+  // Deploy with `npx wrangler deploy` from this folder. .assetsignore keeps dev files out.
+  "name": "meeple-map",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "."
+  }
+}

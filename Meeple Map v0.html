@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meeple Map — Find your first board game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MEEPLE MAP — Design tokens
+   Anchor: Quizlet (styles.refero.design) — tokens copied literally
+   ============================================================ */
+:root{
+  /* Surfaces — two-level hierarchy over a cool canvas */
+  --canvas:      #f6f7fb;
+  --surface:     #ffffff;
+  --tinted:      #edefff;
+  --border:      #d9dde8;   /* hairline ONLY — never a fill */
+
+  /* One saturated accent. That's the whole system. */
+  --accent:      #4255ff;
+  --accent-ink:  #2f3fd6;
+
+  /* Text — four levels, never pure black */
+  --ink:         #282e3e;
+  --ink-2:       #2e3856;
+  --muted:       #586380;
+  --faint:       #939bb4;
+
+  /* Category tints — Quizlet's 4 pastel feature cards, extended to 5 */
+  --cat-family:   #d7f2f7;
+  --cat-party:    #ffe4f0;
+  --cat-strategy: #dbdfff;
+  --cat-thematic: #ffe8d6;
+  --cat-abstract: #e6f0e4;
+
+  /* Type scale — Major Second from 16px */
+  --t-display:  clamp(2rem, 1.4rem + 2.6vw, 2.75rem);  /* →44px */
+  --t-heading:  clamp(1.5rem, 1.2rem + 1.3vw, 2rem);   /* →32px */
+  --t-h-sm:     1.5rem;   /* 24 */
+  --t-sub:      1.25rem;  /* 20 */
+  --t-body:     1rem;     /* 16 */
+  --t-sm:       .875rem;  /* 14 */
+  --t-caption:  .75rem;   /* 12 */
+
+  /* Spacing — base 8 */
+  --s1: 8px;  --s2: 16px; --s3: 24px; --s4: 32px;
+  --s5: 40px; --s6: 48px; --s8: 64px; --s10: 80px;
+  --rail: 1200px;
+
+  /* Radius — pill on primary buttons is the signature */
+  --r-input: 4px; --r-card: 8px; --r-feature: 24px; --r-pill: 200px;
+
+  /* One shadow. Never stacked. */
+  --shadow:    rgba(40,46,62,.1) 0 4px 16px 0;
+  --shadow-sm: rgba(40,46,62,.1) 0 2px 4px 0;
+
+  --ease: cubic-bezier(.2,.8,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--canvas); color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
+  font-size:var(--t-body); font-weight:400; line-height:1.63;
+  text-wrap:pretty; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0; line-height:1.25; font-weight:600; letter-spacing:-.015em}
+p{margin:0}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%; display:block}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:var(--r-input)}
+
+.rail{max-width:var(--rail); margin-inline:auto; padding-inline:var(--s3)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:var(--s1);
+  border:1px solid transparent; border-radius:var(--r-pill);
+  padding:11px 24px; font-size:var(--t-body); font-weight:600;
+  line-height:1.2; transition:transform .14s var(--ease), background .14s var(--ease);
+}
+.btn--primary{background:var(--accent); color:#fff; box-shadow:var(--shadow-sm)}
+.btn--primary:hover{background:var(--accent-ink); text-decoration:none; transform:translateY(-1px)}
+.btn--primary:active{transform:translateY(0)}
+.btn--ghost{background:transparent; border-color:var(--accent); color:var(--accent)}
+.btn--ghost:hover{background:var(--tinted); text-decoration:none}
+.btn:disabled{background:var(--border); color:var(--faint); box-shadow:none; cursor:not-allowed; transform:none}
+.link-ghost{font-size:var(--t-body); font-weight:400}
+
+/* ---------- Nav ---------- */
+.nav{background:var(--surface); box-shadow:var(--shadow); position:sticky; top:0; z-index:50}
+.nav__in{display:flex; align-items:center; gap:var(--s3); height:64px}
+.logo{display:flex; align-items:center; gap:10px; font-weight:700; font-size:var(--t-sub); color:var(--ink); letter-spacing:-.02em}
+.logo:hover{text-decoration:none}
+.logo__mark{width:26px; height:26px; flex:none}
+.search{
+  flex:1; max-width:420px; display:flex; align-items:center; gap:var(--s1);
+  background:var(--canvas); border:1px solid transparent; border-radius:var(--r-pill); padding:9px 16px;
+  transition:border-color .14s var(--ease);
+}
+.search:focus-within{border-color:var(--accent)}
+.search input{border:0; background:none; outline:0; width:100%; font:inherit; font-size:var(--t-sm); color:var(--ink)}
+.search input::placeholder{color:var(--faint)}
+.nav__right{margin-left:auto; display:flex; align-items:center; gap:var(--s2)}
+.nav__link{font-size:var(--t-sm); font-weight:600; color:var(--muted)}
+.nav__link:hover{color:var(--ink); text-decoration:none}
+
+/* ---------- Hero ----------
+   Squared-paper texture + a soft lilac wash. Both drawn from existing
+   tokens — the "study desk" surface the whole system is built on. */
+.hero-wrap{position:relative; overflow:hidden}
+.hero-wrap::before{                       /* graph paper */
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size:32px 32px;
+  opacity:.5;
+  -webkit-mask-image:radial-gradient(ellipse 78% 62% at 50% 34%, #000 20%, transparent 78%);
+          mask-image:radial-gradient(ellipse 78% 62% at 50% 34%, #000 20%, transparent 78%);
+}
+.hero-wrap::after{                         /* lilac glow behind the headline */
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  width:min(760px,86vw); aspect-ratio:1.5; left:50%; top:-14%;
+  transform:translateX(-50%);
+  background:radial-gradient(circle at 50% 50%, var(--tinted) 0%, transparent 68%);
+}
+.hero{position:relative; z-index:1; padding:var(--s10) 0 var(--s8); text-align:center}
+.hero h1{font-size:var(--t-display); font-weight:700; line-height:1.15; max-width:15ch; margin-inline:auto}
+.hero__sub{
+  font-size:var(--t-sub); color:var(--muted); font-weight:400;
+  max-width:52ch; margin:var(--s3) auto 0; line-height:1.45;
+}
+
+/* ---------- Signature: "You already know this game" ---------- */
+.hook{margin-top:var(--s8)}
+.hook__label{
+  font-size:var(--t-caption); font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted);
+}
+.hook__q{font-size:var(--t-h-sm); font-weight:700; margin-top:var(--s1)}
+.hook__grid{
+  display:grid; grid-template-columns:repeat(6,1fr);
+  gap:var(--s2); margin-top:var(--s3); max-width:980px; margin-inline:auto;
+}
+.hook__card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r-feature);
+  padding:var(--s3) var(--s2); text-align:center;
+  display:flex; flex-direction:column; align-items:stretch;  /* buttons centre by default */
+  transition:transform .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.hook__card:hover{transform:translateY(-3px); border-color:var(--accent); box-shadow:var(--shadow)}
+.hook__thumb{
+  height:64px; border-radius:var(--r-card); display:grid; place-items:center;
+  font-size:var(--t-caption); color:var(--muted); margin-bottom:var(--s2);
+  background:var(--tinted);
+}
+.hook__name{font-size:var(--t-sm); font-weight:600; display:block; margin-top:auto; line-height:1.3}
+.hook__kind{font-size:var(--t-caption); color:var(--faint)}
+.hook__skip{margin-top:var(--s3); display:block}
+
+/* ---------- Section shell ---------- */
+.section{padding-block:var(--s10)}
+.section--tinted{background:var(--tinted)}
+.section__head{margin-bottom:var(--s5)}
+.section__head h2{font-size:var(--t-heading)}
+.section__head p{color:var(--muted); margin-top:var(--s1); max-width:60ch}
+.eyebrow{
+  font-size:var(--t-caption); font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--accent); display:block; margin-bottom:10px;
+}
+
+/* ---------- Category cards ---------- */
+.cats{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--s2)}
+.cat{
+  border-radius:var(--r-feature); padding:var(--s3); min-height:190px;
+  display:flex; flex-direction:column; justify-content:space-between; color:var(--ink);
+  transition:transform .18s var(--ease);
+}
+.cat:hover{transform:translateY(-4px); text-decoration:none}
+.cat__title{font-size:var(--t-sub); font-weight:700}
+.cat__desc{font-size:var(--t-sm); color:var(--ink-2); margin-top:6px; line-height:1.45}
+.cat__panel{
+  background:var(--surface); border-radius:var(--r-card); padding:10px 14px;
+  font-size:var(--t-caption); color:var(--muted); font-weight:600; margin-top:var(--s3);
+}
+
+/* ---------- Finder: filters + results ---------- */
+.finder{display:grid; grid-template-columns:264px 1fr; gap:var(--s5); align-items:start}
+.filters{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r-card);
+  padding:var(--s3); position:sticky; top:88px;
+}
+.filters__top{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:var(--s3)}
+.filters__top h3{font-size:var(--t-body); font-weight:600}
+.filters__clear{background:none; border:0; padding:0; font-size:var(--t-caption); color:var(--accent); font-weight:600}
+.fgroup{padding-block:var(--s2); border-top:1px solid var(--border)}
+.fgroup:first-of-type{border-top:0; padding-top:0}
+.fgroup__label{
+  font-size:var(--t-caption); font-weight:600; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--muted); display:block; margin-bottom:10px;
+}
+.chips{display:flex; flex-wrap:wrap; gap:var(--s1)}
+.chip{
+  background:var(--canvas); border:1px solid var(--border); border-radius:var(--r-pill);
+  padding:6px 14px; font-size:var(--t-sm); font-weight:500; color:var(--ink-2);
+  transition:background .14s var(--ease), border-color .14s var(--ease), color .14s var(--ease);
+}
+.chip:hover{border-color:var(--accent); color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+
+.results__bar{display:flex; align-items:center; justify-content:space-between; margin-bottom:var(--s3)}
+.results__count{font-size:var(--t-sm); color:var(--muted)}
+.results__count b{color:var(--ink); font-weight:600}
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:var(--s3)}
+
+/* ---------- Game card — the atom that matters ---------- */
+.game{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r-card);
+  padding:var(--s2); display:flex; flex-direction:column; gap:10px;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
+}
+.game:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--faint)}
+/* Square tile + contain: board game boxes range from square (Azul, Wingspan)
+   to wide rectangles (Ticket to Ride). Never crop the art. */
+.game__cover{
+  aspect-ratio:1/1; border-radius:var(--r-card); background:var(--canvas);
+  display:grid; place-items:center; text-align:center; overflow:hidden;
+  color:var(--faint); font-size:var(--t-caption); line-height:1.4; padding:10px;
+}
+.game__cover img{width:100%; height:100%; object-fit:contain}
+.game__cover:not(:has(img)){border:1px dashed var(--border)}
+.game__title{font-size:var(--t-body); font-weight:600; line-height:1.3}
+.game__meta{font-size:var(--t-caption); color:var(--faint)}
+
+/* The analogy — highlight zone inside a white card */
+.game__like{
+  background:var(--tinted); border-radius:var(--r-card); padding:10px 12px;
+  font-size:var(--t-sm); color:var(--ink-2); line-height:1.45;
+}
+.game__like b{font-weight:600; color:var(--accent)}
+
+.game__facts{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:var(--t-caption); color:var(--muted)}
+.game__foot{
+  margin-top:auto; padding-top:10px; border-top:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between; gap:var(--s1);
+}
+.game__bgg{font-size:var(--t-caption); font-weight:600}
+
+/* Complexity — 5 bars, accent fill. No new hue. */
+.weight{display:flex; align-items:center; gap:5px}
+.weight__bars{display:flex; gap:2px}
+.weight i{width:5px; height:11px; border-radius:1px; background:var(--border)}
+.weight i.on{background:var(--accent)}
+.weight__txt{font-size:var(--t-caption); color:var(--muted)}
+
+/* ---------- The 20 — Franco's own list ----------
+   Horizontal editorial rows, not the catalogue grid. The change of
+   layout is what signals "a person is talking" without a new colour. */
+.byline{display:flex; align-items:center; gap:14px; margin-bottom:var(--s3)}
+.byline__av{
+  width:48px; height:48px; flex:none; border-radius:var(--r-pill);
+  background:var(--accent); color:#fff; display:grid; place-items:center;
+  font-size:var(--t-sub); font-weight:700;
+}
+.byline__name{font-size:var(--t-body); font-weight:600; line-height:1.3}
+.byline__role{font-size:var(--t-sm); color:var(--muted)}
+.thesis{
+  font-size:var(--t-sub); color:var(--ink-2); line-height:1.5;
+  max-width:64ch; font-weight:400;
+}
+.thesis em{                      /* highlighter mark, not a link */
+  font-style:normal; color:var(--ink); font-weight:500;
+  background:var(--tinted); box-shadow:0 0 0 4px var(--tinted);
+  border-radius:2px;
+}
+
+/* Cross-reference mark. Applied to a .game card only when that game is
+   genuinely one of the 20 — never decoratively. */
+.tag-played{
+  display:inline-flex; align-items:center; gap:5px;
+  background:var(--accent); color:#fff; border-radius:var(--r-pill);
+  padding:3px 10px; font-size:var(--t-caption); font-weight:600; line-height:1.4;
+}
+.tag-played::before{content:"◆"; font-size:8px; opacity:.85}
+.legend{
+  margin-top:var(--s3); font-size:var(--t-sm); color:var(--muted);
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; max-width:64ch;
+}
+
+.twenty{margin-top:var(--s6); display:grid; gap:var(--s2)}
+.rec{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r-card);
+  padding:var(--s3); display:grid; grid-template-columns:44px 76px 1fr; gap:var(--s3);
+  align-items:start; transition:border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.rec:hover{border-color:var(--faint); box-shadow:var(--shadow)}
+.rec__n{
+  font-size:var(--t-heading); font-weight:700; color:var(--border);
+  font-variant-numeric:tabular-nums; line-height:1;
+}
+.rec__cover{
+  aspect-ratio:3/4; border-radius:var(--r-input); background:var(--canvas);
+  border:1px dashed var(--border); display:grid; place-items:center;
+  font-size:10px; color:var(--faint); text-align:center; padding:4px;
+}
+.rec__title{font-size:var(--t-sub); font-weight:700; line-height:1.25}
+.rec__meta{font-size:var(--t-caption); color:var(--faint); margin-top:2px}
+.standout{
+  display:inline-block; margin-top:12px; border:1px solid var(--accent); color:var(--accent);
+  border-radius:var(--r-pill); padding:4px 14px; font-size:var(--t-caption); font-weight:600;
+}
+.rec__note{
+  font-size:var(--t-body); color:var(--ink-2); line-height:1.6; margin-top:12px;
+  max-width:62ch;
+}
+.rec__note--empty{
+  color:var(--faint); border:1px dashed var(--border); border-radius:var(--r-card);
+  padding:14px 16px; font-size:var(--t-sm); line-height:1.5;
+}
+
+/* Remaining reserved slots — compact, two up */
+.slots{display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:var(--s1); margin-top:var(--s2)}
+.slot{
+  background:var(--surface); border:1px dashed var(--border); border-radius:var(--r-card);
+  padding:14px var(--s2); display:flex; align-items:center; gap:14px;
+}
+.slot__n{font-size:var(--t-sm); font-weight:700; color:var(--border); font-variant-numeric:tabular-nums; width:24px; flex:none}
+.slot__txt{font-size:var(--t-sm); color:var(--faint)}
+
+/* ---------- Editorial picks ---------- */
+.picks{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--s3)}
+.pick{background:var(--surface); border-radius:var(--r-card); padding:var(--s3); box-shadow:var(--shadow)}
+.pick h3{font-size:var(--t-sub); font-weight:700}
+.pick__note{font-size:var(--t-sm); color:var(--muted); margin-top:6px}
+.pick__list{list-style:none; margin:var(--s3) 0 0; padding:0}
+.pick__item{display:flex; align-items:center; gap:12px; padding-block:10px; border-top:1px solid var(--border)}
+.pick__item:first-child{border-top:0}
+.pick__n{
+  width:22px; flex:none; font-size:var(--t-caption); font-weight:600;
+  color:var(--faint); font-variant-numeric:tabular-nums;
+}
+.pick__thumb{width:36px; height:44px; flex:none; border-radius:var(--r-input); background:var(--canvas); border:1px dashed var(--border)}
+.pick__name{font-size:var(--t-sm); font-weight:600}
+.pick__sub{font-size:var(--t-caption); color:var(--faint)}
+
+/* ---------- Disclosure ---------- */
+.note{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r-card);
+  padding:var(--s3); font-size:var(--t-sm); color:var(--muted); max-width:74ch;
+}
+.note b{color:var(--ink); font-weight:600}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--canvas); border-top:1px solid var(--border); padding-block:var(--s6) var(--s5)}
+.foot__cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--s4)}
+.foot h4{font-size:var(--t-sm); font-weight:600; margin-bottom:12px}
+.foot ul{list-style:none; margin:0; padding:0; display:grid; gap:var(--s1)}
+.foot a{font-size:var(--t-sm); color:var(--muted); font-weight:400}
+.foot a:hover{color:var(--accent)}
+.foot__base{
+  margin-top:var(--s5); padding-top:var(--s3); border-top:1px solid var(--border);
+  font-size:var(--t-caption); color:var(--faint); display:flex; flex-wrap:wrap; gap:var(--s2) var(--s3); justify-content:space-between;
+}
+
+/* ---------- v0 assumption strip ---------- */
+.v0{background:var(--ink); color:#fff; font-size:var(--t-caption); padding:10px 0}
+.v0 .rail{display:flex; gap:var(--s2); align-items:center; flex-wrap:wrap}
+.v0 b{font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.v0 span{color:#c9cfe0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){ .hook__grid{grid-template-columns:repeat(3,1fr); max-width:560px} }
+@media (max-width:900px){
+  .finder{grid-template-columns:1fr}
+  .filters{position:static}
+  .search{display:none}
+}
+@media (max-width:760px){
+  .nav__in{height:56px; gap:var(--s2)}
+  .nav__link{display:none}            /* every link also lives in the footer */
+  .logo{font-size:var(--t-body)}
+  .logo__mark{width:22px; height:22px}
+  .nav__right .btn{padding:8px 16px; white-space:nowrap}
+  .rec{grid-template-columns:32px 60px 1fr; gap:var(--s2); padding:var(--s2)}
+  .rec__n{font-size:var(--t-sub)}
+}
+@media (max-width:560px){
+  .hook__grid{grid-template-columns:repeat(2,1fr); max-width:360px}
+  .section{padding-block:var(--s6)}
+  .hero{padding-top:var(--s6)}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+  .hook__card:hover,.cat:hover,.game:hover,.btn--primary:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="v0">
+  <div class="rail"><b>v0 draft</b><span>Placeholders marked with dashed borders · 8 of 50 games shown · publisher cover art pending</span></div>
+</div>
+
+<header class="nav">
+  <div class="rail nav__in">
+    <a class="logo" href="#">
+      <svg class="logo__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2.6c-2.2 0-3.6 1.6-3.6 3.5 0 1 .4 1.8 1 2.5-2.4.5-4.2 1.6-4.2 3v6.2c0 1.7 3 2.9 6.8 2.9s6.8-1.2 6.8-2.9v-6.2c0-1.4-1.8-2.5-4.2-3 .6-.7 1-1.5 1-2.5 0-1.9-1.4-3.5-3.6-3.5Z" fill="#4255ff"/>
+      </svg>
+      Meeple Map
+    </a>
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="4.6" stroke="#939bb4" stroke-width="1.6"/>
+        <path d="M10.5 10.5 14 14" stroke="#939bb4" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input type="search" placeholder="Search 50 games">
+    </label>
+    <nav class="nav__right">
+      <a class="nav__link" href="#finder">Browse</a>
+      <a class="nav__link" href="#twenty">The 20</a>
+      <a class="nav__link" href="#picks">Our picks</a>
+      <a class="btn btn--primary" href="#hook" style="padding:9px 20px;font-size:var(--t-sm)">Find my game</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero-wrap">
+  <section class="hero rail" id="top">
+    <h1>Never played a board game? Start with one you already know.</h1>
+    <p class="hero__sub">Tell us what you already play — a video game, a sport, anything — and we'll point you to the board game that feels like it.</p>
+
+    <div class="hook" id="hook">
+      <span class="hook__label">Step 1 of 5</span>
+      <h2 class="hook__q">What do you already play?</h2>
+      <div class="hook__grid">
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">Age of Empires</span><span class="hook__kind">Strategy</span></button>
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">Among Us</span><span class="hook__kind">Social deduction</span></button>
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">Dark Souls</span><span class="hook__kind">Hard &amp; punishing</span></button>
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">Stardew Valley</span><span class="hook__kind">Cozy building</span></button>
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">World of Warcraft</span><span class="hook__kind">Build a character</span></button>
+        <button class="hook__card"><div class="hook__thumb">[icon 1:1]</div><span class="hook__name">League of Legends</span><span class="hook__kind">Team vs team</span></button>
+      </div>
+      <a class="link-ghost hook__skip" href="#finder">Skip the questions, show me all 50 games</a>
+    </div>
+  </section>
+  </div>
+
+  <section class="section rail">
+    <div class="section__head">
+      <span class="eyebrow">Or start from a shelf</span>
+      <h2>Five kinds of board game</h2>
+      <p>Every game on this site sits in one of these five families. If you only remember one thing, remember these.</p>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#finder" style="background:var(--cat-family)">
+        <div><div class="cat__title">Family</div><p class="cat__desc">Easy rules, no reading required, works with people who don't play games.</p></div>
+        <div class="cat__panel">12 games</div>
+      </a>
+      <a class="cat" href="#finder" style="background:var(--cat-party)">
+        <div><div class="cat__title">Party</div><p class="cat__desc">Loud, fast, six or more people. Nobody sits and thinks for five minutes.</p></div>
+        <div class="cat__panel">10 games</div>
+      </a>
+      <a class="cat" href="#finder" style="background:var(--cat-strategy)">
+        <div><div class="cat__title">Strategy</div><p class="cat__desc">Long games with real decisions. The ones people write spreadsheets about.</p></div>
+        <div class="cat__panel">14 games</div>
+      </a>
+      <a class="cat" href="#finder" style="background:var(--cat-thematic)">
+        <div><div class="cat__title">Thematic</div><p class="cat__desc">You're a character in a story. Dice, monsters, betrayal, campaigns.</p></div>
+        <div class="cat__panel">8 games</div>
+      </a>
+      <a class="cat" href="#finder" style="background:var(--cat-abstract)">
+        <div><div class="cat__title">Abstract</div><p class="cat__desc">Pure puzzle, no story. Chess's modern descendants — beautiful and mean.</p></div>
+        <div class="cat__panel">6 games</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section rail" id="finder">
+    <div class="section__head">
+      <span class="eyebrow">The finder</span>
+      <h2>Pick what you like. We'll narrow it down.</h2>
+      <p>Nothing here is locked. Change your mind as often as you want — the list updates as you go.</p>
+    </div>
+
+    <div class="finder">
+      <aside class="filters">
+        <div class="filters__top">
+          <h3>Filters</h3>
+          <button class="filters__clear">Clear all</button>
+        </div>
+        <div class="fgroup">
+          <span class="fgroup__label">How many people</span>
+          <div class="chips">
+            <button class="chip" aria-pressed="false">Just 2</button>
+            <button class="chip" aria-pressed="true">3–4</button>
+            <button class="chip" aria-pressed="false">5–6</button>
+            <button class="chip" aria-pressed="false">7+</button>
+            <button class="chip" aria-pressed="false">Solo</button>
+          </div>
+        </div>
+        <div class="fgroup">
+          <span class="fgroup__label">How long</span>
+          <div class="chips">
+            <button class="chip" aria-pressed="false">Under 30 min</button>
+            <button class="chip" aria-pressed="true">30–60 min</button>
+            <button class="chip" aria-pressed="false">1–2 h</button>
+            <button class="chip" aria-pressed="false">All evening</button>
+          </div>
+        </div>
+        <div class="fgroup">
+          <span class="fgroup__label">Together or against</span>
+          <div class="chips">
+            <button class="chip" aria-pressed="false">Co-operative</button>
+            <button class="chip" aria-pressed="false">Competitive</button>
+            <button class="chip" aria-pressed="false">Teams</button>
+            <button class="chip" aria-pressed="false">One vs all</button>
+          </div>
+        </div>
+        <div class="fgroup">
+          <span class="fgroup__label">How much brain</span>
+          <div class="chips">
+            <button class="chip" aria-pressed="true">Light</button>
+            <button class="chip" aria-pressed="false">Medium</button>
+            <button class="chip" aria-pressed="false">Heavy</button>
+          </div>
+        </div>
+        <div class="fgroup">
+          <span class="fgroup__label">Good for</span>
+          <div class="chips">
+            <button class="chip" aria-pressed="false">Non-gamers</button>
+            <button class="chip" aria-pressed="false">Couples</button>
+            <button class="chip" aria-pressed="false">Kids</button>
+            <button class="chip" aria-pressed="false">Big groups</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="results">
+        <div class="results__bar">
+          <p class="results__count"><b>8</b> games match — <span>3–4 players · 30–60 min · light</span></p>
+          <button class="chip">Sort: Easiest first</button>
+        </div>
+        <div class="grid">
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Catan</div>
+            <div>
+              <h3 class="game__title">Catan</h3>
+              <p class="game__meta">1995 · Klaus Teuber · Kosmos</p>
+            </div>
+            <p class="game__like"><b>Like Age of Empires</b>, but everyone shares one map and you have to ask your rivals for wood.</p>
+            <p class="game__facts"><span>3–4 players</span><span>60–90 min</span><span>Age 10+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/13/catan" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Codenames</div>
+            <div>
+              <h3 class="game__title">Codenames</h3>
+              <p class="game__meta">2015 · Vlaada Chvátil · CGE</p>
+            </div>
+            <p class="game__like"><b>Like charades</b>, except you only get one word and your team has to read your mind.</p>
+            <p class="game__facts"><span>4–8 players</span><span>15 min</span><span>Age 10+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/178900/codenames" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Pandemic</div>
+            <div>
+              <h3 class="game__title">Pandemic</h3>
+              <p class="game__meta">2008 · Matt Leacock · Z-Man</p>
+            </div>
+            <p class="game__like"><b>Like a co-op raid</b> — everyone against the board, and the board is winning.</p>
+            <p class="game__facts"><span>2–4 players</span><span>45 min</span><span>Age 8+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/30549/pandemic" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Azul</div>
+            <div>
+              <h3 class="game__title">Azul</h3>
+              <p class="game__meta">2017 · Michael Kiesling · Plan B</p>
+            </div>
+            <p class="game__like"><b>Like Tetris</b>, but you draft the pieces from a shared pool and your neighbour takes the one you needed.</p>
+            <p class="game__facts"><span>2–4 players</span><span>30–45 min</span><span>Age 8+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/230802/azul" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Ticket to Ride</div>
+            <div>
+              <h3 class="game__title">Ticket to Ride</h3>
+              <p class="game__meta">2004 · Alan R. Moon · Days of Wonder</p>
+            </div>
+            <p class="game__like"><b>Like Mini Metro</b>, if Mini Metro let three other people block your line on purpose.</p>
+            <p class="game__facts"><span>2–5 players</span><span>30–60 min</span><span>Age 8+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/9209/ticket-to-ride" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>The Crew</div>
+            <div>
+              <h3 class="game__title">The Crew: The Quest for Planet Nine</h3>
+              <p class="game__meta">2019 · Thomas Sing · KOSMOS</p>
+            </div>
+            <p class="game__like"><b>Like Portal 2 co-op</b> — one shared puzzle, 50 levels, and you're barely allowed to talk.</p>
+            <p class="game__facts"><span>3–5 players</span><span>20 min</span><span>Age 10+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/284083/the-crew-the-quest-for-planet-nine" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Splendor</div>
+            <div>
+              <h3 class="game__title">Splendor</h3>
+              <p class="game__meta">2014 · Marc André · Space Cowboys</p>
+            </div>
+            <p class="game__like"><b>Like an idle clicker</b> in the best way — every turn your engine gets faster, and it takes 30 minutes.</p>
+            <p class="game__facts"><span>2–4 players</span><span>30 min</span><span>Age 10+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/148228/splendor" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+          <article class="game">
+            <div class="game__cover">[cover 3:4]<br>Just One</div>
+            <div>
+              <h3 class="game__title">Just One</h3>
+              <p class="game__meta">2018 · Bombyx</p>
+            </div>
+            <p class="game__like"><b>Like a group chat</b> where everyone types the same joke and it gets cancelled out.</p>
+            <p class="game__facts"><span>3–7 players</span><span>20 min</span><span>Age 8+</span></p>
+            <div class="game__foot">
+              <span class="weight"><span class="weight__bars"><i class="on"></i><i></i><i></i><i></i><i></i></span><span class="weight__txt">Light</span></span>
+              <a class="game__bgg" href="https://boardgamegeek.com/boardgame/254640/just-one" target="_blank" rel="noopener">BGG ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section rail" id="twenty">
+    <div class="section__head">
+      <span class="eyebrow">Played, not scraped</span>
+      <h2>The 20</h2>
+      <div class="byline" style="margin-top:var(--s3)">
+        <div class="byline__av" aria-hidden="true">F</div>
+        <div>
+          <div class="byline__name">Franco Mansilla</div>
+          <div class="byline__role">Web developer in Denmark · I built this site</div>
+        </div>
+      </div>
+      <p class="thesis">Twenty games I've actually put on a table. Board games are the hobby behind this site, not my profession — so take this as one honest opinion, not a verdict. They're here because each one does something the others don't, and I can tell you exactly what that thing is. Some are popular, some aren't; plenty of the games everyone lists are just <em>good games having a very good decade</em>.</p>
+      <p class="legend"><span class="tag-played">Franco played this</span> Where one of these also turns up in the browse grid above, it carries this mark and links back to the note.</p>
+    </div>
+
+    <div class="twenty">
+      <article class="rec">
+        <div class="rec__n">01</div>
+        <div class="rec__cover">[cover 3:4]</div>
+        <div>
+          <h3 class="rec__title">[Game title — pending]</h3>
+          <p class="rec__meta">[year · designer · publisher]</p>
+          <span class="standout">Stands out for: [the one thing]</span>
+          <p class="rec__note rec__note--empty">Your note goes here — 2 to 4 sentences, first person. What it does that nothing else does, and who it's actually for. This is the slot that carries the whole section: it's the only place on the site where someone who has played the game is talking.</p>
+        </div>
+      </article>
+
+      <article class="rec">
+        <div class="rec__n">02</div>
+        <div class="rec__cover">[cover 3:4]</div>
+        <div>
+          <h3 class="rec__title">[Game title — pending]</h3>
+          <p class="rec__meta">[year · designer · publisher]</p>
+          <span class="standout">Stands out for: [the one thing]</span>
+          <p class="rec__note rec__note--empty">Your note goes here.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="slots">
+      <div class="slot"><span class="slot__n">03</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">04</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">05</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">06</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">07</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">08</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">09</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">10</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">11</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">12</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">13</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">14</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">15</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">16</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">17</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">18</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">19</span><span class="slot__txt">Reserved</span></div>
+      <div class="slot"><span class="slot__n">20</span><span class="slot__txt">Reserved</span></div>
+    </div>
+  </section>
+
+  <section class="section section--tinted" id="picks">
+    <div class="rail">
+      <div class="section__head">
+        <span class="eyebrow">Editorial selection</span>
+        <h2>Our picks, by category</h2>
+        <p>These are chosen by hand, not scraped from a ranking. Ten per family, ordered by how well they work for someone who's just starting.</p>
+      </div>
+      <div class="picks">
+        <div class="pick">
+          <h3>Best for people who "don't like board games"</h3>
+          <p class="pick__note">Top 10 · Family</p>
+          <ul class="pick__list">
+            <li class="pick__item"><span class="pick__n">01</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">2–4 players · 30 min</div></div></li>
+            <li class="pick__item"><span class="pick__n">02</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">2–5 players · 45 min</div></div></li>
+            <li class="pick__item"><span class="pick__n">03</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">3–6 players · 20 min</div></div></li>
+          </ul>
+        </div>
+        <div class="pick">
+          <h3>Best when there are eight of you</h3>
+          <p class="pick__note">Top 10 · Party</p>
+          <ul class="pick__list">
+            <li class="pick__item"><span class="pick__n">01</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">4–8 players · 15 min</div></div></li>
+            <li class="pick__item"><span class="pick__n">02</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">6–12 players · 30 min</div></div></li>
+            <li class="pick__item"><span class="pick__n">03</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">4–10 players · 25 min</div></div></li>
+          </ul>
+        </div>
+        <div class="pick">
+          <h3>Worth the whole evening</h3>
+          <p class="pick__note">Top 10 · Strategy</p>
+          <ul class="pick__list">
+            <li class="pick__item"><span class="pick__n">01</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">2–4 players · 2 h</div></div></li>
+            <li class="pick__item"><span class="pick__n">02</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">1–4 players · 90 min</div></div></li>
+            <li class="pick__item"><span class="pick__n">03</span><div class="pick__thumb"></div><div><div class="pick__name">Placeholder title</div><div class="pick__sub">3–5 players · 2 h</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section rail">
+    <div class="note">
+      <b>Where this data comes from.</b> Player counts, playing times and ages are the publishers' own figures. Rankings and difficulty ratings on this site are our editorial judgement — not BoardGameGeek's. Meeple Map is not affiliated with BoardGameGeek; we link to their pages because that's where you should go to read more.
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="rail">
+    <div class="foot__cols">
+      <div><h4>Find a game</h4><ul><li><a href="#hook">Take the quiz</a></li><li><a href="#finder">Browse all 50</a></li><li><a href="#twenty">The 20</a></li><li><a href="#picks">Editorial picks</a></li></ul></div>
+      <div><h4>By category</h4><ul><li><a href="#finder">Family</a></li><li><a href="#finder">Party</a></li><li><a href="#finder">Strategy</a></li><li><a href="#finder">Thematic</a></li><li><a href="#finder">Abstract</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="#">How to read a game box</a></li><li><a href="#">What "worker placement" means</a></li><li><a href="#">Your first game night</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#">Why we built this</a></li><li><a href="#">How we choose</a></li><li><a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek ↗</a></li></ul></div>
+    </div>
+    <div class="foot__base">
+      <span>Meeple Map — a project by Franco Mansilla</span>
+      <span>Cover art © respective publishers. Used for editorial identification.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// v0: chips toggle only — enough to judge the interaction, not the real filter engine
+document.querySelectorAll('.chip[aria-pressed]').forEach(c => {
+  c.addEventListener('click', () => c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'));
+});
+</script>
+</body>
+</html>
