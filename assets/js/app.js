@@ -525,10 +525,11 @@ function bind() {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });   // backdrop
   dlg.addEventListener('close', () => { openSlug = null; });
   $('#sort').addEventListener('change', e => { state.sort = e.target.value; renderFinder(); });
-  let tmr;
+  // No debounce: filtering 50 games takes under 5ms. Coalesce to one render per frame instead.
+  let raf = 0;
   $('#search').addEventListener('input', e => {
-    clearTimeout(tmr);
-    tmr = setTimeout(() => { state.q = e.target.value.trim().slice(0, 60); renderFinder(); }, 120);
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => { state.q = e.target.value.trim().slice(0, 60); renderFinder(); });
   });
   $('#search').addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); state.q = e.target.value.trim().slice(0, 60); renderFinder(); scrollToEl($('#finder')); }

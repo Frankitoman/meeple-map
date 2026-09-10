@@ -49,7 +49,7 @@
  },
  "picks": [
   {
-   "title": "Best for people who “don't like board games”",
+   "title": "For non-gamers",
    "category": "family",
    "games": [
     "ticket-to-ride",
@@ -58,10 +58,10 @@
     "azul",
     "cascadia"
    ],
-   "title_es": "Para los que “no son de juegos de mesa”"
+   "title_es": "Para quien no juega"
   },
   {
-   "title": "Best when there are eight of you",
+   "title": "For eight or more",
    "category": "party",
    "games": [
     "codenames",
@@ -70,10 +70,10 @@
     "telestrations",
     "avalon"
    ],
-   "title_es": "Para cuando son ocho"
+   "title_es": "Para ocho o más"
   },
   {
-   "title": "Worth the whole evening",
+   "title": "For a long evening",
    "category": "strategy",
    "games": [
     "arnak",
@@ -82,10 +82,10 @@
     "terraforming-mars",
     "ark-nova"
    ],
-   "title_es": "Valen la noche entera"
+   "title_es": "Para una noche larga"
   },
   {
-   "title": "Best if you'd rather work together",
+   "title": "Better together",
    "category": "thematic",
    "games": [
     "pandemic",
@@ -94,10 +94,10 @@
     "jaws-of-the-lion",
     "spirit-island"
    ],
-   "title_es": "Para los que prefieren colaborar"
+   "title_es": "Mejor en equipo"
   },
   {
-   "title": "Best for a quiet puzzle",
+   "title": "Quiet puzzles",
    "category": "abstract",
    "games": [
     "patchwork",
@@ -106,7 +106,7 @@
     "hive",
     "sagrada"
    ],
-   "title_es": "Para un puzle tranquilo"
+   "title_es": "Puzles tranquilos"
   }
  ],
  "the20": []
