@@ -49,4 +49,4 @@ Cover art © the respective publishers, used to identify each game.
 
 ---
 
-Design and build by [Franco Mansilla](https://web-portfolio.francojmansilla.workers.dev/).
+Design and build by [Franco Mansilla](https://tierra.dk) · part of the Tierra portfolio.
