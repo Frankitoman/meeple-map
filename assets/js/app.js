@@ -537,7 +537,10 @@ async function boot() {
   readURL();
   if (state.q) $('#search').value = state.q;
   renderThe20();      // before cards: sets which games carry the "played" mark
+  const grid = $('#grid');
+  grid.classList.add('is-entering');                // first paint only — see .grid.is-entering
   renderCats(); renderPicks(); renderQuiz(); renderFinder();
+  setTimeout(() => grid.classList.remove('is-entering'), 600);
   bind();
 }
 boot();

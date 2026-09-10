@@ -313,8 +313,10 @@ button{font:inherit; color:inherit; cursor:pointer}
   background:var(--surface); border:1px solid var(--border); border-radius:var(--r-card);
   padding:var(--s2); display:flex; flex-direction:column; gap:10px; position:relative;
   transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
-  animation:cardIn .3s var(--ease) both;
 }
+/* Entrance plays once, when the grid first appears. Filtering, sorting and
+   typing re-render the grid dozens of times a session — those must be instant. */
+.grid.is-entering .game{animation:cardIn .3s var(--ease) both}
 @keyframes cardIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
 .game:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--faint)}
 
@@ -489,9 +491,24 @@ button{font:inherit; color:inherit; cursor:pointer}
   border:0; padding:0; border-radius:var(--r-feature); width:min(760px,calc(100vw - 32px));
   max-height:calc(100vh - 48px); background:var(--surface); color:var(--ink); box-shadow:var(--shadow);
 }
-.dlg::backdrop{background:rgba(40,46,62,.42); backdrop-filter:blur(2px)}
-.dlg[open]{animation:dlgIn .24s var(--ease)}
-@keyframes dlgIn{from{opacity:0; transform:translateY(12px) scale(.98)} to{opacity:1; transform:none}}
+/* Enters and leaves the same way. Transitions, not keyframes, so the close
+   animates too: allow-discrete keeps the dialog in the top layer and
+   displayed until the fade ends. Exit is quicker than entry. Browsers without
+   @starting-style/allow-discrete (Firefox today) just open and close instantly. */
+.dlg{
+  opacity:0; transform:translateY(8px) scale(.98);
+  transition:opacity 160ms var(--ease), transform 160ms var(--ease),
+             overlay 160ms var(--ease) allow-discrete, display 160ms var(--ease) allow-discrete;
+}
+.dlg[open]{opacity:1; transform:none; transition-duration:200ms}
+@starting-style{ .dlg[open]{opacity:0; transform:translateY(12px) scale(.98)} }
+.dlg::backdrop{
+  background:rgba(40,46,62,0); backdrop-filter:blur(0);
+  transition:background 160ms var(--ease), backdrop-filter 160ms var(--ease),
+             overlay 160ms var(--ease) allow-discrete, display 160ms var(--ease) allow-discrete;
+}
+.dlg[open]::backdrop{background:rgba(40,46,62,.42); backdrop-filter:blur(2px); transition-duration:200ms}
+@starting-style{ .dlg[open]::backdrop{background:rgba(40,46,62,0); backdrop-filter:blur(0)} }
 .dlg__in{display:grid; grid-template-columns:280px 1fr; gap:var(--s4); padding:var(--s4)}
 .dlg__cover{aspect-ratio:1/1; background:var(--canvas); border-radius:var(--r-card); padding:var(--s2); display:grid; place-items:center}
 .dlg__cover img{width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply}
@@ -638,4 +655,9 @@ button{font:inherit; color:inherit; cursor:pointer}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+}
+/* Reduced motion keeps the dialog's fade (gentler, not zero) and drops the movement. */
+@media (prefers-reduced-motion:reduce){
+  .dlg{transform:none !important; transition-property:opacity, overlay, display !important;
+       transition-duration:150ms !important; transition-behavior:allow-discrete !important}
 }
