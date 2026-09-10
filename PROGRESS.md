@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 91 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 101 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -59,8 +59,9 @@ all four, since there you're refining, not answering.
 
 ## Growing the catalogue to 100 (started 2026-09-10)
 
-Franco asked to go from the top 50 to the top 100, ten at a time. 85 games now: the original 50, 15 from
-The 20, **batch 2 (61–70)**: Love Letter, Mysterium, Takenoko, Machi Koro, Century: Spice Road, Horrified,
+Franco asked to go from the top 50 to the top 100, ten at a time. 95 games now: the original 50, 15 from
+The 20, **batch 3 (71–80)**: Deception, Werewords, The Mind, Captain Sonar, Tokaido (Stonemaier new edition),
+Photosynthesis, Calico, Quoridor, Stone Age, Blood Rage — **batch 2 (61–70)**: Love Letter, Mysterium, Takenoko, Machi Koro, Century: Spice Road, Horrified,
 Mansions of Madness: Second Edition, Qwirkle, Clank!, Sheriff of Nottingham (2nd ed.) — and **batch 1 (51–60)**: King of Tokyo, Exploding Kittens, Coup, Forbidden Island, Lords of
 Waterdeep, Viticulture Essential Edition, Dead of Winter, Slay the Spire: The Board Game, Stardew
 Valley: The Board Game, Blokus. Facts come from Board Game Bliss product pages (their body lists the BGG
@@ -69,8 +70,7 @@ Video-game adaptations (Slay the Spire, Stardew Valley — and Valheim in The 20
 premise, so the plan leans on them where the game is good. Small World appears in the old cover notes
 but not in the data; left out until Franco confirms whether it was cut on purpose.
 
-Still to add (approved list): 71–80 Deception: Murder in Hong Kong, Werewords, The Mind, Captain Sonar,
-Tokaido, Photosynthesis, Calico, Quoridor, Stone Age, Blood Rage · 81–90 Great Western Trail, Star Wars:
+Still to add (proposed list): 81–90 Great Western Trail, Star Wars:
 Rebellion, Marvel Champions, Unmatched, Robinson Crusoe, Zombicide, Too Many Bones, The Witcher: Old World,
 Tsuro, Harmonies · 91–100 Minecraft: Builders & Biomes, Deep Rock Galactic, This War of Mine, Dorfromantik,
 Cartographers, Hues and Cues, Sea Salt & Paper, Lost Cities, Cthulhu: Death May Die, Wits & Wagers.
@@ -102,7 +102,7 @@ step 1 (finder results stay until new answers replace them) and the step is cent
 
 Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, League of Legends,
 **ARK** (survival — Paleo, Sleeping Gods, Nemesis, Stonesaga, Valheim). Franco plans more survival games; tag them
-`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 15.
+`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 17.
 
 ## Portfolio and repo
 
@@ -115,7 +115,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 91.
+  it should be 101.
 
 ## Languages
 

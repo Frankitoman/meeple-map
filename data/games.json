@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 85,
+  "count": 95,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -2429,6 +2429,292 @@
    "mode": "competitive",
    "anchors": [
     "amongus"
+   ]
+  },
+  {
+   "slug": "deception",
+   "name": "Deception: Murder in Hong Kong",
+   "bgg": 156129,
+   "year": 2014,
+   "category": "party",
+   "players": [
+    4,
+    12
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "Grey Fox Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Among Us",
+    "text": "Among Us at a crime scene: the forensic scientist knows who did it, but can only point at clues.",
+    "text_es": "Among Us en la escena del crimen: el forense sabe quién fue, pero solo puede señalar pistas.",
+    "ref_es": "Among Us"
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "werewords",
+   "name": "Werewords",
+   "bgg": 219215,
+   "year": 2017,
+   "category": "party",
+   "players": [
+    4,
+    10
+   ],
+   "minutes": [
+    10,
+    10
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Bézier Games",
+   "analogy": {
+    "kind": "board",
+    "ref": "one-night-werewolf",
+    "text": "One Night Ultimate Werewolf meets 20 Questions: guess the secret word with yes-or-no questions while a werewolf quietly steers you wrong.",
+    "text_es": "One Night Ultimate Werewolf con 20 preguntas: adivinas la palabra secreta con preguntas de sí o no mientras un hombre lobo te desvía sin que se note."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "the-mind",
+   "name": "The Mind",
+   "bgg": 244992,
+   "year": 2018,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Pandasaurus Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "rhythm game",
+    "text": "A rhythm game with no music: play your numbers in rising order, in silence, and just feel when it's your turn.",
+    "text_es": "Un juego de ritmo sin música: juegas tus números en orden creciente, en silencio, y sientes cuándo te toca.",
+    "ref_es": "juego de ritmo"
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "captain-sonar",
+   "name": "Captain Sonar",
+   "bgg": 171131,
+   "year": 2016,
+   "category": "party",
+   "players": [
+    2,
+    8
+   ],
+   "minutes": [
+    45,
+    60
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "Matagot",
+   "analogy": {
+    "kind": "video",
+    "ref": "Counter-Strike",
+    "text": "Counter-Strike in submarines: two crews in real time, each hunting the other by sound.",
+    "text_es": "Counter-Strike con submarinos: dos tripulaciones en tiempo real, cada una cazando a la otra por el sonido.",
+    "ref_es": "Counter-Strike"
+   },
+   "mode": "teams",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "tokaido",
+   "name": "Tokaido",
+   "bgg": 123540,
+   "year": 2012,
+   "category": "family",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    45,
+    45
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Stonemaier Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Animal Crossing",
+    "text": "Animal Crossing as a road trip: stroll across old Japan, eat, paint the views and collect souvenirs — whoever enjoys the journey most wins.",
+    "text_es": "Animal Crossing como viaje: recorres el Japón antiguo, comes, pintas paisajes y juntas recuerdos; gana quien más disfruta del camino.",
+    "ref_es": "Animal Crossing"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "photosynthesis",
+   "name": "Photosynthesis",
+   "bgg": 218603,
+   "year": 2017,
+   "category": "abstract",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Blue Orange Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "Stardew Valley's garden as a fight for sunlight: plant trees, catch the light, and leave your rivals in the shade.",
+    "text_es": "El jardín de Stardew Valley convertido en pelea por la luz: plantas árboles, atrapas el sol y dejas a tus rivales en la sombra.",
+    "ref_es": "Stardew Valley"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "calico",
+   "name": "Calico",
+   "bgg": 283155,
+   "year": 2020,
+   "category": "abstract",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Alderac Entertainment Group",
+   "analogy": {
+    "kind": "board",
+    "ref": "azul",
+    "text": "Azul with quilts and cats: stitch patches by colour and pattern, and lure cats onto your quilt.",
+    "text_es": "Azul con colchas y gatos: coses parches por color y diseño, y atraes gatos a tu colcha."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "quoridor",
+   "name": "Quoridor",
+   "bgg": 624,
+   "year": 1997,
+   "category": "abstract",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Gigamic",
+   "analogy": {
+    "kind": "video",
+    "ref": "tower defense",
+    "text": "A tower defense duel: race to the far side while dropping walls that turn your rival's path into a maze.",
+    "text_es": "Un duelo de tower defense: corres al otro lado mientras pones muros que convierten el camino de tu rival en un laberinto.",
+    "ref_es": "tower defense"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "stone-age",
+   "name": "Stone Age",
+   "bgg": 34635,
+   "year": 2008,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    60,
+    90
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Z-Man Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Age of Empires",
+    "text": "Age of Empires in the Stone Age: send your tribe to hunt, gather and build, then roll to see what they bring back.",
+    "text_es": "Age of Empires en la Edad de Piedra: mandas a tu tribu a cazar, recolectar y construir, y tiras dados para ver qué traen.",
+    "ref_es": "Age of Empires"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "blood-rage",
+   "name": "Blood Rage",
+   "bgg": 170216,
+   "year": 2015,
+   "category": "strategy",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    60,
+    90
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "CMON",
+   "analogy": {
+    "kind": "video",
+    "ref": "God of War",
+    "text": "God of War on a board: lead a Viking clan, pillage, and win glory even when you die — Ragnarök is coming.",
+    "text_es": "God of War en la mesa: diriges un clan vikingo, saqueas y ganas gloria incluso al morir; el Ragnarök se acerca.",
+    "ref_es": "God of War"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
    ]
   }
  ]
