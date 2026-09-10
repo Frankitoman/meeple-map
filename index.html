@@ -41,8 +41,20 @@
 
 <main id="top">
   <div class="hero-wrap">
+    <!-- The grid is a game board: pieces stand on its intersections. Decorative. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="meeple" viewBox="0 0 24 24"><path d="M12 2.6c-2.2 0-3.6 1.6-3.6 3.5 0 1 .4 1.8 1 2.5-2.4.5-4.2 1.6-4.2 3v6.2c0 1.7 3 2.9 6.8 2.9s6.8-1.2 6.8-2.9v-6.2c0-1.4-1.8-2.5-4.2-3 .6-.7 1-1.5 1-2.5 0-1.9-1.4-3.5-3.6-3.5Z" fill="currentColor"/></symbol></svg>
+    <div class="board" aria-hidden="true">
+      <span class="piece piece--lg piece--m" style="--x:-560px; --y:4; --d:0s; color:var(--c-strategy); --xm:-144px; --ym:1;"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+      <span class="piece piece--die" style="--x:-448px; --y:8; --d:.4s; --r:-14deg"><svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#fff" stroke="#d9dde8"/><circle cx="8" cy="8" r="2.1" fill="#282e3e"/><circle cx="16" cy="16" r="2.1" fill="#282e3e"/><circle cx="12" cy="12" r="2.1" fill="#282e3e"/></svg></span>
+      <span class="piece piece--wide" style="--x:-640px; --y:10; --d:.9s; color:var(--c-party);"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+      <span class="piece" style="--x:-416px; --y:13; --d:1.4s; color:var(--c-abstract);"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+      <span class="piece piece--lg piece--m" style="--x:544px; --y:5; --d:.6s; color:var(--c-family); --xm:128px; --ym:1;"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+      <span class="piece" style="--x:416px; --y:9; --d:1.1s; color:var(--c-thematic);"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+      <span class="piece piece--die piece--wide" style="--x:608px; --y:11; --d:.2s; --r:12deg"><svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#fff" stroke="#d9dde8"/><circle cx="7" cy="7" r="2.1" fill="#282e3e"/><circle cx="17" cy="7" r="2.1" fill="#282e3e"/><circle cx="7" cy="17" r="2.1" fill="#282e3e"/><circle cx="17" cy="17" r="2.1" fill="#282e3e"/></svg></span>
+      <span class="piece piece--m" style="--x:448px; --y:13; --d:1.7s; color:var(--sun); --xm:160px; --ym:1;"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
+    </div>
     <section class="hero rail" aria-labelledby="hero-title">
-      <h1 id="hero-title">Never played a board game? Start with one you already know.</h1>
+      <h1 id="hero-title">Never played a board game? Start with one <span class="mark">you already know</span>.</h1>
       <p class="hero__sub">Tell us what you already play — a video game, anything — and we'll point you to the board game that feels like it.</p>
 
       <!-- Quiz: rendered by app.js. The static fallback below is replaced on load. -->
@@ -105,21 +117,23 @@
     </div>
   </section>
 
-  <section class="section rail" id="twenty" aria-labelledby="twenty-title">
+  <section class="section section--band" id="twenty" aria-labelledby="twenty-title">
+   <div class="rail">
     <div class="section__head">
       <span class="eyebrow">Played, not scraped</span>
       <h2 id="twenty-title">The 20</h2>
       <div class="byline" style="margin-top:var(--s3)">
-        <div class="byline__av" aria-hidden="true">F</div>
+        <div class="byline__av" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><use href="#meeple"/></svg></div>
         <div>
-          <div class="byline__name">Franco Mansilla</div>
+          <div class="byline__name">Games I've played</div>
           <div class="byline__role">Web developer in Denmark · I built this site</div>
         </div>
       </div>
       <p class="thesis">Twenty games I've actually put on a table. Board games are the hobby behind this site, not my profession — so take this as one honest opinion, not a verdict. They're here because each one does something the others don't, and I can tell you exactly what that thing is. Some are popular, some aren't; plenty of the games everyone lists are just <em>good games having a very good decade</em>.</p>
-      <p class="legend"><span class="tag-played">Franco played this</span> Where one of these also turns up in the finder above, it carries this mark.</p>
+      <p class="legend"><span class="tag-played">I played this</span> When one of these also turns up in the finder above, I've marked it.</p>
     </div>
     <div id="the20"></div>
+   </div>
   </section>
 
   <section class="section section--tinted" id="picks" aria-labelledby="picks-title">

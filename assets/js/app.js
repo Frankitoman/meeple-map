@@ -86,6 +86,9 @@ const STEPS = [
   ]},
 ];
 const ANCHOR_MARK = { aoe: 'AoE', amongus: 'AU', darksouls: 'DS', stardew: 'SV', wow: 'WoW', lol: 'LoL' };
+// Each video game gets a colour from the palette; steps 2–5 cycle through it.
+const ANCHOR_COLOR = { aoe: '--c-strategy', amongus: '--c-party', darksouls: '--c-thematic', stardew: '--c-abstract', wow: '--sun', lol: '--c-family' };
+const STEP_COLORS = ['--c-family', '--c-party', '--c-strategy', '--c-thematic'];
 const RELAX_ORDER = ['b', 't', 'm', 'p'];   // least to most important for a beginner
 
 /* ---------- State ---------- */
@@ -170,8 +173,8 @@ function cardHTML(g) {
   const feels = state.anchor && g.anchors.includes(state.anchor)
     ? `<span class="tag tag--feels">Feels like ${esc(editorial.anchors[state.anchor].name)}</span>` : '';
   return `<article class="game" id="g-${g.slug}">
-    ${played.has(g.slug) ? '<span class="tag-played">Franco played this</span>' : ''}
-    <div class="cover">${cover(g)}</div>
+    ${played.has(g.slug) ? '<span class="tag-played">I played this</span>' : ''}
+    <div class="cover cover--${g.category}">${cover(g)}</div>
     <button class="game__open" type="button" data-open="${g.slug}"><span class="sr-only">Open ${esc(g.name)}</span></button>
     <div class="game__head">
       <h3 class="game__title">${esc(g.name)}</h3>
@@ -196,7 +199,7 @@ function renderGroups() {
         const on = sel[gr.key].has(c.id);
         // Would adding this chip leave nothing? Then say so before they click.
         const dead = !on && !matching({ key: gr.key, set: new Set([...sel[gr.key], c.id]) }).length;
-        return `<button class="chip" type="button" data-g="${gr.key}" data-c="${c.id}" aria-pressed="${on}"${dead ? ' disabled title="No games left with this"' : ''}>${c.label}</button>`;
+        return `<button class="chip${gr.key === 'c' ? ' chip--' + c.id : ''}" type="button" data-g="${gr.key}" data-c="${c.id}" aria-pressed="${on}"${dead ? ' disabled title="No games left with this"' : ''}>${c.label}</button>`;
       }).join('')}</div>
     </div>`).join('');
 }
@@ -271,7 +274,7 @@ function clearAll() {
 /* ---------- Quiz ---------- */
 function optHTML(o, i) {
   const mark = o.bars ? `<span class="weight__bars" style="transform:scale(1.9)">${bars(o.bars).replace(/^<span[^>]*>|<\/span>$/g, '')}</span>` : esc(o.mark);
-  return `<button class="opt" type="button" data-opt="${i}">
+  return `<button class="opt" type="button" data-opt="${i}" style="--c:var(${o.color || STEP_COLORS[i % STEP_COLORS.length]})">
     <span class="opt__mark" aria-hidden="true">${mark}</span>
     <span class="opt__name">${esc(o.label)}</span>
     <span class="opt__kind">${esc(o.kind)}</span>
@@ -279,7 +282,7 @@ function optHTML(o, i) {
 }
 function stepOptions(step) {
   if (step.key !== 'a') return step.options;
-  return Object.entries(editorial.anchors).map(([k, a]) => ({ v: k, mark: ANCHOR_MARK[k] || a.name[0], label: a.name, kind: a.kind }));
+  return Object.entries(editorial.anchors).map(([k, a]) => ({ v: k, mark: ANCHOR_MARK[k] || a.name[0], label: a.name, kind: a.kind, color: ANCHOR_COLOR[k] }));
 }
 function renderQuiz() {
   const el = $('#quiz');
@@ -377,16 +380,16 @@ function showCategory(id) {
 function renderPicks() {
   $('#picks-list').innerHTML = editorial.picks.map(p => {
     const gs = p.games.map(s => bySlug[s]).filter(Boolean);
-    return `<div class="pick">
+    return `<div class="pick pick--${p.category}">
       <h3>${esc(p.title)}</h3>
       <p class="pick__note">Top ${gs.length} · ${CATS[p.category].name}</p>
-      <ol class="pick__list">${gs.map((g, i) => `<li class="pick__item">
+      <div class="pick__panel"><ol class="pick__list">${gs.map((g, i) => `<li class="pick__item">
         <button class="pick__row" type="button" data-open="${g.slug}">
           <span class="pick__n">${String(i + 1).padStart(2, '0')}</span>
-          <span class="pick__thumb">${cover(g)}</span>
+          <span class="pick__thumb cover--${g.category}">${cover(g)}</span>
           <span><span class="pick__name">${esc(g.name)}</span><br><span class="pick__sub">${players(g)} · ${minutes(g)}</span></span>
         </button></li>`).join('')}</ol>
-      <button class="link-btn pick__all" type="button" data-cat="${p.category}">All ${count(p.category)} ${CATS[p.category].name.toLowerCase()} games →</button>
+      <button class="link-btn pick__all" type="button" data-cat="${p.category}">All ${count(p.category)} ${CATS[p.category].name.toLowerCase()} games →</button></div>
     </div>`;
   }).join('');
   function count(c) { return games.filter(g => g.category === c).length; }
@@ -422,11 +425,11 @@ function renderThe20() {
       <div class="rec__cover" aria-hidden="true"></div>
       <div>
         <h3 class="rec__title">Coming soon</h3>
-        <p class="rec__meta">Reserved for one of Franco's twenty</p>
+        <p class="rec__meta">Reserved for one of my twenty</p>
         <span class="standout">Stands out for: the one thing</span>
         <p class="rec__note rec__note--empty">${i === 0
-          ? "Two to four sentences, first person: what this game does that nothing else does, and who it's actually for."
-          : 'Note to come.'}</p>
+          ? "Why I play it, what I think about it, and what it does that nothing else does."
+          : "What I think — coming soon."}</p>
       </div>
     </article>`;
   const shown = entries.length ? entries.map(rec) : [example(0), example(1)];
@@ -445,11 +448,11 @@ function openGame(slug) {
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1l10 10M11 1 1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
     <div class="dlg__in">
-      <div class="dlg__cover">${cover(g).replace('loading="lazy"', 'loading="eager"')}</div>
+      <div class="dlg__cover cover--${g.category}">${cover(g).replace('loading="lazy"', 'loading="eager"')}</div>
       <div>
         <div class="game__tags"><span class="tag tag--${g.category}">${CATS[g.category].name}</span><span class="tag tag--feels">${MODE[g.mode]}</span></div>
         <h2 id="dlg-title" style="margin-top:12px">${esc(g.name)}</h2>
-        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ' · <span class="tag-played">Franco played this</span>' : ''}</p>
+        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ' · <span class="tag-played">I played this</span>' : ''}</p>
         ${likeHTML(g)}
         <dl class="dlg__facts">
           <div class="fact"><dt>Players</dt><dd>${range(g.players)}</dd></div>
