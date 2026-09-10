@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 64,
+  "count": 65,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -1833,6 +1833,33 @@
     "ref": "unstable-unicorns",
     "text": "Unstable Unicorns with a board and spells: roll for resources, blast your friends, and be the last caster standing.",
     "text_es": "Unstable Unicorns con tablero y hechizos: tiras dados por recursos, atacas a tus amigos y gana el último en pie."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "not-enough-mana",
+   "name": "Not Enough Mana",
+   "bgg": 343990,
+   "year": 2022,
+   "category": "party",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 18,
+   "complexity": 2,
+   "publisher": "SUPERHOT Presents",
+   "analogy": {
+    "kind": "video",
+    "ref": "Hearthstone",
+    "text": "Hearthstone at a party: cast spells at your friends, and drink to refill your mana.",
+    "text_es": "Hearthstone en una fiesta: lanzas hechizos a tus amigos y bebes para recargar tu maná.",
+    "ref_es": "Hearthstone"
    },
    "mode": "competitive",
    "anchors": []

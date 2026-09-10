@@ -143,7 +143,8 @@
    "standout": "cute outside, ruthless inside",
    "standout_es": "tierno por fuera, despiadado por dentro",
    "note": "You'll lose more friends than with Uno. Adorable unicorns, pure chaos — it makes no sense, and that's the fun. Very 21st-century humour: we laugh the whole time, right up until your best friend betrays you just as you're about to win.",
-   "note_es": "Vas a perder más amistades que con el Uno. Unicornios adorables y caos puro: no tiene ningún sentido, y eso es lo divertido. Humor muy siglo XXI: nos reímos todo el tiempo, hasta que tu mejor amigo te traiciona justo cuando ibas a ganar."
+   "note_es": "Vas a perder más amistades que con el Uno. Unicornios adorables y caos puro: no tiene ningún sentido, y eso es lo divertido. Humor muy siglo XXI: nos reímos todo el tiempo, hasta que tu mejor amigo te traiciona justo cuando ibas a ganar.",
+   "luchi": true
   },
   {
    "slug": "sleeping-gods",
@@ -157,7 +158,8 @@
    "standout": "teamwork against a cosmic horror",
    "standout_es": "trabajo en equipo contra un horror cósmico",
    "note": "Co-op taken up a level. You face one of four Ancient Ones, and you have to investigate and think strategically: spread out across the map so one of you closes gates while another hunts clues and mysteries — all while watching your sanity, your health and the weapons you find. Great investigation, great combat.",
-   "note_es": "El cooperativo llevado a otro nivel. Te enfrentas a uno de cuatro Primigenios y hay que investigar y pensar con estrategia: repartirse por el mapa para que uno cierre portales mientras otro busca pistas y misterios, sin descuidar la cordura, la salud y las armas que consigas. Muy buena investigación y muy buen combate."
+   "note_es": "El cooperativo llevado a otro nivel. Te enfrentas a uno de cuatro Primigenios y hay que investigar y pensar con estrategia: repartirse por el mapa para que uno cierre portales mientras otro busca pistas y misterios, sin descuidar la cordura, la salud y las armas que consigas. Muy buena investigación y muy buen combate.",
+   "luchi": true
   },
   {
    "slug": "keep-the-heroes-out",
@@ -185,7 +187,8 @@
    "standout": "your drink is your health bar",
    "standout_es": "tu vaso es tu barra de vida",
    "note": "A party game for up to six that mixes D&D — the d20 really matters — with drinks. Any drink: it doesn't have to be alcohol. Together we build a dungeon and roll to see if we beat the monsters. It's a bit co-op and a bit competitive: sometimes you have allies, sometimes you pick a friend as your enemy and make them drink. Your drink is your health — run out and you refill. And everything is waterproof, because it's made for parties.",
-   "note_es": "Un juego de fiesta para hasta seis que mezcla D&D —el d20 importa muchísimo— con bebidas. Cualquier bebida: no tiene que ser alcohol. Entre todos construimos una mazmorra y tiramos el d20 para ver si vencemos a los monstruos. Es un poco cooperativo y un poco competitivo: a veces tienes aliados y a veces eliges a un amigo como enemigo y lo haces beber. Tu bebida es tu vida: si se te acaba, rellenas. Y todo es impermeable, porque está hecho para fiestas."
+   "note_es": "Un juego de fiesta para hasta seis que mezcla D&D —el d20 importa muchísimo— con bebidas. Cualquier bebida: no tiene que ser alcohol. Entre todos construimos una mazmorra y tiramos el d20 para ver si vencemos a los monstruos. Es un poco cooperativo y un poco competitivo: a veces tienes aliados y a veces eliges a un amigo como enemigo y lo haces beber. Tu bebida es tu vida: si se te acaba, rellenas. Y todo es impermeable, porque está hecho para fiestas.",
+   "luchi": true
   },
   {
    "slug": "yawning-portal",
@@ -199,7 +202,8 @@
    "standout": "a cozy town, a quiet race",
    "standout_es": "un pueblo acogedor, una carrera tranquila",
    "note": "Competitive, but never directly. You're all in a town of dragons, moving from shop to shop, helping the townsfolk, opening new shops and improving them to earn fame. It's a very calm game where you just enjoy the atmosphere — the illustrations are gorgeous and funny — but there's still a race to be the most famous.",
-   "note_es": "Competitivo, pero nunca de forma directa. Todos están en un pueblo de dragones, moviéndose de tienda en tienda, ayudando a los vecinos, abriendo locales nuevos y mejorándolos para ganar fama. Es un juego muy tranquilo donde se disfruta el ambiente —las ilustraciones son preciosas y muy divertidas—, pero igual hay una carrera por ver quién es el más famoso."
+   "note_es": "Competitivo, pero nunca de forma directa. Todos están en un pueblo de dragones, moviéndose de tienda en tienda, ayudando a los vecinos, abriendo locales nuevos y mejorándolos para ganar fama. Es un juego muy tranquilo donde se disfruta el ambiente —las ilustraciones son preciosas y muy divertidas—, pero igual hay una carrera por ver quién es el más famoso.",
+   "luchi": true
   },
   {
    "slug": "stonesaga",
@@ -213,7 +217,8 @@
    "standout": "it's the video game, literally",
    "standout_es": "es el videojuego, literal",
    "note": "Top two of all my board games. It's Valheim, literally: you're Vikings exploring the world for resources, with an incredible amount to craft. The world feels alive — it starts raining and you take damage or get tired. Out in a biome you fight creatures, open chests and help your friends; back home you cook, build furniture for comfort and better buffs, brew potions and make bombs. It's 100% teamwork, and the scenario is won or lost on the boss, who comes as a miniature you can paint. Plenty of scenarios, tremendous replayability, and building each one's world is half the fun.",
-   "note_es": "Top 2 de todos mis juegos de mesa. Es Valheim, literal: somos vikingos explorando el mundo en busca de recursos, con una cantidad increíble de cosas para craftear. El mundo se siente vivo: empieza a llover y sufres daño o cansancio. Afuera, en un bioma, te atacan bichos, abres cofres y ayudas a tus amigos; en casa cocinas, fabricas muebles para estar más cómodo y mejorar tus buffs, y creas pociones y granadas. Es trabajo en equipo al 100 %, y el escenario se gana o se pierde contra el jefe final, que viene en miniatura para pintarlo si quieres. Muchos escenarios, una rejugabilidad tremenda, y armar el mundo de cada uno es parte de la diversión."
+   "note_es": "Top 2 de todos mis juegos de mesa. Es Valheim, literal: somos vikingos explorando el mundo en busca de recursos, con una cantidad increíble de cosas para craftear. El mundo se siente vivo: empieza a llover y sufres daño o cansancio. Afuera, en un bioma, te atacan bichos, abres cofres y ayudas a tus amigos; en casa cocinas, fabricas muebles para estar más cómodo y mejorar tus buffs, y creas pociones y granadas. Es trabajo en equipo al 100 %, y el escenario se gana o se pierde contra el jefe final, que viene en miniatura para pintarlo si quieres. Muchos escenarios, una rejugabilidad tremenda, y armar el mundo de cada uno es parte de la diversión.",
+   "luchi": true
   },
   {
    "slug": "casting-shadows",
@@ -221,6 +226,14 @@
    "standout_es": "Unstable Unicorns, con hechizos",
    "note": "From the makers of Unstable Unicorns, with the same art. Short, competitive and very simple: you get a little creature with spells to bring down your enemies' health — your friends', in this case. It adds a layer to the Unstable Unicorns idea: some spells hit harder than others, and there are different locations and tiles to move to for bonuses. Good to have around for when someone's tired of Unstable Unicorns. I have the expansion too, and it's great. Fun — a good game.",
    "note_es": "De los creadores de Unstable Unicorns, con las mismas ilustraciones. Competitivo, corto y muy simple: tienes un bichito con hechizos para bajarles la vida a tus enemigos; en este caso, a tus amigos. Le suma una capa a la idea de Unstable Unicorns: hay hechizos que hacen más o menos daño, y distintos lugares y casillas adonde ir para conseguir beneficios. Es bueno tenerlo de opción por si alguien se cansó de Unstable Unicorns. Tengo también la expansión, y está muy buena. Divertido, buen juego."
+  },
+  {
+   "slug": "not-enough-mana",
+   "standout": "drinking is your power, not your punishment",
+   "standout_es": "beber es tu poder, no tu castigo",
+   "note": "A party drinking game — and it doesn't have to be alcohol. It's great because it makes you drink to get the mana you need to cast spells and attack your friends. In most drinking games, drinking is the punishment; here it's the source of your power. Very entertaining. Just drink in moderation.",
+   "note_es": "Un juego de fiesta para beber, y no tiene que ser alcohol. Está muy bueno porque te obliga a beber para conseguir el maná con el que lanzas hechizos y atacas a tus amigos. En casi todos los juegos de beber, beber es el castigo; aquí es la fuente de tu poder. Muy entretenido. Eso sí: a beber con moderación.",
+   "luchi": true
   }
  ]
 }
