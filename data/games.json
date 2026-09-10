@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 75,
+  "count": 85,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -1970,7 +1970,9 @@
     "text_es": "El hermano menor de Pandemic: entre todos rescatan cuatro tesoros antes de que la isla se hunda."
    },
    "mode": "coop",
-   "anchors": []
+   "anchors": [
+    "lol"
+   ]
   },
   {
    "slug": "lords-of-waterdeep",
@@ -2144,6 +2146,290 @@
    },
    "mode": "competitive",
    "anchors": []
+  },
+  {
+   "slug": "love-letter",
+   "name": "Love Letter",
+   "bgg": 129622,
+   "year": 2012,
+   "category": "family",
+   "players": [
+    2,
+    6
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Z-Man Games",
+   "analogy": {
+    "kind": "board",
+    "ref": "coup",
+    "text": "A pocket-sized cousin of Coup: sixteen cards, a lot of guessing, and one letter that reaches the princess.",
+    "text_es": "Un primo de bolsillo de Coup: dieciséis cartas, mucha deducción y una sola carta que llega a la princesa."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "mysterium",
+   "name": "Mysterium",
+   "bgg": 181304,
+   "year": 2015,
+   "category": "party",
+   "players": [
+    2,
+    7
+   ],
+   "minutes": [
+    42,
+    42
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Libellud",
+   "analogy": {
+    "kind": "board",
+    "ref": "dixit",
+    "text": "Dixit with a murder: a ghost can only talk through dream cards, and everyone else has to solve the crime.",
+    "text_es": "Dixit con un asesinato: un fantasma solo puede hablar con cartas de sueños, y los demás tienen que resolver el crimen."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "takenoko",
+   "name": "Takenoko",
+   "bgg": 70919,
+   "year": 2011,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    45,
+    45
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Bombyx / Matagot",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "Stardew Valley with a hungry panda: grow bamboo, water the garden, and keep the emperor's panda fed.",
+    "text_es": "Stardew Valley con un panda hambriento: haces crecer bambú, riegas el jardín y mantienes alimentado al panda del emperador.",
+    "ref_es": "Stardew Valley"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "machi-koro",
+   "name": "Machi Koro",
+   "bgg": 143884,
+   "year": 2012,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 7,
+   "complexity": 1,
+   "publisher": "IDW Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "SimCity",
+    "text": "SimCity with dice: build a town, and cash in whenever anyone rolls your numbers.",
+    "text_es": "SimCity con dados: construyes una ciudad y cobras cada vez que alguien saca tus números.",
+    "ref_es": "SimCity"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "century-spice-road",
+   "name": "Century: Spice Road",
+   "bgg": 209685,
+   "year": 2017,
+   "category": "family",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Plan B Games",
+   "analogy": {
+    "kind": "board",
+    "ref": "splendor",
+    "text": "Splendor on a caravan: trade spices for better ones until you can afford the richest orders.",
+    "text_es": "Splendor en caravana: cambias especias por otras mejores hasta poder pagar los pedidos más caros."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "horrified",
+   "name": "Horrified",
+   "bgg": 282524,
+   "year": 2019,
+   "category": "thematic",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    60,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Ravensburger",
+   "analogy": {
+    "kind": "board",
+    "ref": "pandemic",
+    "text": "Pandemic with classic movie monsters: rescue the villagers and work out how to beat Dracula, the Mummy and friends.",
+    "text_es": "Pandemic con los monstruos clásicos del cine: rescatas aldeanos y descubres cómo vencer a Drácula, la Momia y compañía."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "mansions-of-madness",
+   "name": "Mansions of Madness: Second Edition",
+   "bgg": 205059,
+   "year": 2016,
+   "category": "thematic",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    120,
+    180
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Fantasy Flight Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Resident Evil",
+    "text": "Resident Evil run by an app: explore a haunted mansion, solve its puzzles, and hold on to your sanity.",
+    "text_es": "Resident Evil dirigido por una app: exploras una mansión embrujada, resuelves sus acertijos y cuidas tu cordura.",
+    "ref_es": "Resident Evil"
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls"
+   ]
+  },
+  {
+   "slug": "qwirkle",
+   "name": "Qwirkle",
+   "bgg": 25669,
+   "year": 2006,
+   "category": "abstract",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    45,
+    45
+   ],
+   "age": 6,
+   "complexity": 1,
+   "publisher": "MindWare",
+   "analogy": {
+    "kind": "video",
+    "ref": "Candy Crush",
+    "text": "Candy Crush on a table: line up colours and shapes, and score big when you complete a row of six.",
+    "text_es": "Candy Crush en la mesa: alineas colores y formas, y sumas mucho cuando completas una fila de seis.",
+    "ref_es": "Candy Crush"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "clank",
+   "name": "Clank! A Deck-Building Adventure",
+   "bgg": 201808,
+   "year": 2016,
+   "category": "thematic",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Renegade Game Studios",
+   "analogy": {
+    "kind": "video",
+    "ref": "Spelunky",
+    "text": "Spelunky with a deck of cards: sneak in, steal a treasure, and get out before the dragon hears you.",
+    "text_es": "Spelunky con un mazo de cartas: te cuelas, robas un tesoro y sales antes de que el dragón te oiga.",
+    "ref_es": "Spelunky"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "sheriff-of-nottingham",
+   "name": "Sheriff of Nottingham",
+   "bgg": 298638,
+   "year": 2021,
+   "category": "party",
+   "players": [
+    3,
+    6
+   ],
+   "minutes": [
+    60,
+    60
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "CMON",
+   "analogy": {
+    "kind": "video",
+    "ref": "Papers, Please",
+    "text": "Papers, Please in reverse: smuggle goods past the sheriff — or be the sheriff, and guess who's lying.",
+    "text_es": "Papers, Please al revés: pasas contrabando delante del sheriff, o te toca ser el sheriff y adivinar quién miente.",
+    "ref_es": "Papers, Please"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "amongus"
+   ]
   }
  ]
 }

@@ -10,7 +10,7 @@ A board game finder for complete beginners. Instead of asking about "worker plac
 
 - **A five-step quiz** — video game, players, time, co-op or competitive, how much thinking. It hands off to the finder with your answers already set as filters. If your answers leave too few games, it loosens the fewest answers it can and tells you which.
 - **A finder** — six filter groups, search, four sort orders. Chips that would empty the list are disabled before you click them. Filter state lives in the URL, so any result can be shared.
-- **75 hand-picked games** in five families: Family, Party, Strategy, Thematic, Abstract.
+- **85 hand-picked games** in five families: Family, Party, Strategy, Thematic, Abstract.
 - **Editorial top-five lists** per family.
 - **The 20** — a personal list of games I've actually played, each with the one thing it does that nothing else does.
 - **English and Spanish.** The page opens in Spanish for any Spanish-language browser (Spain and Latin America alike) and in English otherwise; an EN/ES switch in the nav overrides it and is remembered. `?lang=es` forces it for a link.

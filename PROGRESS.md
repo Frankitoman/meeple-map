@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 81 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 91 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -59,14 +59,31 @@ all four, since there you're refining, not answering.
 
 ## Growing the catalogue to 100 (started 2026-09-10)
 
-Franco asked to go from the top 50 to the top 100, ten at a time. 75 games now: the original 50, 15 from
-The 20, and **batch 1 (51–60)**: King of Tokyo, Exploding Kittens, Coup, Forbidden Island, Lords of
+Franco asked to go from the top 50 to the top 100, ten at a time. 85 games now: the original 50, 15 from
+The 20, **batch 2 (61–70)**: Love Letter, Mysterium, Takenoko, Machi Koro, Century: Spice Road, Horrified,
+Mansions of Madness: Second Edition, Qwirkle, Clank!, Sheriff of Nottingham (2nd ed.) — and **batch 1 (51–60)**: King of Tokyo, Exploding Kittens, Coup, Forbidden Island, Lords of
 Waterdeep, Viticulture Essential Edition, Dead of Winter, Slay the Spire: The Board Game, Stardew
 Valley: The Board Game, Blokus. Facts come from Board Game Bliss product pages (their body lists the BGG
 id, players, time and age); covers from the Shopify retailers below, checked on rendered cards.
 Video-game adaptations (Slay the Spire, Stardew Valley — and Valheim in The 20) suit the site's
 premise, so the plan leans on them where the game is good. Small World appears in the old cover notes
 but not in the data; left out until Franco confirms whether it was cut on purpose.
+
+Still to add (approved list): 71–80 Deception: Murder in Hong Kong, Werewords, The Mind, Captain Sonar,
+Tokaido, Photosynthesis, Calico, Quoridor, Stone Age, Blood Rage · 81–90 Great Western Trail, Star Wars:
+Rebellion, Marvel Champions, Unmatched, Robinson Crusoe, Zombicide, Too Many Bones, The Witcher: Old World,
+Tsuro, Harmonies · 91–100 Minecraft: Builders & Biomes, Deep Rock Galactic, This War of Mine, Dorfromantik,
+Cartographers, Hues and Cues, Sea Salt & Paper, Lost Cities, Cthulhu: Death May Die, Wits & Wagers.
+Watch the retailer's BGG id: it can point at an old edition (Mansions of Madness listed the 1st edition's).
+
+## Animation review (2026-09-10, review-animations skill)
+
+Applied: quiz step 320 → 220 ms; dialog backdrop fades only its tint (the 2px blur is static — animating
+it repainted the page every frame); the card grid's first-paint entrance is gone (it played below the
+fold, unseen); the loading shimmer moves a pseudo-element with `transform` instead of
+`background-position`; game cards no longer lift on hover (shadow + border only); all hover motion lives
+in one `@media (hover: hover) and (pointer: fine)` block instead of being reset for touch. Checked by
+forcing :hover/:active through DevTools on desktop and touch (`motion_check.js`).
 
 ## Phone and tablet audit (2026-09-10)
 
@@ -98,7 +115,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 81.
+  it should be 91.
 
 ## Languages
 

@@ -178,7 +178,12 @@ function likeHTML(g) {
   let s = esc(L(a, 'text'));
   if (a.kind === 'board' && bySlug[a.ref]) {
     const ref = bySlug[a.ref], nm = esc(ref.name), i = s.indexOf(nm);
-    if (i >= 0) s = `${s.slice(0, i)}<button class="like__ref" type="button" data-open="${ref.slug}">${nm}</button>${s.slice(i + nm.length)}`;
+    if (i >= 0) {
+      // A button is inline-block, so a line could break right after it ("Coup" / ": sixteen…").
+      // Glue the punctuation that follows ("Coup:", "Pandemic's") to it.
+      const rest = s.slice(i + nm.length), tail = rest.match(/^\S*/)[0];
+      s = `${s.slice(0, i)}<span class="nw"><button class="like__ref" type="button" data-open="${ref.slug}">${nm}</button>${tail}</span>${rest.slice(tail.length)}`;
+    }
   } else {
     const r = L(a, 'ref');
     const keys = [r, r.replace(/s$/, ''), r.split(' ')[0]].filter(k => k.length >= 3);
@@ -587,10 +592,7 @@ async function boot() {
   readURL();
   if (state.q) $('#search').value = state.q;
   renderThe20();      // before cards: sets which games carry the "played" mark
-  const grid = $('#grid');
-  grid.classList.add('is-entering');                // first paint only — see .grid.is-entering
   renderCats(); renderPicks(); renderQuiz(); renderFinder();
-  setTimeout(() => grid.classList.remove('is-entering'), 600);
   bind();
 }
 boot();
