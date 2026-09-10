@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 56 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 60 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -25,22 +25,29 @@ Browsers block `fetch()` of local JSON, so double-clicking the file shows the er
 - **50 of 50 covers**, eye-checked twice (small contact sheet, then a large-format pass).
 - Responsive to 375px; on phones game cards switch to a horizontal layout.
 
-## Waiting on Franco
+## The 20 — in progress (5 of 20)
 
-**The 20.** Add entries to `the20` in `data/editorial.json`:
+Paleo, Catan, Coffee Rush, Unstable Unicorns, Sleeping Gods (2026-09-10). Franco sends each game
+with a long description; it gets condensed to 3–4 first-person sentences in EN and ES, keeping his
+most characteristic lines and his honest complaints. Entries live in `the20` in
+`data/editorial.json`:
 
 ```json
-{ "slug": "patchwork", "name": "Patchwork", "year": 2014,
-  "standout": "a two-player game that fits in a lunch break",
-  "note": "Two to four sentences, first person." }
+{ "slug": "paleo", "standout": "…", "standout_es": "…", "note": "…", "note_es": "…" }
 ```
 
-Spanish is optional per entry: add `standout_es` and `note_es` and the Spanish page uses them;
-without them it shows the English text.
+**Every game of The 20 also goes into `games.json`** (so it can come up in the quiz and carries the
+"I played this" mark in the finder). That's why the catalogue is 54, not 50: Paleo, Coffee Rush,
+Unstable Unicorns and Sleeping Gods were added; Catan was already there. Copy that mentions the size
+uses `{total}`, so it updates itself. For a new game: verify the BGG id with a web search (BGG's own
+search is behind a Cloudflare challenge now), players/time/age from retail listings, cover from the
+Shopify retailers below, checked by eye at full size.
 
-`slug` is optional. If it matches a game in `games.json`, the cover is pulled in automatically and
-that game's card in the finder gets the "Franco played this" mark. Games outside the 50 work too —
-leave `slug` out and they render with an empty cover slot.
+## Quiz anchors
+
+Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, League of Legends,
+**ARK** (survival — Paleo, Sleeping Gods, Nemesis). Franco plans more survival games; tag them
+`"anchors": ["ark"]` in `games.json`. Simulator: 4,000 combinations, none empty, median 10.
 
 ## Portfolio and repo
 
@@ -53,7 +60,7 @@ leave `slug` out and they render with an empty cover slot.
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 56.
+  it should be 60.
 
 ## Languages
 

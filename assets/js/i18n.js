@@ -7,14 +7,14 @@
 window.MM_I18N = {
   en: {
     'meta.title': 'Meeple Map — Find your first board game',
-    'meta.desc': 'Tell us what you play and find the board game that feels like it. 50 hand-picked games for beginners.',
+    'meta.desc': 'Tell us what you play and find the board game that feels like it. {total} hand-picked games for beginners.',
     'lang.label': 'Language',
 
     'nav.logoAria': 'Meeple Map — back to top',
     'nav.sections': 'Sections',
     'nav.browse': 'Browse', 'nav.twenty': 'The 20', 'nav.picks': 'Our picks',
     'nav.cta': 'Find my game', 'nav.ctaShort': 'Start',
-    'search.label': 'Search games by name', 'search.ph': 'Search 50 games',
+    'search.label': 'Search games by name', 'search.ph': 'Search {total} games',
 
     'hero.h1': 'Never played a board game? Start with one <span class="mark">you already know</span>.',
     'hero.sub': 'Tell us what you play. We\'ll find the board game that feels like it.',
@@ -74,7 +74,7 @@ window.MM_I18N = {
     'empty.lead': 'Remove a filter to see more.',
     'empty.clear': 'Clear all filters',
     'shelf.title': '“{q}” isn\'t on our shelf',
-    'shelf.lead': 'We only list 50 beginner games. Try another name.',
+    'shelf.lead': 'We only list {total} beginner games. Try another name.',
     'err.title': "The games didn't load",
     'err.lead': 'Something went wrong loading the list.',
     'err.retry': 'Try again',
@@ -105,7 +105,7 @@ window.MM_I18N = {
 
     'note': '<b>About the data.</b> Players, time and age come from the publishers. Categories, difficulty and comparisons are our own call, not BoardGameGeek\'s.',
 
-    'foot.find': 'Find a game', 'foot.quiz': 'Take the quiz', 'foot.all': 'Browse all 50', 'foot.twenty': 'The 20', 'foot.picks': 'Editorial picks',
+    'foot.find': 'Find a game', 'foot.quiz': 'Take the quiz', 'foot.all': 'Browse all {total}', 'foot.twenty': 'The 20', 'foot.picks': 'Editorial picks',
     'foot.bycat': 'By category', 'foot.about': 'About',
     'foot.credit': 'Meeple Map — A project by <a href="https://tierra.dk" target="_blank" rel="noopener">Tierra</a>',
     'foot.covers': 'Cover art © their publishers.',
@@ -113,14 +113,14 @@ window.MM_I18N = {
 
   es: {
     'meta.title': 'Meeple Map — Encuentra tu primer juego de mesa',
-    'meta.desc': 'Dinos a qué juegas y encuentra el juego de mesa que se le parece. 50 juegos elegidos para empezar.',
+    'meta.desc': 'Dinos a qué juegas y encuentra el juego de mesa que se le parece. {total} juegos elegidos para empezar.',
     'lang.label': 'Idioma',
 
     'nav.logoAria': 'Meeple Map — volver arriba',
     'nav.sections': 'Secciones',
     'nav.browse': 'Explorar', 'nav.twenty': 'Los 20', 'nav.picks': 'Selección',
     'nav.cta': 'Encontrar mi juego', 'nav.ctaShort': 'Empezar',
-    'search.label': 'Buscar juegos por nombre', 'search.ph': 'Buscar entre 50 juegos',
+    'search.label': 'Buscar juegos por nombre', 'search.ph': 'Buscar entre {total} juegos',
 
     'hero.h1': '¿Nunca has jugado un juego de mesa? Empieza por uno <span class="mark">que ya conoces</span>.',
     'hero.sub': 'Dinos a qué juegas y te mostramos el juego de mesa que se le parece.',
@@ -180,7 +180,7 @@ window.MM_I18N = {
     'empty.lead': 'Quita un filtro para ver más.',
     'empty.clear': 'Borrar todos los filtros',
     'shelf.title': '“{q}” no está en nuestra estantería',
-    'shelf.lead': 'Solo listamos 50 juegos para empezar. Prueba otro nombre.',
+    'shelf.lead': 'Solo listamos {total} juegos para empezar. Prueba otro nombre.',
     'err.title': 'Los juegos no cargaron',
     'err.lead': 'Algo falló al cargar la lista.',
     'err.retry': 'Reintentar',
@@ -211,7 +211,7 @@ window.MM_I18N = {
 
     'note': '<b>Sobre los datos.</b> Jugadores, duración y edad vienen de las editoriales. Categorías, dificultad y comparaciones son criterio nuestro, no de BoardGameGeek.',
 
-    'foot.find': 'Encontrar un juego', 'foot.quiz': 'Hacer el test', 'foot.all': 'Ver los 50', 'foot.twenty': 'Los 20', 'foot.picks': 'Selección editorial',
+    'foot.find': 'Encontrar un juego', 'foot.quiz': 'Hacer el test', 'foot.all': 'Ver los {total}', 'foot.twenty': 'Los 20', 'foot.picks': 'Selección editorial',
     'foot.bycat': 'Por categoría', 'foot.about': 'Sobre el proyecto',
     'foot.credit': 'Meeple Map — Un proyecto de <a href="https://tierra.dk" target="_blank" rel="noopener">Tierra</a>',
     'foot.covers': 'Portadas © de sus editoriales.',

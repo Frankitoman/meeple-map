@@ -45,6 +45,13 @@
    "why": "you like winning — or losing — together with your friends",
    "kind_es": "Equipo contra equipo",
    "why_es": "te gusta ganar —o perder— junto a tus amigos"
+  },
+  "ark": {
+   "name": "ARK",
+   "kind": "Survival",
+   "why": "you like gathering, crafting and making it through the night",
+   "kind_es": "Supervivencia",
+   "why_es": "te gusta recolectar, craftear y sobrevivir a la noche"
   }
  },
  "picks": [
@@ -109,5 +116,41 @@
    "title_es": "Puzles tranquilos"
   }
  ],
- "the20": []
+ "the20": [
+  {
+   "slug": "paleo",
+   "standout": "a real survival game, on a table",
+   "standout_es": "un survival de verdad, en la mesa",
+   "note": "Almost no board game makes you feel like you're playing a survival game. This one does: dodging danger, hunting for food, gathering resources to craft tools, getting through the night and exploring further. If you've played ARK or Minecraft, it's all here. And it's hugely replayable — for me, that matters most.",
+   "note_es": "Casi ningún juego de mesa te hace sentir que estás jugando un survival. Este sí: esquivar peligros, buscar comida, juntar recursos para craftear, aguantar la noche y explorar más lejos. Si jugaste ARK o Minecraft, está todo aquí. Y es muy rejugable, que para mí es lo más importante."
+  },
+  {
+   "slug": "catan",
+   "standout": "you can't win without talking",
+   "standout_es": "para ganar tienes que hablar",
+   "note": "The game that breaks the Monopoly habit: you can't win without talking to people. It has more poker in it than it looks. At some point the trading takes over the game itself — “two sheep for a wheat, and you buy me a beer” — and with friends, that's the best part.",
+   "note_es": "El juego que rompe con la costumbre del Monopoly: no puedes ganar sin hablar con la gente. Tiene más de póker de lo que parece. Llega un punto en que el trueque se come al juego —«te cambio dos ovejas por un trigo y me invitas una birra»— y con amigos esa es la mejor parte."
+  },
+  {
+   "slug": "coffee-rush",
+   "standout": "the pressure of a busy bar",
+   "standout_es": "la presión de una barra llena",
+   "note": "If you've ever worked behind a bar or a coffee counter, you know the feeling of five orders landing at once. This game nails it. My one gripe: the ingredient pieces are beautiful, but fitting them into the cups and clearing them after every order gets fiddly. Everything else is excellent.",
+   "note_es": "Si alguna vez trabajaste en una barra o haciendo cafés, conoces la sensación de que te lleguen cinco pedidos juntos. Este juego la clava. Mi única queja: las fichas de ingredientes son preciosas, pero meterlas en las tazas y sacarlas después de cada pedido es un poco tedioso. Todo lo demás, excelente."
+  },
+  {
+   "slug": "unstable-unicorns",
+   "standout": "cute outside, ruthless inside",
+   "standout_es": "tierno por fuera, despiadado por dentro",
+   "note": "You'll lose more friends than with Uno. Adorable unicorns, pure chaos — it makes no sense, and that's the fun. Very 21st-century humour: we laugh the whole time, right up until your best friend betrays you just as you're about to win.",
+   "note_es": "Vas a perder más amistades que con el Uno. Unicornios adorables y caos puro: no tiene ningún sentido, y eso es lo divertido. Humor muy siglo XXI: nos reímos todo el tiempo, hasta que tu mejor amigo te traiciona justo cuando ibas a ganar."
+  },
+  {
+   "slug": "sleeping-gods",
+   "standout": "a campaign where every choice counts",
+   "standout_es": "una campaña donde cada decisión pesa",
+   "note": "A campaign of about 20 hours, and I love campaigns for how replayable they are. You're always deciding — five, six, seven options every couple of minutes — and you're free to explore wherever you want. The combat is interesting, and the story comes from a book that branches with your choices. One person ends up reading a lot, but if you like Dungeons & Dragons, it's perfect.",
+   "note_es": "Una campaña de unas 20 horas, y las campañas me encantan por lo rejugables que son. Siempre estás decidiendo —cinco, seis, siete opciones cada par de minutos— y tienes libertad total para explorar por donde quieras. El combate es interesante y la historia sale de un libro que cambia según lo que elijas. Alguien termina leyendo mucho, pero si te gusta Dungeons & Dragons, es ideal."
+  }
+ ]
 }

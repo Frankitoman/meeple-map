@@ -33,6 +33,7 @@
   --c-strategy: #8b97ff;
   --c-thematic: #ffa45c;
   --c-abstract: #5fd08e;
+  --c-survival: #a8d65a;   /* ARK in the quiz — abstract's green pushed toward lime */
   --sun:        #ffcd1f;   /* Quizlet's yellow: highlighter only */
   --band:       #1d2466;   /* deep indigo from --accent, for The 20 */
 
@@ -641,6 +642,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 @media (max-width:1000px){
   .quiz__grid{grid-template-columns:repeat(min(var(--n),3),1fr); max-width:min(var(--w),560px)}
   .quiz__head{max-width:min(var(--w),560px)}
+  .quiz__grid--a{grid-template-columns:repeat(4,1fr); max-width:640px}   /* seven games: 4 + 3, not 3 + 3 + 1 */
 }
 @media (max-width:900px){
   .finder{grid-template-columns:1fr}
@@ -676,6 +678,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 }
 @media (max-width:560px){
   .quiz__grid{grid-template-columns:repeat(2,1fr); max-width:360px}
+  .quiz__grid--a .opt:last-child:nth-child(odd){grid-column:1 / -1; justify-self:center; width:calc(50% - 8px)}
   .quiz__head{max-width:360px}
   .quiz__back{position:static; display:block; margin:0 auto 8px}
   .section{padding-block:var(--s6)}

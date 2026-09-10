@@ -4,9 +4,9 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 50,
+  "count": 54,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
-  "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol — editorial",
+  "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
  },
  "games": [
@@ -1278,7 +1278,8 @@
    "mode": "hidden",
    "anchors": [
     "amongus",
-    "darksouls"
+    "darksouls",
+    "ark"
    ]
   },
   {
@@ -1441,6 +1442,118 @@
    },
    "mode": "competitive",
    "anchors": []
+  },
+  {
+   "slug": "paleo",
+   "name": "Paleo",
+   "bgg": 300531,
+   "year": 2020,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    45,
+    60
+   ],
+   "age": 10,
+   "complexity": 3,
+   "publisher": "Z-Man Games / Hans im Glück",
+   "analogy": {
+    "kind": "video",
+    "ref": "ARK",
+    "text": "ARK or Minecraft with cards: find food, craft tools, survive the night — together.",
+    "text_es": "ARK o Minecraft con cartas: buscar comida, craftear herramientas y sobrevivir a la noche, en equipo.",
+    "ref_es": "ARK"
+   },
+   "mode": "coop",
+   "anchors": [
+    "ark"
+   ]
+  },
+  {
+   "slug": "coffee-rush",
+   "name": "Coffee Rush",
+   "bgg": 377061,
+   "year": 2023,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Korea Boardgames",
+   "analogy": {
+    "kind": "video",
+    "ref": "Overcooked",
+    "text": "Overcooked at a coffee bar: the orders pile up faster than you can make them.",
+    "text_es": "Overcooked en una cafetería: los pedidos se acumulan más rápido de lo que los preparas.",
+    "ref_es": "Overcooked"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "unstable-unicorns",
+   "name": "Unstable Unicorns",
+   "bgg": 234190,
+   "year": 2017,
+   "category": "party",
+   "players": [
+    2,
+    8
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Unstable Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Mario Party",
+    "text": "Mario Party's friendship-ending chaos, with adorable unicorns.",
+    "text_es": "El caos de Mario Party que termina amistades, con unicornios adorables.",
+    "ref_es": "Mario Party"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "sleeping-gods",
+   "name": "Sleeping Gods",
+   "bgg": 255984,
+   "year": 2021,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 13,
+   "complexity": 3,
+   "publisher": "Red Raven Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Sea of Thieves",
+    "text": "Sea of Thieves as a storybook: sail anywhere, and every choice rewrites the next page.",
+    "text_es": "Sea of Thieves hecho libro: navegas a donde quieras y cada decisión cambia la página siguiente.",
+    "ref_es": "Sea of Thieves"
+   },
+   "mode": "coop",
+   "anchors": [
+    "ark"
+   ]
   }
  ]
 }

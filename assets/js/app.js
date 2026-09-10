@@ -58,9 +58,9 @@ const STEPS = [
   { key: 'm', options: [ { v: ['coop'], mark: 'We' }, { v: ['competitive'], mark: 'Me' }, { v: ['teams'], mark: 'vs' }, { v: ['hidden'], mark: '?' } ]},
   { key: 'b', options: [ { v: ['light'], bars: 2 }, { v: ['medium'], bars: 3 }, { v: ['heavy'], bars: 5 } ]},
 ];
-const ANCHOR_MARK = { aoe: 'AoE', amongus: 'AU', darksouls: 'DS', stardew: 'SV', wow: 'WoW', lol: 'LoL' };
+const ANCHOR_MARK = { aoe: 'AoE', amongus: 'AU', darksouls: 'DS', stardew: 'SV', wow: 'WoW', lol: 'LoL', ark: 'ARK' };
 // Each video game gets a colour from the palette; steps 2–5 cycle through it.
-const ANCHOR_COLOR = { aoe: '--c-strategy', amongus: '--c-party', darksouls: '--c-thematic', stardew: '--c-abstract', wow: '--sun', lol: '--c-family' };
+const ANCHOR_COLOR = { aoe: '--c-strategy', amongus: '--c-party', darksouls: '--c-thematic', stardew: '--c-abstract', wow: '--sun', lol: '--c-family', ark: '--c-survival' };
 const STEP_COLORS = ['--c-family', '--c-party', '--c-strategy', '--c-thematic'];
 const RELAX_ORDER = ['b', 't', 'm', 'p'];   // least to most important for a beginner
 
@@ -81,7 +81,8 @@ const I18N = window.MM_I18N || { en: {} };
 const LANGS = ['en', 'es'];
 const STORE = 'meeplemap.lang';
 let lang = 'en', langInURL = false;   // ?lang= links keep their language while you filter
-const t = (k, v = {}) => String(I18N[lang]?.[k] ?? I18N.en[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? '');
+const t = (k, v = {}) => { v = { total: games.length || '', ...v };
+  return String(I18N[lang]?.[k] ?? I18N.en[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? ''); };
 const L = (obj, f) => (lang !== 'en' && obj[`${f}_${lang}`]) || obj[f];   // localized data field
 
 function detectLang() {
@@ -318,7 +319,7 @@ function renderQuiz() {
     return;
   }
   const step = STEPS[quiz.step], opts = stepOptions(step), n = opts.length;
-  const w = n >= 6 ? 980 : n * 190;
+  const w = n >= 6 ? Math.min(n * 165, 1150) : n * 190;
   const hint = step.key === 'a' ? t('step.a.hint') : '';
   el.innerHTML = `<div class="quiz__step" style="--n:${n};--w:${w}px">
     <div class="quiz__head">
@@ -330,7 +331,7 @@ function renderQuiz() {
       <h2 class="quiz__q">${esc(t(`step.${step.key}.q`))}</h2>
       ${hint ? `<p class="quiz__hint">${esc(hint)}</p>` : ''}
     </div>
-    <div class="quiz__grid">${opts.map(optHTML).join('')}</div>
+    <div class="quiz__grid${step.key === 'a' ? ' quiz__grid--a' : ''}">${opts.map(optHTML).join('')}</div>
     <button class="link-btn quiz__skip" type="button" data-skip>${esc(step.key === 'a' ? t('step.a.skip') : t('quiz.skip'))}</button>
   </div>`;
 }
@@ -561,6 +562,7 @@ async function boot() {
     $('#quiz').innerHTML = '';
     return;
   }
+  applyStatic();                                    // again, now {total} is known
   readURL();
   if (state.q) $('#search').value = state.q;
   renderThe20();      // before cards: sets which games carry the "played" mark
