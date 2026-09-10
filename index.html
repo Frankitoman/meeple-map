@@ -16,7 +16,7 @@
 
 <header class="nav">
   <div class="rail nav__in">
-    <a class="logo" href="#top" aria-label="Meeple Map — back to top">
+    <a class="logo" href="#top" aria-label="Meeple Map — back to top" data-i18n-attr="aria-label:nav.logoAria">
       <svg class="logo__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2.6c-2.2 0-3.6 1.6-3.6 3.5 0 1 .4 1.8 1 2.5-2.4.5-4.2 1.6-4.2 3v6.2c0 1.7 3 2.9 6.8 2.9s6.8-1.2 6.8-2.9v-6.2c0-1.4-1.8-2.5-4.2-3 .6-.7 1-1.5 1-2.5 0-1.9-1.4-3.5-3.6-3.5Z" fill="#4255ff"/>
       </svg>
@@ -27,14 +27,18 @@
         <circle cx="7" cy="7" r="4.6" stroke="#939bb4" stroke-width="1.6"/>
         <path d="M10.5 10.5 14 14" stroke="#939bb4" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
-      <span class="sr-only">Search games by name</span>
-      <input type="search" id="search" placeholder="Search 50 games" autocomplete="off">
+      <span class="sr-only" data-i18n="search.label">Search games by name</span>
+      <input type="search" id="search" placeholder="Search 50 games" autocomplete="off" data-i18n-attr="placeholder:search.ph">
     </label>
-    <nav class="nav__right" aria-label="Sections">
-      <a class="nav__link" href="#finder">Browse</a>
-      <a class="nav__link" href="#twenty">The 20</a>
-      <a class="nav__link" href="#picks">Our picks</a>
-      <a class="btn btn--primary btn--sm" href="#quiz">Find my game</a>
+    <nav class="nav__right" aria-label="Sections" data-i18n-attr="aria-label:nav.sections">
+      <a class="nav__link" href="#finder" data-i18n="nav.browse">Browse</a>
+      <a class="nav__link" href="#twenty" data-i18n="nav.twenty">The 20</a>
+      <a class="nav__link" href="#picks" data-i18n="nav.picks">Our picks</a>
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+      </div>
+      <a class="btn btn--primary btn--sm" href="#quiz"><span class="cta-long" data-i18n="nav.cta">Find my game</span><span class="cta-short" data-i18n="nav.ctaShort">Start</span></a>
     </nav>
   </div>
 </header>
@@ -54,37 +58,37 @@
       <span class="piece piece--m" style="--x:448px; --y:13; --d:1.7s; color:var(--sun); --xm:160px; --ym:1;"><svg viewBox="0 0 24 24"><use href="#meeple"/></svg></span>
     </div>
     <section class="hero rail" aria-labelledby="hero-title">
-      <h1 id="hero-title">Never played a board game? Start with one <span class="mark">you already know</span>.</h1>
-      <p class="hero__sub">Tell us what you already play — a video game, anything — and we'll point you to the board game that feels like it.</p>
+      <h1 id="hero-title" data-i18n-html="hero.h1">Never played a board game? Start with one <span class="mark">you already know</span>.</h1>
+      <p class="hero__sub" data-i18n="hero.sub">Tell us what you already play — a video game, anything — and we'll point you to the board game that feels like it.</p>
 
       <!-- Quiz: rendered by app.js. The static fallback below is replaced on load. -->
       <div class="quiz" id="quiz" aria-live="polite">
-        <p class="quiz__hint">Loading the questions…</p>
+        <p class="quiz__hint" data-i18n="quiz.loading">Loading the questions…</p>
       </div>
     </section>
   </div>
 
   <section class="section rail" aria-labelledby="cats-title">
     <div class="section__head">
-      <span class="eyebrow">Or start from a shelf</span>
-      <h2 id="cats-title">Five kinds of board game</h2>
-      <p>Every game on this site sits in one of these five families. If you only remember one thing, remember these.</p>
+      <span class="eyebrow" data-i18n="cats.eyebrow">Or start from a shelf</span>
+      <h2 id="cats-title" data-i18n="cats.title">Five kinds of board game</h2>
+      <p data-i18n="cats.lead">Every game on this site sits in one of these five families. If you only remember one thing, remember these.</p>
     </div>
     <div class="cats" id="cats"></div>
   </section>
 
   <section class="section rail" id="finder" aria-labelledby="finder-title">
     <div class="section__head">
-      <span class="eyebrow">The finder</span>
-      <h2 id="finder-title">Pick what you like. We'll narrow it down.</h2>
-      <p>Nothing here is locked. Change your mind as often as you want — the list updates as you go.</p>
+      <span class="eyebrow" data-i18n="finder.eyebrow">The finder</span>
+      <h2 id="finder-title" data-i18n="finder.title">Pick what you like. We'll narrow it down.</h2>
+      <p data-i18n="finder.lead">Nothing here is locked. Change your mind as often as you want — the list updates as you go.</p>
     </div>
 
     <div class="finder">
-      <aside class="filters" id="filters" aria-label="Filters">
+      <aside class="filters" id="filters" aria-label="Filters" data-i18n-attr="aria-label:filters.aria">
         <div class="filters__top">
-          <h3>Filters</h3>
-          <button class="filters__clear" id="clear" type="button">Clear all</button>
+          <h3 data-i18n="filters.title">Filters</h3>
+          <button class="filters__clear" id="clear" type="button" data-i18n="filters.clear">Clear all</button>
         </div>
         <div id="groups"></div>
       </aside>
@@ -92,19 +96,19 @@
       <div class="results">
         <div id="because"></div>
         <div class="results__bar">
-          <p class="results__count" id="count" aria-live="polite">Loading games…</p>
+          <p class="results__count" id="count" aria-live="polite" data-i18n="count.loading">Loading games…</p>
           <div class="results__tools">
             <button class="chip filters-toggle" id="filters-toggle" type="button" aria-controls="filters" aria-expanded="false">Filters</button>
-            <label class="sr-only" for="sort">Sort games</label>
+            <label class="sr-only" for="sort" data-i18n="sort.label">Sort games</label>
             <select class="select" id="sort">
-              <option value="match">Sort: Best match</option>
-              <option value="easy">Sort: Easiest first</option>
-              <option value="short">Sort: Shortest first</option>
-              <option value="az">Sort: A–Z</option>
+              <option value="match" data-i18n="sort.match">Sort: Best match</option>
+              <option value="easy" data-i18n="sort.easy">Sort: Easiest first</option>
+              <option value="short" data-i18n="sort.short">Sort: Shortest first</option>
+              <option value="az" data-i18n="sort.az">Sort: A–Z</option>
             </select>
           </div>
         </div>
-        <div class="active" id="active" aria-label="Active filters"></div>
+        <div class="active" id="active" aria-label="Active filters" data-i18n-attr="aria-label:active.aria"></div>
         <div class="grid" id="grid">
           <div class="skel"><i></i><i></i><i></i></div>
           <div class="skel"><i></i><i></i><i></i></div>
@@ -120,17 +124,17 @@
   <section class="section section--band" id="twenty" aria-labelledby="twenty-title">
    <div class="rail">
     <div class="section__head">
-      <span class="eyebrow">Played, not scraped</span>
-      <h2 id="twenty-title">The 20</h2>
+      <span class="eyebrow" data-i18n="twenty.eyebrow">Played, not scraped</span>
+      <h2 id="twenty-title" data-i18n="twenty.title">The 20</h2>
       <div class="byline" style="margin-top:var(--s3)">
         <div class="byline__av" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><use href="#meeple"/></svg></div>
         <div>
-          <div class="byline__name">Games I've played</div>
-          <div class="byline__role">Web developer in Denmark · I built this site</div>
+          <div class="byline__name" data-i18n="twenty.byName">Games I've played</div>
+          <div class="byline__role" data-i18n="twenty.byRole">Web developer in Denmark · I built this site</div>
         </div>
       </div>
-      <p class="thesis">Twenty games I've actually put on a table. Board games are the hobby behind this site, not my profession — so take this as one honest opinion, not a verdict. They're here because each one does something the others don't, and I can tell you exactly what that thing is. Some are popular, some aren't; plenty of the games everyone lists are just <em>good games having a very good decade</em>.</p>
-      <p class="legend"><span class="tag-played">I played this</span> When one of these also turns up in the finder above, I've marked it.</p>
+      <p class="thesis" data-i18n-html="twenty.thesis">Twenty games I've actually put on a table. Board games are the hobby behind this site, not my profession — so take this as one honest opinion, not a verdict. They're here because each one does something the others don't, and I can tell you exactly what that thing is. Some are popular, some aren't; plenty of the games everyone lists are just <em>good games having a very good decade</em>.</p>
+      <p class="legend"><span class="tag-played" data-i18n="twenty.played">I played this</span> <span data-i18n="twenty.legend">When one of these also turns up in the finder above, I've marked it.</span></p>
     </div>
     <div id="the20"></div>
    </div>
@@ -139,16 +143,16 @@
   <section class="section section--tinted" id="picks" aria-labelledby="picks-title">
     <div class="rail">
       <div class="section__head">
-        <span class="eyebrow">Editorial selection</span>
-        <h2 id="picks-title">Our picks, by category</h2>
-        <p>Chosen by hand, not scraped from a ranking. Five per family, ordered by how well they work for someone who's just starting.</p>
+        <span class="eyebrow" data-i18n="picks.eyebrow">Editorial selection</span>
+        <h2 id="picks-title" data-i18n="picks.title">Our picks, by category</h2>
+        <p data-i18n="picks.lead">Chosen by hand, not scraped from a ranking. Five per family, ordered by how well they work for someone who's just starting.</p>
       </div>
       <div class="carousel">
-        <button class="arrow arrow--l" id="picks-prev" type="button" aria-label="Previous lists">
+        <button class="arrow arrow--l" id="picks-prev" type="button" aria-label="Previous lists" data-i18n-attr="aria-label:picks.prev">
           <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M7 1 1 7l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="picks" id="picks-list"></div>
-        <button class="arrow arrow--r" id="picks-next" type="button" aria-label="Next lists">
+        <button class="arrow arrow--r" id="picks-next" type="button" aria-label="Next lists" data-i18n-attr="aria-label:picks.next">
           <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="m1 1 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
@@ -156,7 +160,7 @@
   </section>
 
   <section class="section rail">
-    <div class="note">
+    <div class="note" data-i18n-html="note">
       <b>Where this data comes from.</b> Player counts, playing times and ages are the publishers' own figures. Categories, difficulty ratings, the video-game comparisons and every list on this site are our editorial judgement — not BoardGameGeek's. Meeple Map is not affiliated with BoardGameGeek; we link to their pages because that's where you should go to read more.
     </div>
   </section>
@@ -165,19 +169,20 @@
 <footer class="foot">
   <div class="rail">
     <div class="foot__cols">
-      <div><h4>Find a game</h4><ul><li><a href="#quiz">Take the quiz</a></li><li><a href="#finder">Browse all 50</a></li><li><a href="#twenty">The 20</a></li><li><a href="#picks">Editorial picks</a></li></ul></div>
-      <div><h4>By category</h4><ul id="foot-cats"></ul></div>
-      <div><h4>About</h4><ul><li><a href="https://tierra.dk" target="_blank" rel="noopener">Tierra.dk — Franco's studio ↗</a></li><li><a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek ↗</a></li></ul></div>
+      <div><h4 data-i18n="foot.find">Find a game</h4><ul><li><a href="#quiz" data-i18n="foot.quiz">Take the quiz</a></li><li><a href="#finder" data-i18n="foot.all">Browse all 50</a></li><li><a href="#twenty" data-i18n="foot.twenty">The 20</a></li><li><a href="#picks" data-i18n="foot.picks">Editorial picks</a></li></ul></div>
+      <div><h4 data-i18n="foot.bycat">By category</h4><ul id="foot-cats"></ul></div>
+      <div><h4 data-i18n="foot.about">About</h4><ul><li><a href="https://tierra.dk" target="_blank" rel="noopener">tierra.dk ↗</a></li><li><a href="https://boardgamegeek.com" target="_blank" rel="noopener">BoardGameGeek ↗</a></li></ul></div>
     </div>
     <div class="foot__base">
-      <span>Meeple Map — a project by Franco Mansilla</span>
-      <span>Cover art © respective publishers. Used to identify each game.</span>
+      <span data-i18n-html="foot.credit">Meeple Map — A project by <a href="https://tierra.dk" target="_blank" rel="noopener">Tierra</a></span>
+      <span data-i18n="foot.covers">Cover art © respective publishers. Used to identify each game.</span>
     </div>
   </div>
 </footer>
 
 <dialog class="dlg" id="dlg" aria-labelledby="dlg-title"></dialog>
 
+<script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/app.js" defer></script>
 </body>
 </html>

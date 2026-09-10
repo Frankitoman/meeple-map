@@ -1,5 +1,6 @@
-/* Meeple Map — quiz, finder, lists and the game dialog.
-   Vanilla JS, no build step. Data lives in data/games.json and data/editorial.json. */
+/* Meeple Map — quiz, finder, lists and the game dialog, in English and Spanish.
+   Vanilla JS, no build step. Data lives in data/games.json and data/editorial.json;
+   interface strings in assets/js/i18n.js. */
 (() => {
 'use strict';
 
@@ -7,83 +8,55 @@ const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const CATS = {
-  family:   { name: 'Family',   desc: "Easy rules, no reading required, works with people who don't play games." },
-  party:    { name: 'Party',    desc: 'Loud, fast, six or more people. Nobody sits and thinks for five minutes.' },
-  strategy: { name: 'Strategy', desc: 'Long games with real decisions. The ones people write spreadsheets about.' },
-  thematic: { name: 'Thematic', desc: "You're a character in a story. Monsters, betrayal, campaigns." },
-  abstract: { name: 'Abstract', desc: "Pure puzzle, no story. Chess's modern descendants — beautiful and mean." },
-};
-const WEIGHT = ['', 'Very light', 'Light', 'Medium', 'Heavy', 'Very heavy'];
-const MODE = { competitive: 'Competitive', coop: 'Co-op', teams: 'Teams', hidden: 'Hidden roles' };
-
+/* Config below is language-free — ids only. Labels come from t(). The quiz
+   simulator evaluates this block verbatim, so keep it self-contained. */
+const CATS = ['family', 'party', 'strategy', 'thematic', 'abstract'];
 const overlaps = ([a, b], lo, hi) => a <= hi && b >= lo;
 
 /* Filter groups. Within a group chips are OR'd, across groups AND'd. */
 const GROUPS = [
-  { key: 'p', label: 'How many people', chips: [
-    { id: '1',   label: 'Solo',   test: g => g.players[0] <= 1 },
-    { id: '2',   label: 'Just 2', test: g => g.players[0] <= 2 && g.players[1] >= 2 },
-    { id: '3-4', label: '3–4',    test: g => g.players[0] <= 4 && g.players[1] >= 3 },
-    { id: '5-6', label: '5–6',    test: g => g.players[0] <= 6 && g.players[1] >= 5 },
-    { id: '7+',  label: '7+',     test: g => g.players[1] >= 7 },
+  { key: 'p', chips: [
+    { id: '1',   test: g => g.players[0] <= 1 },
+    { id: '2',   test: g => g.players[0] <= 2 && g.players[1] >= 2 },
+    { id: '3-4', test: g => g.players[0] <= 4 && g.players[1] >= 3 },
+    { id: '5-6', test: g => g.players[0] <= 6 && g.players[1] >= 5 },
+    { id: '7+',  test: g => g.players[1] >= 7 },
   ]},
   // Overlap, not containment: a 30-minute game still counts as "about an hour",
   // and Catan's 60–90 does too. Only "Under 30" is strict — it's a promise.
-  { key: 't', label: 'How long', chips: [
-    { id: 'u30',   label: 'Under 30 min', test: g => g.minutes[1] <= 30 },
-    { id: '30-60', label: '30–60 min',    test: g => overlaps(g.minutes, 30, 60) },
-    { id: '1-2h',  label: '1–2 h',        test: g => overlaps(g.minutes, 60, 120) },
-    { id: 'eve',   label: 'All evening',  test: g => g.minutes[1] >= 120 },
+  { key: 't', chips: [
+    { id: 'u30',   test: g => g.minutes[1] <= 30 },
+    { id: '30-60', test: g => overlaps(g.minutes, 30, 60) },
+    { id: '1-2h',  test: g => overlaps(g.minutes, 60, 120) },
+    { id: 'eve',   test: g => g.minutes[1] >= 120 },
   ]},
-  { key: 'm', label: 'Together or against', chips: [
-    { id: 'coop',        label: 'Co-operative', test: g => g.mode === 'coop' },
-    { id: 'competitive', label: 'Competitive',  test: g => g.mode === 'competitive' },
-    { id: 'teams',       label: 'Teams',        test: g => g.mode === 'teams' },
-    { id: 'hidden',      label: 'Hidden roles', test: g => g.mode === 'hidden' },
+  { key: 'm', chips: [
+    { id: 'coop',        test: g => g.mode === 'coop' },
+    { id: 'competitive', test: g => g.mode === 'competitive' },
+    { id: 'teams',       test: g => g.mode === 'teams' },
+    { id: 'hidden',      test: g => g.mode === 'hidden' },
   ]},
-  { key: 'b', label: 'How much brain', chips: [
-    { id: 'light',  label: 'Light',  test: g => g.complexity <= 2 },
-    { id: 'medium', label: 'Medium', test: g => g.complexity === 3 },
-    { id: 'heavy',  label: 'Heavy',  test: g => g.complexity >= 4 },
+  { key: 'b', chips: [
+    { id: 'light',  test: g => g.complexity <= 2 },
+    { id: 'medium', test: g => g.complexity === 3 },
+    { id: 'heavy',  test: g => g.complexity >= 4 },
   ]},
-  { key: 'g', label: 'Good for', chips: [
-    { id: 'new',  label: 'Non-gamers', test: g => g.complexity === 1 },
-    { id: 'kids', label: 'Kids (8+)',  test: g => g.age <= 8 },
+  { key: 'g', chips: [
+    { id: 'new',  test: g => g.complexity === 1 },
+    { id: 'kids', test: g => g.age <= 8 },
   ]},
-  { key: 'c', label: 'Kind of game', chips: Object.entries(CATS).map(([id, c]) => (
-    { id, label: c.name, test: g => g.category === id }
-  ))},
+  { key: 'c', chips: CATS.map(id => ({ id, test: g => g.category === id })) },
 ];
 const GROUP = Object.fromEntries(GROUPS.map(gr => [gr.key, gr]));
 
 /* Quiz steps 2–5 map straight onto finder chips, so the quiz never
-   invents a filter the finder can't show you. */
+   invents a filter the finder can't show you. Labels: 'opt.<key>.<i>' in i18n.js. */
 const STEPS = [
-  { key: 'a', q: 'What do you already play?', hint: 'Pick the one that feels closest. There are no wrong answers.', skip: 'None of these — skip' },
-  { key: 'p', q: "Who's usually playing?", options: [
-    { v: ['1'],        mark: '1',   label: 'Just me',        kind: 'Solo' },
-    { v: ['2'],        mark: '2',   label: 'The two of us',  kind: 'Partner, roommate' },
-    { v: ['3-4'],      mark: '3–4', label: 'Three or four',  kind: 'A few friends' },
-    { v: ['5-6','7+'], mark: '5+',  label: 'A big group',    kind: 'Five or more' },
-  ]},
-  { key: 't', q: 'How long have you got?', options: [
-    { v: ['u30'],   mark: '½ h', label: 'Half an hour',       kind: 'Under 30 min' },
-    { v: ['30-60'], mark: '1 h', label: 'About an hour',      kind: '30–60 min' },
-    { v: ['1-2h'],  mark: '2 h', label: 'A couple of hours',  kind: '1–2 h' },
-    { v: ['eve'],   mark: '3 h+', label: 'All evening',       kind: 'Bring snacks' },
-  ]},
-  { key: 'm', q: 'Together, or against each other?', options: [
-    { v: ['coop'],        mark: 'We', label: 'Team up',               kind: 'Everyone vs the game' },
-    { v: ['competitive'], mark: 'Me', label: 'Every player for themselves', kind: 'Competitive' },
-    { v: ['teams'],       mark: 'vs', label: 'Split into teams',      kind: 'Team vs team' },
-    { v: ['hidden'],      mark: '?',  label: 'Lie and bluff',         kind: 'Hidden roles' },
-  ]},
-  { key: 'b', q: 'How much thinking?', options: [
-    { v: ['light'],  bars: 2, label: 'Keep it light',       kind: 'Talk while you play' },
-    { v: ['medium'], bars: 3, label: 'Some thinking',       kind: 'Real decisions' },
-    { v: ['heavy'],  bars: 5, label: 'Give me a challenge', kind: 'Brain hurts, in a good way' },
-  ]},
+  { key: 'a' },
+  { key: 'p', options: [ { v: ['1'], mark: '1' }, { v: ['2'], mark: '2' }, { v: ['3-4'], mark: '3–4' }, { v: ['5-6', '7+'], mark: '5+' } ]},
+  { key: 't', options: [ { v: ['u30'], mark: '½ h' }, { v: ['30-60'], mark: '1 h' }, { v: ['1-2h'], mark: '2 h' }, { v: ['eve'], mark: '3 h+' } ]},
+  { key: 'm', options: [ { v: ['coop'], mark: 'We' }, { v: ['competitive'], mark: 'Me' }, { v: ['teams'], mark: 'vs' }, { v: ['hidden'], mark: '?' } ]},
+  { key: 'b', options: [ { v: ['light'], bars: 2 }, { v: ['medium'], bars: 3 }, { v: ['heavy'], bars: 5 } ]},
 ];
 const ANCHOR_MARK = { aoe: 'AoE', amongus: 'AU', darksouls: 'DS', stardew: 'SV', wow: 'WoW', lol: 'LoL' };
 // Each video game gets a colour from the palette; steps 2–5 cycle through it.
@@ -96,7 +69,48 @@ let games = [], bySlug = {}, editorial = {}, played = new Set();
 const sel = Object.fromEntries(GROUPS.map(g => [g.key, new Set()]));
 const state = { anchor: null, q: '', sort: 'easy', relaxed: [], quizDone: false };
 const quiz = { step: 0, answers: {} };
-let filtersOpen = false;
+let filtersOpen = false, openSlug = null;
+
+/* ---------- Language ----------
+   1. an explicit choice (the EN/ES switch, remembered)
+   2. ?lang=es in the link (for this visit only)
+   3. the browser's language: any Spanish variant → Spanish, everything else → English.
+   Browser language beats location: an Argentine in Denmark gets Spanish,
+   an English tourist in Madrid gets English. */
+const I18N = window.MM_I18N || { en: {} };
+const LANGS = ['en', 'es'];
+const STORE = 'meeplemap.lang';
+let lang = 'en', langInURL = false;   // ?lang= links keep their language while you filter
+const t = (k, v = {}) => String(I18N[lang]?.[k] ?? I18N.en[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? '');
+const L = (obj, f) => (lang !== 'en' && obj[`${f}_${lang}`]) || obj[f];   // localized data field
+
+function detectLang() {
+  const p = new URLSearchParams(location.search).get('lang');
+  if (LANGS.includes(p)) { langInURL = true; return p; }
+  try { const s = localStorage.getItem(STORE); if (LANGS.includes(s)) return s; } catch (e) { /* storage blocked */ }
+  const prefs = navigator.languages?.length ? navigator.languages : [navigator.language || 'en'];
+  for (const l of prefs) { const base = String(l).toLowerCase().split('-')[0]; if (LANGS.includes(base)) return base; }
+  return 'en';
+}
+function applyStatic() {
+  document.documentElement.lang = lang;
+  document.title = t('meta.title');
+  $('meta[name="description"]')?.setAttribute('content', t('meta.desc'));
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });   // our own strings only
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => el.dataset.i18nAttr.split(',').forEach(pair => {
+    const [attr, key] = pair.split(':'); el.setAttribute(attr.trim(), t(key.trim()));
+  }));
+  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+}
+function setLang(l, remember) {
+  if (!LANGS.includes(l) || l === lang) return;
+  lang = l;
+  if (remember) { langInURL = false; try { localStorage.setItem(STORE, l); } catch (e) { /* storage blocked */ } }
+  applyStatic();
+  renderThe20(); renderCats(); renderPicks(); renderQuiz(); renderFinder();
+  if (dlg.open && openSlug) openGame(openSlug);
+}
 
 /* ---------- Matching ---------- */
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -128,6 +142,7 @@ function writeURL() {
   if (state.anchor) u.set('a', state.anchor);
   if (state.q) u.set('q', state.q);
   if (state.sort !== 'easy') u.set('s', state.sort);
+  if (langInURL) u.set('lang', lang);
   const qs = u.toString();
   history.replaceState(null, '', (qs ? '?' + qs : location.pathname) + location.hash);
 }
@@ -144,45 +159,49 @@ function readURL() {
 }
 
 /* ---------- Small render helpers ---------- */
-const cover = (g, cls = '') => `<img class="${cls}" src="assets/covers/${g.slug}.webp" alt="Box of ${esc(g.name)}" loading="lazy" decoding="async" width="400" height="400">`;
-const range = ([a, b], unit = '') => a === b ? `${a}${unit}` : `${a}–${b}${unit}`;
-const players = g => g.players[0] === g.players[1] ? `${g.players[0]} player${g.players[0] > 1 ? 's' : ''}` : `${range(g.players)} players`;
-const minutes = g => `${range(g.minutes)} min`;
+const chipLabel = (key, id) => key === 'c' ? t(`cat.${id}`) : t(`chip.${id}`);
+const cover = g => `<img src="assets/covers/${g.slug}.webp" alt="${esc(t('card.box', { x: g.name }))}" loading="lazy" decoding="async" width="400" height="400">`;
+const range = ([a, b]) => a === b ? `${a}` : `${a}–${b}`;
+const players = g => g.players[0] === g.players[1]
+  ? t(g.players[0] === 1 ? 'card.player1' : 'card.playersSame', { n: g.players[0] })
+  : t('card.players', { a: g.players[0], b: g.players[1] });
+const minutes = g => `${range(g.minutes)} ${t('card.min')}`;
 const bars = n => `<span class="weight__bars" aria-hidden="true">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>`;
-const weight = g => `<span class="weight" title="Difficulty ${g.complexity} of 5">${bars(g.complexity)}<span class="weight__txt">${WEIGHT[g.complexity]}</span></span>`;
+const weight = g => `<span class="weight" title="${esc(t('weight.title', { n: g.complexity }))}">${bars(g.complexity)}<span class="weight__txt">${t(`weight.${g.complexity}`)}</span></span>`;
 
 /* "Feels like…" — bold the thing the reader already knows; if it's another
    game on this site, make it a door into that game. */
 function likeHTML(g) {
   const a = g.analogy; if (!a) return '';
-  let t = esc(a.text);
+  let s = esc(L(a, 'text'));
   if (a.kind === 'board' && bySlug[a.ref]) {
-    const ref = bySlug[a.ref], nm = esc(ref.name), i = t.indexOf(nm);
-    if (i >= 0) t = `${t.slice(0, i)}<button class="like__ref" type="button" data-open="${ref.slug}">${nm}</button>${t.slice(i + nm.length)}`;
+    const ref = bySlug[a.ref], nm = esc(ref.name), i = s.indexOf(nm);
+    if (i >= 0) s = `${s.slice(0, i)}<button class="like__ref" type="button" data-open="${ref.slug}">${nm}</button>${s.slice(i + nm.length)}`;
   } else {
-    const keys = [a.ref, a.ref.replace(/s$/, ''), a.ref.split(' ')[0]].filter(k => k.length >= 3);
+    const r = L(a, 'ref');
+    const keys = [r, r.replace(/s$/, ''), r.split(' ')[0]].filter(k => k.length >= 3);
     for (const k of keys) {
-      const i = t.toLowerCase().indexOf(esc(k).toLowerCase());
-      if (i >= 0) { t = `${t.slice(0, i)}<b>${t.slice(i, i + esc(k).length)}</b>${t.slice(i + esc(k).length)}`; break; }
+      const i = s.toLowerCase().indexOf(esc(k).toLowerCase());
+      if (i >= 0) { s = `${s.slice(0, i)}<b>${s.slice(i, i + esc(k).length)}</b>${s.slice(i + esc(k).length)}`; break; }
     }
   }
-  return `<p class="like">${t}</p>`;
+  return `<p class="like">${s}</p>`;
 }
 
 function cardHTML(g) {
   const feels = state.anchor && g.anchors.includes(state.anchor)
-    ? `<span class="tag tag--feels">Feels like ${esc(editorial.anchors[state.anchor].name)}</span>` : '';
+    ? `<span class="tag tag--feels">${esc(t('card.feels', { x: editorial.anchors[state.anchor].name }))}</span>` : '';
   return `<article class="game" id="g-${g.slug}">
-    ${played.has(g.slug) ? '<span class="tag-played">I played this</span>' : ''}
+    ${played.has(g.slug) ? `<span class="tag-played">${t('twenty.played')}</span>` : ''}
     <div class="cover cover--${g.category}">${cover(g)}</div>
-    <button class="game__open" type="button" data-open="${g.slug}"><span class="sr-only">Open ${esc(g.name)}</span></button>
+    <button class="game__open" type="button" data-open="${g.slug}"><span class="sr-only">${esc(t('card.open', { x: g.name }))}</span></button>
     <div class="game__head">
       <h3 class="game__title">${esc(g.name)}</h3>
-      <p class="game__meta">${g.year} · ${MODE[g.mode]}</p>
+      <p class="game__meta">${g.year} · ${t(`mode.${g.mode}`)}</p>
     </div>
-    <div class="game__tags"><span class="tag tag--${g.category}">${CATS[g.category].name}</span>${feels}</div>
+    <div class="game__tags"><span class="tag tag--${g.category}">${t(`cat.${g.category}`)}</span>${feels}</div>
     ${likeHTML(g)}
-    <p class="facts"><span>${players(g)}</span><span>${minutes(g)}</span><span>Age ${g.age}+</span></p>
+    <p class="facts"><span>${players(g)}</span><span>${minutes(g)}</span><span>${t('card.age', { n: g.age })}</span></p>
     <div class="game__foot">
       ${weight(g)}
       <a class="bgg" href="https://boardgamegeek.com/boardgame/${g.bgg}" target="_blank" rel="noopener">BGG ↗</a>
@@ -194,12 +213,12 @@ function cardHTML(g) {
 function renderGroups() {
   $('#groups').innerHTML = GROUPS.map(gr => `
     <div class="fgroup" role="group" aria-labelledby="fl-${gr.key}">
-      <span class="fgroup__label" id="fl-${gr.key}">${gr.label}</span>
+      <span class="fgroup__label" id="fl-${gr.key}">${t(`group.${gr.key}`)}</span>
       <div class="chips">${gr.chips.map(c => {
         const on = sel[gr.key].has(c.id);
         // Would adding this chip leave nothing? Then say so before they click.
         const dead = !on && !matching({ key: gr.key, set: new Set([...sel[gr.key], c.id]) }).length;
-        return `<button class="chip${gr.key === 'c' ? ' chip--' + c.id : ''}" type="button" data-g="${gr.key}" data-c="${c.id}" aria-pressed="${on}"${dead ? ' disabled title="No games left with this"' : ''}>${c.label}</button>`;
+        return `<button class="chip${gr.key === 'c' ? ' chip--' + c.id : ''}" type="button" data-g="${gr.key}" data-c="${c.id}" aria-pressed="${on}"${dead ? ` disabled title="${esc(t('chip.dead'))}"` : ''}>${chipLabel(gr.key, c.id)}</button>`;
       }).join('')}</div>
     </div>`).join('');
 }
@@ -208,50 +227,46 @@ function renderActive() {
   const bits = [];
   if (state.q) bits.push(`<button class="chip chip--x" type="button" data-x="q">“${esc(state.q)}”</button>`);
   for (const gr of GROUPS) for (const id of sel[gr.key]) {
-    const c = gr.chips.find(c => c.id === id);
-    bits.push(`<button class="chip chip--x" type="button" data-x="${gr.key}:${id}" aria-label="Remove ${esc(c.label)}">${esc(c.label)}</button>`);
+    const lbl = chipLabel(gr.key, id);
+    bits.push(`<button class="chip chip--x" type="button" data-x="${gr.key}:${id}" aria-label="${esc(t('chip.remove', { x: lbl }))}">${esc(lbl)}</button>`);
   }
   $('#active').innerHTML = bits.join('');
   const n = bits.length;
   $('#clear').disabled = !n && !state.anchor;
-  $('#filters-toggle').textContent = n ? `Filters (${n})` : 'Filters';
+  $('#filters-toggle').textContent = n ? t('filters.toggleN', { n }) : t('filters.toggle');
 }
 
 function feelsCount(an) {
   const n = matching().filter(g => g.anchors.includes(state.anchor)).length;
-  if (!n) return `Nothing here feels much like ${esc(an.name)} with these filters — loosen one and they'll show up.`;
-  return n === 1 ? 'The one that feels most like it comes first.' : `The ${n} that feel most like it come first.`;
+  if (!n) return t('because.feels0', { x: esc(an.name) });
+  return n === 1 ? t('because.feels1') : t('because.feelsN', { n });
 }
 function renderBecause() {
   const el = $('#because');
   if (!state.anchor && !state.quizDone) { el.innerHTML = ''; return; }
   const an = state.anchor && editorial.anchors[state.anchor];
   const loose = state.relaxed.length
-    ? `<span class="because__loose">We loosened “${state.relaxed.map(k => GROUP[k].label.toLowerCase()).join('” and “')}” so you'd have more than a couple to choose from.</span>` : '';
+    ? `<span class="because__loose">${t('because.loose', { labels: state.relaxed.map(k => t(`group.${k}`).toLowerCase()).join(t('because.and')) })}</span>` : '';
   el.innerHTML = `<div class="because">
     <p class="because__txt">${an
-      ? `Because <b>you play ${esc(an.name)}</b> — ${esc(an.why)}. ${feelsCount(an)}`
-      : '<b>Based on your answers.</b> Easiest games first.'}${loose}</p>
-    <button class="chip" type="button" data-reset-quiz>Start over</button>
+      ? t('because.anchor', { x: esc(an.name), why: esc(L(an, 'why')), feels: feelsCount(an) })
+      : t('because.based')}${loose}</p>
+    <button class="chip" type="button" data-reset-quiz>${t('quiz.restart')}</button>
   </div>`;
 }
 
 function renderGrid() {
   const list = sorted(matching());
   const total = games.length;
-  $('#count').innerHTML = list.length === total
-    ? `<b>${total}</b> games`
-    : `<b>${list.length}</b> of ${total} games match`;
+  $('#count').innerHTML = list.length === total ? t('count.all', { n: total }) : t('count.some', { n: list.length, total });
   if (!list.length) {
     const notOnShelf = state.q && !games.some(g => norm(g.name).includes(norm(state.q)));
     $('#grid').innerHTML = `<div class="empty" style="grid-column:1/-1">
       ${notOnShelf
-        ? `<h3>“${esc(state.q)}” isn't on our shelf</h3>
-      <p>We keep this list to 50 games we'd hand to a beginner. Try another name, or clear the search and browse.</p>`
-        : `<h3>Nothing fits all of that</h3>
-      <p>No game on our shelf ticks every box you've picked. Drop one of these and see what comes back.</p>`}
+        ? `<h3>${t('shelf.title', { q: esc(state.q) })}</h3><p>${t('shelf.lead')}</p>`
+        : `<h3>${t('empty.title')}</h3><p>${t('empty.lead')}</p>`}
       <div class="chips">${$('#active').innerHTML}</div>
-      <button class="btn btn--ghost btn--sm" type="button" data-clear>Clear all filters</button>
+      <button class="btn btn--ghost btn--sm" type="button" data-clear>${t('empty.clear')}</button>
     </div>`;
     return;
   }
@@ -281,38 +296,42 @@ function optHTML(o, i) {
   </button>`;
 }
 function stepOptions(step) {
-  if (step.key !== 'a') return step.options;
-  return Object.entries(editorial.anchors).map(([k, a]) => ({ v: k, mark: ANCHOR_MARK[k] || a.name[0], label: a.name, kind: a.kind, color: ANCHOR_COLOR[k] }));
+  if (step.key === 'a') {
+    return Object.entries(editorial.anchors).map(([k, a]) =>
+      ({ v: k, mark: ANCHOR_MARK[k] || a.name[0], label: a.name, kind: L(a, 'kind'), color: ANCHOR_COLOR[k] }));
+  }
+  return step.options.map((o, i) => { const [label, kind] = t(`opt.${step.key}.${i}`).split('|'); return { ...o, label, kind }; });
 }
 function renderQuiz() {
   const el = $('#quiz');
   if (state.quizDone) {
     const n = matching().length, an = state.anchor && editorial.anchors[state.anchor];
     el.innerHTML = `<div class="quiz__done quiz__step">
-      <span class="quiz__label">Done</span>
-      <h2>${n} game${n === 1 ? '' : 's'} for you${an ? `, starting with the ones that feel like ${esc(an.name)}` : ''}.</h2>
-      <p>They're in the finder below, with your answers already filled in. Change anything you like.</p>
+      <span class="quiz__label">${t('quiz.done')}</span>
+      <h2>${t(n === 1 ? 'quiz.done1' : 'quiz.doneN', { n })}${an ? t('quiz.doneAnchor', { x: esc(an.name) }) : ''}.</h2>
+      <p>${t('quiz.doneLead')}</p>
       <div class="btns">
-        <a class="btn btn--primary" href="#finder">See my games</a>
-        <button class="btn btn--ghost" type="button" data-reset-quiz>Start over</button>
+        <a class="btn btn--primary" href="#finder">${t('quiz.see')}</a>
+        <button class="btn btn--ghost" type="button" data-reset-quiz>${t('quiz.restart')}</button>
       </div>
     </div>`;
     return;
   }
   const step = STEPS[quiz.step], opts = stepOptions(step), n = opts.length;
   const w = n >= 6 ? 980 : n * 190;
+  const hint = step.key === 'a' ? t('step.a.hint') : '';
   el.innerHTML = `<div class="quiz__step" style="--n:${n};--w:${w}px">
     <div class="quiz__head">
-      ${quiz.step ? '<button class="quiz__back" type="button" data-back>← Back</button>' : ''}
+      ${quiz.step ? `<button class="quiz__back" type="button" data-back>${t('quiz.back')}</button>` : ''}
       <div class="quiz__top">
-        <span class="quiz__label">Step ${quiz.step + 1} of ${STEPS.length}</span>
+        <span class="quiz__label">${t('quiz.step', { i: quiz.step + 1, n: STEPS.length })}</span>
         <span class="quiz__dots" aria-hidden="true">${STEPS.map((_, i) => `<i class="${i <= quiz.step ? 'on' : ''}"></i>`).join('')}</span>
       </div>
-      <h2 class="quiz__q">${esc(step.q)}</h2>
-      ${step.hint ? `<p class="quiz__hint">${esc(step.hint)}</p>` : ''}
+      <h2 class="quiz__q">${esc(t(`step.${step.key}.q`))}</h2>
+      ${hint ? `<p class="quiz__hint">${esc(hint)}</p>` : ''}
     </div>
     <div class="quiz__grid">${opts.map(optHTML).join('')}</div>
-    <button class="link-btn quiz__skip" type="button" data-skip>${esc(step.skip || "Doesn't matter — skip")}</button>
+    <button class="link-btn quiz__skip" type="button" data-skip>${esc(step.key === 'a' ? t('step.a.skip') : t('quiz.skip'))}</button>
   </div>`;
 }
 function answer(value) {
@@ -362,37 +381,39 @@ function scrollToEl(el) {
 }
 
 /* ---------- Categories, picks, The 20 ---------- */
+const countCat = c => games.filter(g => g.category === c).length;
 function renderCats() {
-  const count = c => games.filter(g => g.category === c).length;
-  $('#cats').innerHTML = Object.entries(CATS).map(([id, c]) => `
+  $('#cats').innerHTML = CATS.map(id => `
     <button class="cat cat--${id}" type="button" data-cat="${id}">
-      <div><div class="cat__title">${c.name}</div><p class="cat__desc">${c.desc}</p></div>
-      <div class="cat__panel"><span>${count(id)} games</span><span>Browse →</span></div>
+      <div><div class="cat__title">${t(`cat.${id}`)}</div><p class="cat__desc">${t(`catd.${id}`)}</p></div>
+      <div class="cat__panel"><span>${t('cats.games', { n: countCat(id) })}</span><span>${t('cats.browse')}</span></div>
     </button>`).join('');
-  $('#foot-cats').innerHTML = Object.entries(CATS).map(([id, c]) =>
-    `<li><button class="link-btn" type="button" data-cat="${id}">${c.name}</button></li>`).join('');
+  $('#foot-cats').innerHTML = CATS.map(id =>
+    `<li><button class="link-btn" type="button" data-cat="${id}">${t(`cat.${id}`)}</button></li>`).join('');
 }
 function showCategory(id) {
   sel.c.clear(); sel.c.add(id);
   renderFinder(); scrollToEl($('#finder'));
 }
 
+let picksBound = false;
 function renderPicks() {
   $('#picks-list').innerHTML = editorial.picks.map(p => {
     const gs = p.games.map(s => bySlug[s]).filter(Boolean);
     return `<div class="pick pick--${p.category}">
-      <h3>${esc(p.title)}</h3>
-      <p class="pick__note">Top ${gs.length} · ${CATS[p.category].name}</p>
+      <h3>${esc(L(p, 'title'))}</h3>
+      <p class="pick__note">${t('picks.top', { n: gs.length, cat: t(`cat.${p.category}`) })}</p>
       <div class="pick__panel"><ol class="pick__list">${gs.map((g, i) => `<li class="pick__item">
         <button class="pick__row" type="button" data-open="${g.slug}">
           <span class="pick__n">${String(i + 1).padStart(2, '0')}</span>
           <span class="pick__thumb cover--${g.category}">${cover(g)}</span>
           <span><span class="pick__name">${esc(g.name)}</span><br><span class="pick__sub">${players(g)} · ${minutes(g)}</span></span>
         </button></li>`).join('')}</ol>
-      <button class="link-btn pick__all" type="button" data-cat="${p.category}">All ${count(p.category)} ${CATS[p.category].name.toLowerCase()} games →</button></div>
+      <button class="link-btn pick__all" type="button" data-cat="${p.category}">${t('picks.all', { n: countCat(p.category), cat: t(`catp.${p.category}`) })}</button></div>
     </div>`;
   }).join('');
-  function count(c) { return games.filter(g => g.category === c).length; }
+  if (picksBound) return;                           // re-render on language change: listeners already in place
+  picksBound = true;
   const list = $('#picks-list'), prev = $('#picks-prev'), next = $('#picks-next');
   const sync = () => {
     prev.disabled = list.scrollLeft < 8;
@@ -407,35 +428,35 @@ function renderPicks() {
 function renderThe20() {
   const entries = (editorial.the20 || []).slice(0, 20);
   played = new Set(entries.map(e => e.slug).filter(s => bySlug[s]));
+  const num = i => String(i + 1).padStart(2, '0');
   const rec = (e, i) => {
     const g = e.slug && bySlug[e.slug];
+    const standout = L(e, 'standout'), note = L(e, 'note');
     return `<article class="rec">
-      <div class="rec__n">${String(i + 1).padStart(2, '0')}</div>
+      <div class="rec__n">${num(i)}</div>
       <div class="rec__cover">${g ? cover(g) : ''}</div>
       <div>
         <h3 class="rec__title">${esc(e.name || (g && g.name) || '')}</h3>
         <p class="rec__meta">${esc(e.year || (g && g.year) || '')}</p>
-        ${e.standout ? `<span class="standout">Stands out for: ${esc(e.standout)}</span>` : ''}
-        ${e.note ? `<p class="rec__note">${esc(e.note)}</p>` : ''}
+        ${standout ? `<span class="standout">${esc(t('twenty.standout', { x: standout }))}</span>` : ''}
+        ${note ? `<p class="rec__note">${esc(note)}</p>` : ''}
       </div>
     </article>`;
   };
   const example = i => `<article class="rec">
-      <div class="rec__n">${String(i + 1).padStart(2, '0')}</div>
+      <div class="rec__n">${num(i)}</div>
       <div class="rec__cover" aria-hidden="true"></div>
       <div>
-        <h3 class="rec__title">Coming soon</h3>
-        <p class="rec__meta">Reserved for one of my twenty</p>
-        <span class="standout">Stands out for: the one thing</span>
-        <p class="rec__note rec__note--empty">${i === 0
-          ? "Why I play it, what I think about it, and what it does that nothing else does."
-          : "What I think — coming soon."}</p>
+        <h3 class="rec__title">${t('twenty.soon')}</h3>
+        <p class="rec__meta">${t('twenty.reserved')}</p>
+        <span class="standout">${esc(t('twenty.standout', { x: t('twenty.standoutPh') }))}</span>
+        <p class="rec__note rec__note--empty">${t(i === 0 ? 'twenty.note0' : 'twenty.note1')}</p>
       </div>
     </article>`;
   const shown = entries.length ? entries.map(rec) : [example(0), example(1)];
   const from = shown.length;
   const slots = Array.from({ length: 20 - from }, (_, i) =>
-    `<div class="slot"><span class="slot__n">${String(from + i + 1).padStart(2, '0')}</span><span class="slot__txt">Reserved</span></div>`);
+    `<div class="slot"><span class="slot__n">${num(from + i)}</span><span class="slot__txt">${t('twenty.slot')}</span></div>`);
   $('#the20').innerHTML = `<div class="twenty">${shown.join('')}</div>${slots.length ? `<div class="slots">${slots.join('')}</div>` : ''}`;
 }
 
@@ -443,25 +464,26 @@ function renderThe20() {
 const dlg = $('#dlg');
 function openGame(slug) {
   const g = bySlug[slug]; if (!g) return;
+  openSlug = slug;
   dlg.innerHTML = `
-    <button class="dlg__x" type="button" data-close aria-label="Close">
+    <button class="dlg__x" type="button" data-close aria-label="${esc(t('dlg.close'))}">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1l10 10M11 1 1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
     <div class="dlg__in">
       <div class="dlg__cover cover--${g.category}">${cover(g).replace('loading="lazy"', 'loading="eager"')}</div>
       <div>
-        <div class="game__tags"><span class="tag tag--${g.category}">${CATS[g.category].name}</span><span class="tag tag--feels">${MODE[g.mode]}</span></div>
+        <div class="game__tags"><span class="tag tag--${g.category}">${t(`cat.${g.category}`)}</span><span class="tag tag--feels">${t(`mode.${g.mode}`)}</span></div>
         <h2 id="dlg-title" style="margin-top:12px">${esc(g.name)}</h2>
-        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ' · <span class="tag-played">I played this</span>' : ''}</p>
+        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ` · <span class="tag-played">${t('twenty.played')}</span>` : ''}</p>
         ${likeHTML(g)}
         <dl class="dlg__facts">
-          <div class="fact"><dt>Players</dt><dd>${range(g.players)}</dd></div>
-          <div class="fact"><dt>Time</dt><dd>${minutes(g)}</dd></div>
-          <div class="fact"><dt>Age</dt><dd>${g.age}+</dd></div>
-          <div class="fact"><dt>Difficulty</dt><dd>${weight(g)}</dd></div>
+          <div class="fact"><dt>${t('dlg.players')}</dt><dd>${range(g.players)}</dd></div>
+          <div class="fact"><dt>${t('dlg.time')}</dt><dd>${minutes(g)}</dd></div>
+          <div class="fact"><dt>${t('dlg.age')}</dt><dd>${g.age}+</dd></div>
+          <div class="fact"><dt>${t('dlg.diff')}</dt><dd>${weight(g)}</dd></div>
         </dl>
         <div class="dlg__cta">
-          <a class="btn btn--primary" href="https://boardgamegeek.com/boardgame/${g.bgg}" target="_blank" rel="noopener">Read more on BGG ↗</a>
+          <a class="btn btn--primary" href="https://boardgamegeek.com/boardgame/${g.bgg}" target="_blank" rel="noopener">${t('dlg.bgg')}</a>
         </div>
       </div>
     </div>`;
@@ -471,8 +493,9 @@ function openGame(slug) {
 
 /* ---------- Events (delegated) ---------- */
 function onClick(e) {
-  const t = e.target.closest('button, a'); if (!t) return;
-  const d = t.dataset;
+  const tg = e.target.closest('button, a'); if (!tg) return;
+  const d = tg.dataset;
+  if (d.lang) { setLang(d.lang, true); return; }
   if (d.open) { openGame(d.open); return; }
   if (d.close !== undefined) { dlg.close(); return; }
   if (d.g) {                                         // filter chip
@@ -485,7 +508,7 @@ function onClick(e) {
     else { const [k, id] = d.x.split(':'); sel[k].delete(id); }
     renderFinder(); return;
   }
-  if (d.clear !== undefined || t.id === 'clear') { clearAll(); quiz.step = 0; quiz.answers = {}; renderQuiz(); renderFinder(); return; }
+  if (d.clear !== undefined || tg.id === 'clear') { clearAll(); quiz.step = 0; quiz.answers = {}; renderQuiz(); renderFinder(); return; }
   if (d.cat) { if (dlg.open) dlg.close(); showCategory(d.cat); return; }
   if (d.opt !== undefined) {
     const step = STEPS[quiz.step], o = stepOptions(step)[+d.opt];
@@ -494,12 +517,13 @@ function onClick(e) {
   if (d.skip !== undefined) { answer(STEPS[quiz.step].key === 'a' ? null : []); return; }
   if (d.back !== undefined) { quiz.step = Math.max(0, quiz.step - 1); renderQuiz(); focusQuiz(); return; }
   if (d.resetQuiz !== undefined) { resetQuiz(); return; }
-  if (t.getAttribute('href') === '#finder' && state.quizDone) { e.preventDefault(); scrollToEl($('#finder')); }
+  if (tg.getAttribute('href') === '#finder' && state.quizDone) { e.preventDefault(); scrollToEl($('#finder')); }
 }
 
 function bind() {
   document.addEventListener('click', onClick);
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });   // backdrop
+  dlg.addEventListener('close', () => { openSlug = null; });
   $('#sort').addEventListener('change', e => { state.sort = e.target.value; renderFinder(); });
   let tmr;
   $('#search').addEventListener('input', e => {
@@ -520,6 +544,8 @@ function bind() {
 
 /* ---------- Boot ---------- */
 async function boot() {
+  lang = detectLang();
+  applyStatic();                                    // before the fetch, so the shell is already in the right language
   try {
     const [gd, ed] = await Promise.all(['data/games.json', 'data/editorial.json'].map(u =>
       fetch(u).then(r => { if (!r.ok) throw new Error(`${u}: ${r.status}`); return r.json(); })));
@@ -527,9 +553,9 @@ async function boot() {
     bySlug = Object.fromEntries(games.map(g => [g.slug, g]));
   } catch (err) {
     console.error(err);
-    $('#grid').innerHTML = `<div class="empty" style="grid-column:1/-1"><h3>The games didn't load</h3>
-      <p>Something went wrong fetching the list. If you opened this file straight from your computer, serve the folder instead — browsers block local data files.</p>
-      <button class="btn btn--ghost btn--sm" type="button" onclick="location.reload()">Try again</button></div>`;
+    $('#grid').innerHTML = `<div class="empty" style="grid-column:1/-1"><h3>${t('err.title')}</h3>
+      <p>${t('err.lead')}</p>
+      <button class="btn btn--ghost btn--sm" type="button" onclick="location.reload()">${t('err.retry')}</button></div>`;
     $('#count').textContent = '';
     $('#quiz').innerHTML = '';
     return;

@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 55 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 56 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -35,6 +35,9 @@ Browsers block `fetch()` of local JSON, so double-clicking the file shows the er
   "note": "Two to four sentences, first person." }
 ```
 
+Spanish is optional per entry: add `standout_es` and `note_es` and the Spanish page uses them;
+without them it shows the English text.
+
 `slug` is optional. If it matches a game in `games.json`, the cover is pulled in automatically and
 that game's card in the finder gets the "Franco played this" mark. Games outside the 50 work too —
 leave `slug` out and they render with an empty cover slot.
@@ -50,7 +53,20 @@ leave `slug` out and they render with an empty cover slot.
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 55.
+  it should be 56.
+
+## Languages
+
+English and Spanish (neutral "tú", readable in Spain and Latin America). Priority: the EN/ES switch
+(saved in localStorage) → `?lang=` in the URL (that visit only, and kept in the URL while filtering) →
+the browser language. Browser language rather than geolocation on purpose — it's the better signal
+(an Argentine in Denmark gets Spanish) and needs no server code. Tested with Edge set to es-MX and
+es-ES (Spanish) and da-DK and en-US (English).
+
+- Interface strings: `assets/js/i18n.js` — 180 keys per language, same keys in both.
+- Content: `text_es` / `ref_es` on each analogy, `kind_es` / `why_es` on quiz anchors, `title_es` on
+  lists. Board comparisons keep the other game's exact name, or the internal link breaks.
+- Game names stay as published (Codenames, Ticket to Ride…), matching BGG.
 
 ## How the quiz decides
 

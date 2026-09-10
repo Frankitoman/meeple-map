@@ -6,7 +6,8 @@
   "publisher": "kept for cover-art sourcing only — never displayed",
   "count": 50,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
-  "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol — editorial"
+  "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol — editorial",
+  "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
  },
  "games": [
   {
@@ -29,7 +30,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Age of Empires",
-    "text": "Age of Empires, but everyone shares one map and you have to ask your rivals for wood."
+    "text": "Age of Empires, but everyone shares one map and you have to ask your rivals for wood.",
+    "text_es": "Age of Empires, pero todos comparten un mismo mapa y tienes que pedirle madera a tus rivales.",
+    "ref_es": "Age of Empires"
    },
    "mode": "competitive",
    "anchors": [
@@ -56,7 +59,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Mini Metro",
-    "text": "Mini Metro, if three other people could block your line on purpose."
+    "text": "Mini Metro, if three other people could block your line on purpose.",
+    "text_es": "Mini Metro, si otros tres jugadores pudieran bloquearte la línea a propósito.",
+    "ref_es": "Mini Metro"
    },
    "mode": "competitive",
    "anchors": [
@@ -83,7 +88,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Islanders",
-    "text": "You build the map as you play, like Islanders — except someone else keeps finishing your city."
+    "text": "You build the map as you play, like Islanders — except someone else keeps finishing your city.",
+    "text_es": "Construyes el mapa mientras juegas, como en Islanders, solo que otro no para de terminarte la ciudad.",
+    "ref_es": "Islanders"
    },
    "mode": "competitive",
    "anchors": [
@@ -110,7 +117,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Tetris",
-    "text": "Tetris, but you draft the pieces from a shared pool and your neighbour takes the one you needed."
+    "text": "Tetris, but you draft the pieces from a shared pool and your neighbour takes the one you needed.",
+    "text_es": "Tetris, pero las piezas salen de un fondo común y tu vecino se lleva justo la que necesitabas.",
+    "ref_es": "Tetris"
    },
    "mode": "competitive",
    "anchors": [
@@ -137,7 +146,9 @@
    "analogy": {
     "kind": "video",
     "ref": "idle games",
-    "text": "An idle clicker in the best way — every turn your engine gets faster, and it's over in 30 minutes."
+    "text": "An idle clicker in the best way — every turn your engine gets faster, and it's over in 30 minutes.",
+    "text_es": "Un idle clicker en el buen sentido: cada turno tu motor va más rápido, y la partida dura 30 minutos.",
+    "ref_es": "idle clicker"
    },
    "mode": "competitive",
    "anchors": [
@@ -165,7 +176,9 @@
    "analogy": {
     "kind": "video",
     "ref": "dominoes",
-    "text": "Dominoes crossed with city-building. The whole game takes twenty minutes."
+    "text": "Dominoes crossed with city-building. The whole game takes twenty minutes.",
+    "text_es": "Dominó cruzado con construir ciudades. La partida entera dura veinte minutos.",
+    "ref_es": "Dominó"
    },
    "mode": "competitive",
    "anchors": [
@@ -192,7 +205,9 @@
    "analogy": {
     "kind": "video",
     "ref": "auto-battler drafting",
-    "text": "The draft phase of an auto-battler: take one, pass the rest, watch your combo fall apart."
+    "text": "The draft phase of an auto-battler: take one, pass the rest, watch your combo fall apart.",
+    "text_es": "La fase de draft de un auto-battler: te quedas una carta, pasas el resto y ves cómo se te desarma el combo.",
+    "ref_es": "auto-battler"
    },
    "mode": "competitive",
    "anchors": [
@@ -219,7 +234,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Dorfromantik",
-    "text": "Dorfromantik on a table. Quiet tile-laying, nobody attacks anybody."
+    "text": "Dorfromantik on a table. Quiet tile-laying, nobody attacks anybody.",
+    "text_es": "Dorfromantik sobre la mesa. Colocar losetas con calma, sin que nadie ataque a nadie.",
+    "ref_es": "Dorfromantik"
    },
    "mode": "competitive",
    "anchors": [
@@ -246,7 +263,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Slay the Spire",
-    "text": "The engine-building feeling of Slay the Spire, but calm, and the cards are birds."
+    "text": "The engine-building feeling of Slay the Spire, but calm, and the cards are birds.",
+    "text_es": "La sensación de armar un motor de Slay the Spire, pero tranquila, y las cartas son pájaros.",
+    "ref_es": "Slay the Spire"
    },
    "mode": "competitive",
    "anchors": [
@@ -274,7 +293,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Mario Kart",
-    "text": "Mario Kart with a deck of cards — you upgrade your own movement mid-race."
+    "text": "Mario Kart with a deck of cards — you upgrade your own movement mid-race.",
+    "text_es": "Mario Kart con un mazo de cartas: mejoras tu propio movimiento en plena carrera.",
+    "ref_es": "Mario Kart"
    },
    "mode": "competitive",
    "anchors": [
@@ -301,7 +322,9 @@
    "analogy": {
     "kind": "video",
     "ref": "blackjack",
-    "text": "Blackjack, if going bust made your potion explode in front of everyone."
+    "text": "Blackjack, if going bust made your potion explode in front of everyone.",
+    "text_es": "Blackjack, pero si te pasas, tu poción explota delante de todos.",
+    "ref_es": "Blackjack"
    },
    "mode": "competitive",
    "anchors": [
@@ -328,7 +351,9 @@
    "analogy": {
     "kind": "video",
     "ref": "F1 games",
-    "text": "An F1 game where the skill is gear management, not reflexes."
+    "text": "An F1 game where the skill is gear management, not reflexes.",
+    "text_es": "Un juego de F1 donde la habilidad está en gestionar las marchas, no en los reflejos.",
+    "ref_es": "F1"
    },
    "mode": "competitive",
    "anchors": [
@@ -355,7 +380,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Stardew Valley",
-    "text": "Stardew Valley: you build a small town across four seasons, and the seasons run out."
+    "text": "Stardew Valley: you build a small town across four seasons, and the seasons run out.",
+    "text_es": "Stardew Valley: construyes un pueblito a lo largo de cuatro estaciones, y las estaciones se acaban.",
+    "ref_es": "Stardew Valley"
    },
    "mode": "competitive",
    "anchors": [
@@ -382,7 +409,9 @@
    "analogy": {
     "kind": "video",
     "ref": "charades",
-    "text": "Charades, except you only get one word and your team has to read your mind."
+    "text": "Charades, except you only get one word and your team has to read your mind.",
+    "text_es": "El juego de la mímica, pero solo tienes una palabra y tu equipo tiene que leerte la mente.",
+    "ref_es": "mímica"
    },
    "mode": "teams",
    "anchors": [
@@ -409,7 +438,9 @@
    "analogy": {
     "kind": "video",
     "ref": "group chat",
-    "text": "A group chat where everyone types the same joke and it cancels out."
+    "text": "A group chat where everyone types the same joke and it cancels out.",
+    "text_es": "Un grupo de chat donde todos escriben el mismo chiste y se anula.",
+    "ref_es": "grupo de chat"
    },
    "mode": "coop",
    "anchors": [
@@ -436,7 +467,8 @@
    "analogy": {
     "kind": "board",
     "ref": "codenames",
-    "text": "Codenames, but you're the one writing the code and a rival team is listening in."
+    "text": "Codenames, but you're the one writing the code and a rival team is listening in.",
+    "text_es": "Codenames, pero tú escribes el código y el equipo rival está escuchando."
    },
    "mode": "teams",
    "anchors": [
@@ -463,7 +495,8 @@
    "analogy": {
     "kind": "board",
     "ref": "codenames",
-    "text": "Codenames where everyone is on the same side."
+    "text": "Codenames where everyone is on the same side.",
+    "text_es": "Codenames donde todos están del mismo lado."
    },
    "mode": "coop",
    "anchors": [
@@ -490,7 +523,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Among Us",
-    "text": "Among Us at a table, with no tasks to hide behind — only what you say."
+    "text": "Among Us at a table, with no tasks to hide behind — only what you say.",
+    "text_es": "Among Us en una mesa, sin tareas detrás de las que esconderte: solo lo que dices.",
+    "ref_es": "Among Us"
    },
    "mode": "hidden",
    "anchors": [
@@ -517,7 +552,8 @@
    "analogy": {
     "kind": "board",
     "ref": "just-one",
-    "text": "The shared-brain feeling of Just One, aimed at opinions instead of words."
+    "text": "The shared-brain feeling of Just One, aimed at opinions instead of words.",
+    "text_es": "La sensación de cerebro compartido de Just One, apuntada a opiniones en vez de a palabras."
    },
    "mode": "teams",
    "anchors": [
@@ -544,7 +580,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Among Us",
-    "text": "One round of Among Us, start to finish, in ten minutes — and nobody gets eliminated."
+    "text": "One round of Among Us, start to finish, in ten minutes — and nobody gets eliminated.",
+    "text_es": "Una ronda de Among Us de principio a fin, en diez minutos, y sin que eliminen a nadie.",
+    "ref_es": "Among Us"
    },
    "mode": "hidden",
    "anchors": [
@@ -571,7 +609,9 @@
    "analogy": {
     "kind": "video",
     "ref": "broken telephone",
-    "text": "Broken telephone, but drawn — and you keep the evidence."
+    "text": "Broken telephone, but drawn — and you keep the evidence.",
+    "text_es": "El teléfono descompuesto, pero dibujado, y te quedas con las pruebas.",
+    "ref_es": "teléfono descompuesto"
    },
    "mode": "competitive",
    "anchors": []
@@ -596,7 +636,8 @@
    "analogy": {
     "kind": "board",
     "ref": "codenames",
-    "text": "Codenames with surreal paintings instead of words — too obvious and too obscure both lose."
+    "text": "Codenames with surreal paintings instead of words — too obvious and too obscure both lose.",
+    "text_es": "Codenames con pinturas surrealistas en lugar de palabras: si eres demasiado obvio o demasiado críptico, pierdes."
    },
    "mode": "competitive",
    "anchors": []
@@ -621,7 +662,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Mario Party",
-    "text": "Betting on a camel race that will not stay still. Mario Party's chaos, with money on it."
+    "text": "Betting on a camel race that will not stay still. Mario Party's chaos, with money on it.",
+    "text_es": "Apostar en una carrera de camellos que no se queda quieta. El caos de Mario Party, con dinero de por medio.",
+    "ref_es": "Mario Party"
    },
    "mode": "competitive",
    "anchors": []
@@ -646,7 +689,9 @@
    "analogy": {
     "kind": "video",
     "ref": "poker",
-    "text": "Poker's bluffing with none of poker's mathematics. Four cards, one nerve."
+    "text": "Poker's bluffing with none of poker's mathematics. Four cards, one nerve.",
+    "text_es": "El farol del póker sin nada de su matemática. Cuatro cartas y mucho temple.",
+    "ref_es": "póker"
    },
    "mode": "competitive",
    "anchors": [
@@ -673,7 +718,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Civilization",
-    "text": "Civilization compressed into thirty minutes, because everyone plays at once."
+    "text": "Civilization compressed into thirty minutes, because everyone plays at once.",
+    "text_es": "Civilization comprimido en treinta minutos, porque todos juegan a la vez.",
+    "ref_es": "Civilization"
    },
    "mode": "competitive",
    "anchors": [
@@ -700,7 +747,8 @@
    "analogy": {
     "kind": "board",
     "ref": "7-wonders",
-    "text": "The same civilisation arc as 7 Wonders, rebuilt so that two people can fight over it."
+    "text": "The same civilisation arc as 7 Wonders, rebuilt so that two people can fight over it.",
+    "text_es": "El mismo arco de civilización de 7 Wonders, rehecho para que dos personas se lo disputen."
    },
    "mode": "competitive",
    "anchors": [
@@ -727,7 +775,9 @@
    "analogy": {
     "kind": "video",
     "ref": "deckbuilding roguelikes",
-    "text": "The original deckbuilder. Every roguelike deckbuilder you've played descends from this one."
+    "text": "The original deckbuilder. Every roguelike deckbuilder you've played descends from this one.",
+    "text_es": "El deckbuilder original. Todos los roguelikes de construir mazos que has jugado descienden de este.",
+    "ref_es": "roguelikes"
    },
    "mode": "competitive",
    "anchors": [
@@ -754,7 +804,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Factorio",
-    "text": "Factorio's production chains, on Mars, with rivals racing you to the same milestones."
+    "text": "Factorio's production chains, on Mars, with rivals racing you to the same milestones.",
+    "text_es": "Las cadenas de producción de Factorio, en Marte, con rivales que compiten por los mismos hitos.",
+    "ref_es": "Factorio"
    },
    "mode": "competitive",
    "anchors": [
@@ -781,7 +833,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Planet Zoo",
-    "text": "Planet Zoo rebuilt as a card engine — and conservation actually scores."
+    "text": "Planet Zoo rebuilt as a card engine — and conservation actually scores.",
+    "text_es": "Planet Zoo convertido en un motor de cartas, y la conservación de verdad da puntos.",
+    "ref_es": "Planet Zoo"
    },
    "mode": "competitive",
    "anchors": [
@@ -809,7 +863,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Anno 1800",
-    "text": "Anno 1800's logistics distilled — you build the network, rivals use it, everyone profits."
+    "text": "Anno 1800's logistics distilled — you build the network, rivals use it, everyone profits.",
+    "text_es": "La logística de Anno 1800, destilada: tú construyes la red, tus rivales la usan y todos ganan.",
+    "ref_es": "Anno 1800"
    },
    "mode": "competitive",
    "anchors": [
@@ -836,7 +892,9 @@
    "analogy": {
     "kind": "video",
     "ref": "real-time strategy",
-    "text": "An RTS where the fighting almost never happens — the threat does the work."
+    "text": "An RTS where the fighting almost never happens — the threat does the work.",
+    "text_es": "Un RTS donde casi nunca hay combate: la amenaza hace todo el trabajo.",
+    "ref_es": "RTS"
    },
    "mode": "competitive",
    "anchors": [
@@ -863,7 +921,9 @@
    "analogy": {
     "kind": "video",
     "ref": "asymmetric heroes",
-    "text": "Every player is running different rules on the same board, like picking wildly different heroes."
+    "text": "Every player is running different rules on the same board, like picking wildly different heroes.",
+    "text_es": "Cada jugador sigue reglas distintas en el mismo tablero, como elegir héroes muy diferentes.",
+    "ref_es": "héroes"
    },
    "mode": "competitive",
    "anchors": [
@@ -891,7 +951,8 @@
    "analogy": {
     "kind": "board",
     "ref": "dominion",
-    "text": "Dominion's deck feeding 7 Wonders' worker placement — your cards decide where you can go."
+    "text": "Dominion's deck feeding 7 Wonders' worker placement — your cards decide where you can go.",
+    "text_es": "El mazo de Dominion alimentando la colocación de trabajadores de 7 Wonders: tus cartas deciden adónde puedes ir."
    },
    "mode": "competitive",
    "anchors": [
@@ -919,7 +980,8 @@
    "analogy": {
     "kind": "board",
     "ref": "7-wonders",
-    "text": "7 Wonders' card engine stretched across a map of the Mediterranean. No dice, no luck, no excuses."
+    "text": "7 Wonders' card engine stretched across a map of the Mediterranean. No dice, no luck, no excuses.",
+    "text_es": "El motor de cartas de 7 Wonders estirado sobre un mapa del Mediterráneo. Sin dados, sin suerte, sin excusas."
    },
    "mode": "competitive",
    "anchors": [
@@ -946,7 +1008,8 @@
    "analogy": {
     "kind": "board",
     "ref": "azul",
-    "text": "Azul's tile puzzle carrying the depth of a full strategy game underneath it."
+    "text": "Azul's tile puzzle carrying the depth of a full strategy game underneath it.",
+    "text_es": "El puzle de losetas de Azul con la profundidad de un juego de estrategia completo por debajo."
    },
    "mode": "competitive",
    "anchors": [
@@ -973,7 +1036,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Indiana Jones",
-    "text": "Indiana Jones made playable — explore ruins, fight guardians, build a deck while you do it."
+    "text": "Indiana Jones made playable — explore ruins, fight guardians, build a deck while you do it.",
+    "text_es": "Indiana Jones hecho juego: exploras ruinas, peleas con guardianes y armas un mazo mientras tanto.",
+    "ref_es": "Indiana Jones"
    },
    "mode": "competitive",
    "anchors": [
@@ -1000,7 +1065,9 @@
    "analogy": {
     "kind": "video",
     "ref": "co-op raids",
-    "text": "A co-op raid — everyone against the board, and the board is winning."
+    "text": "A co-op raid — everyone against the board, and the board is winning.",
+    "text_es": "Una raid cooperativa: todos contra el tablero, y el tablero va ganando.",
+    "ref_es": "raid cooperativa"
    },
    "mode": "coop",
    "anchors": [
@@ -1028,7 +1095,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Portal 2 co-op",
-    "text": "Portal 2's co-op — one shared puzzle, fifty levels, and you're barely allowed to talk."
+    "text": "Portal 2's co-op — one shared puzzle, fifty levels, and you're barely allowed to talk.",
+    "text_es": "El cooperativo de Portal 2: un solo puzle compartido, cincuenta niveles, y casi no puedes hablar.",
+    "ref_es": "Portal 2"
    },
    "mode": "coop",
    "anchors": [
@@ -1055,7 +1124,9 @@
    "analogy": {
     "kind": "video",
     "ref": "flight sims",
-    "text": "Landing a plane with one other person, in near silence, in twenty minutes."
+    "text": "Landing a plane with one other person, in near silence, in twenty minutes.",
+    "text_es": "Aterrizar un avión con otra persona, casi en silencio, en veinte minutos.",
+    "ref_es": "Aterrizar un avión"
    },
    "mode": "coop",
    "anchors": [
@@ -1082,7 +1153,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Diablo",
-    "text": "A Diablo campaign in a box — twenty-five scenarios, and your character keeps levelling."
+    "text": "A Diablo campaign in a box — twenty-five scenarios, and your character keeps levelling.",
+    "text_es": "Una campaña de Diablo en una caja: veinticinco escenarios, y tu personaje sigue subiendo de nivel.",
+    "ref_es": "Diablo"
    },
    "mode": "coop",
    "anchors": [
@@ -1110,7 +1183,9 @@
    "analogy": {
     "kind": "video",
     "ref": "tower defence",
-    "text": "Tower defence where you are the island, and the invaders keep landing anyway."
+    "text": "Tower defence where you are the island, and the invaders keep landing anyway.",
+    "text_es": "Un tower defense donde tú eres la isla, y los invasores siguen desembarcando igual.",
+    "ref_es": "tower defense"
    },
    "mode": "coop",
    "anchors": [
@@ -1137,7 +1212,9 @@
    "analogy": {
     "kind": "video",
     "ref": "narrative RPGs",
-    "text": "A narrative RPG you can play alone, where losing writes itself into the next chapter."
+    "text": "A narrative RPG you can play alone, where losing writes itself into the next chapter.",
+    "text_es": "Un RPG narrativo que puedes jugar solo, donde perder se escribe en el capítulo siguiente.",
+    "ref_es": "RPG narrativo"
    },
    "mode": "coop",
    "anchors": [
@@ -1165,7 +1242,9 @@
    "analogy": {
     "kind": "video",
     "ref": "horror films",
-    "text": "A horror film where, halfway through, one of you turns out to be the monster."
+    "text": "A horror film where, halfway through, one of you turns out to be the monster.",
+    "text_es": "Una película de terror donde, a mitad de camino, uno de los jugadores resulta ser el monstruo.",
+    "ref_es": "película de terror"
    },
    "mode": "hidden",
    "anchors": [
@@ -1192,7 +1271,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Alien: Isolation",
-    "text": "Alien: Isolation, with someone at the table quietly working against you."
+    "text": "Alien: Isolation, with someone at the table quietly working against you.",
+    "text_es": "Alien: Isolation, con alguien en la mesa trabajando en tu contra en silencio.",
+    "ref_es": "Alien: Isolation"
    },
    "mode": "hidden",
    "anchors": [
@@ -1220,7 +1301,9 @@
    "analogy": {
     "kind": "video",
     "ref": "chess",
-    "text": "Chess with insects and no board — the pieces are the board."
+    "text": "Chess with insects and no board — the pieces are the board.",
+    "text_es": "Ajedrez con insectos y sin tablero: las piezas son el tablero.",
+    "ref_es": "Ajedrez"
    },
    "mode": "competitive",
    "anchors": []
@@ -1245,7 +1328,9 @@
    "analogy": {
     "kind": "video",
     "ref": "chess",
-    "text": "Pocket chess where the legal moves change every single game."
+    "text": "Pocket chess where the legal moves change every single game.",
+    "text_es": "Ajedrez de bolsillo donde los movimientos permitidos cambian en cada partida.",
+    "ref_es": "Ajedrez"
    },
    "mode": "competitive",
    "anchors": []
@@ -1270,7 +1355,8 @@
    "analogy": {
     "kind": "board",
     "ref": "onitama",
-    "text": "Onitama's two-minute rules, on a board you build upward as you play."
+    "text": "Onitama's two-minute rules, on a board you build upward as you play.",
+    "text_es": "Las reglas de dos minutos de Onitama, en un tablero que vas construyendo hacia arriba."
    },
    "mode": "competitive",
    "anchors": []
@@ -1295,7 +1381,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Tetris",
-    "text": "Tetris for two, where you pay for every piece with time you don't have."
+    "text": "Tetris for two, where you pay for every piece with time you don't have.",
+    "text_es": "Tetris para dos, donde cada pieza la pagas con tiempo que no tienes.",
+    "ref_es": "Tetris"
    },
    "mode": "competitive",
    "anchors": []
@@ -1320,7 +1408,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Sudoku",
-    "text": "Sudoku with dice and stained glass — and the dice you need keep getting taken."
+    "text": "Sudoku with dice and stained glass — and the dice you need keep getting taken.",
+    "text_es": "Un sudoku con dados y vitrales, y los dados que necesitas siempre se los lleva otro.",
+    "ref_es": "sudoku"
    },
    "mode": "competitive",
    "anchors": []
@@ -1345,7 +1435,9 @@
    "analogy": {
     "kind": "video",
     "ref": "Tetris",
-    "text": "Tetris pieces that you spend to earn better Tetris pieces."
+    "text": "Tetris pieces that you spend to earn better Tetris pieces.",
+    "text_es": "Piezas de Tetris que gastas para conseguir mejores piezas de Tetris.",
+    "ref_es": "Tetris"
    },
    "mode": "competitive",
    "anchors": []

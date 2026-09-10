@@ -13,6 +13,7 @@ A board game finder for complete beginners. Instead of asking about "worker plac
 - **50 hand-picked games** in five families: Family, Party, Strategy, Thematic, Abstract.
 - **Editorial top-five lists** per family.
 - **The 20** — a personal list of games I've actually played, each with the one thing it does that nothing else does.
+- **English and Spanish.** The page opens in Spanish for any Spanish-language browser (Spain and Latin America alike) and in English otherwise; an EN/ES switch in the nav overrides it and is remembered. `?lang=es` forces it for a link.
 
 ## Stack
 
@@ -20,6 +21,7 @@ Plain HTML, CSS and JavaScript. No framework, no build step. Content lives in tw
 
 - `data/games.json` — the 50 games: players, time, age, difficulty, mode, and the video-game comparison
 - `data/editorial.json` — quiz anchors, the category lists, and The 20
+- `assets/js/i18n.js` — every interface string, in English and Spanish (content fields in the JSON carry a `_es` twin)
 
 Hosted as a Cloudflare Worker with static assets.
 
@@ -49,4 +51,4 @@ Cover art © the respective publishers, used to identify each game.
 
 ---
 
-Design and build by [Franco Mansilla](https://tierra.dk) · part of the Tierra portfolio.
+A project by [Tierra](https://tierra.dk).
