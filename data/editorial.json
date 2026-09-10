@@ -61,7 +61,7 @@
    "games": [
     "ticket-to-ride",
     "kingdomino",
-    "sushi-go",
+    "dorfromantik",
     "azul",
     "cascadia"
    ],
@@ -71,35 +71,35 @@
    "title": "For eight or more",
    "category": "party",
    "games": [
+    "hues-and-cues",
     "codenames",
     "wavelength",
-    "one-night-werewolf",
-    "telestrations",
-    "avalon"
+    "werewords",
+    "one-night-werewolf"
    ],
    "title_es": "Para ocho o más"
   },
   {
-   "title": "For a long evening",
+   "title": "First steps",
    "category": "strategy",
    "games": [
+    "7-wonders",
+    "small-world",
+    "lords-of-waterdeep",
     "arnak",
-    "dune-imperium",
-    "scythe",
-    "terraforming-mars",
-    "ark-nova"
+    "dune-imperium"
    ],
-   "title_es": "Para una noche larga"
+   "title_es": "Primeros pasos"
   },
   {
    "title": "Better together",
    "category": "thematic",
    "games": [
+    "horrified",
     "pandemic",
-    "the-crew",
     "sky-team",
-    "jaws-of-the-lion",
-    "spirit-island"
+    "zombicide",
+    "slay-the-spire"
    ],
    "title_es": "Mejor en equipo"
   },
@@ -107,11 +107,11 @@
    "title": "Quiet puzzles",
    "category": "abstract",
    "games": [
+    "blokus",
+    "qwirkle",
     "patchwork",
-    "onitama",
-    "santorini",
-    "hive",
-    "sagrada"
+    "calico",
+    "harmonies"
    ],
    "title_es": "Puzles tranquilos"
   }

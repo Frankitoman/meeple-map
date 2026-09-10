@@ -74,7 +74,12 @@ premise, so the plan leans on them where the game is good. Small World was never
 deleted as an orphan. Added in batch 4.
 
 Star Wars: Rebellion, Robinson Crusoe and Too Many Bones were dropped from the plan as too heavy for
-beginners (Franco agreed). The "Top 5 by type" lists were not re-picked after the expansion.
+beginners (Franco agreed). The "Top 5 by type" lists were re-picked after the expansion (2026-09-10), easiest first, none from The 20:
+Family — Ticket to Ride, Kingdomino, Dorfromantik, Azul, Cascadia · Party (8+) — Hues and Cues, Codenames,
+Wavelength, Werewords, ONUW · Strategy, now "First steps" / "Primeros pasos" (was "For a long evening", all
+heavies) — 7 Wonders, Small World, Lords of Waterdeep, Arnak, Dune: Imperium · Thematic (co-op) — Horrified,
+Pandemic, Sky Team, Zombicide, Slay the Spire · Abstract ("quiet puzzles", so no duels) — Blokus, Qwirkle,
+Patchwork, Calico, Harmonies. Keep titles short: a two-line title pushes that card's panel out of line.
 Watch the retailer's BGG id: it can point at an old edition (Mansions of Madness listed the 1st edition's).
 
 ## Animation review (2026-09-10, review-animations skill)
