@@ -88,7 +88,7 @@ window.MM_I18N = {
     'dlg.players': 'Players', 'dlg.time': 'Time', 'dlg.age': 'Age', 'dlg.diff': 'Difficulty', 'dlg.bgg': 'Read more on BGG ↗', 'dlg.close': 'Close',
 
     'twenty.eyebrow': 'Played, not scraped', 'twenty.title': 'The 20',
-    'twenty.byName': "Games I've played", 'twenty.byRole': 'I built this site',
+    'twenty.byName': "Games I've played",
     'twenty.thesis': 'Twenty games I\'ve actually played. Each does something the others don\'t — I\'ll tell you what.',
     'twenty.played': 'I played this',
     'twenty.legend': 'Also marked in the finder.',
@@ -194,7 +194,7 @@ window.MM_I18N = {
     'dlg.players': 'Jugadores', 'dlg.time': 'Duración', 'dlg.age': 'Edad', 'dlg.diff': 'Dificultad', 'dlg.bgg': 'Leer más en BGG ↗', 'dlg.close': 'Cerrar',
 
     'twenty.eyebrow': 'Jugados, no copiados', 'twenty.title': 'Los 20',
-    'twenty.byName': 'Juegos que jugué', 'twenty.byRole': 'Hice este sitio',
+    'twenty.byName': 'Juegos que jugué',
     'twenty.thesis': 'Veinte juegos que jugué de verdad. Cada uno hace algo que los demás no, y te cuento qué.',
     'twenty.played': 'Lo jugué',
     'twenty.legend': 'También marcados en el buscador.',

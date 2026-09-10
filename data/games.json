@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 57,
+  "count": 61,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -1639,6 +1639,117 @@
    },
    "mode": "coop",
    "anchors": []
+  },
+  {
+   "slug": "earthborne-rangers",
+   "name": "Earthborne Rangers",
+   "bgg": 342900,
+   "year": 2023,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    60,
+    240
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "Earthborne Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Breath of the Wild",
+    "text": "Breath of the Wild as a park ranger: a vast valley to explore, creatures to befriend, and a world that remembers what you did.",
+    "text_es": "Breath of the Wild como guardabosques: un valle enorme para explorar, criaturas de las que hacerte amigo y un mundo que recuerda lo que hiciste.",
+    "ref_es": "Breath of the Wild"
+   },
+   "mode": "coop",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "heroes-of-barcadia",
+   "name": "Heroes of Barcadia",
+   "bgg": 341027,
+   "year": 2023,
+   "category": "party",
+   "players": [
+    2,
+    6
+   ],
+   "minutes": [
+    30,
+    90
+   ],
+   "age": 21,
+   "complexity": 1,
+   "publisher": "Rollacrit",
+   "analogy": {
+    "kind": "video",
+    "ref": "Baldur's Gate",
+    "text": "Baldur's Gate at a party: roll the d20, and your drink is your health bar.",
+    "text_es": "Baldur's Gate en una fiesta: tiras el d20 y tu vaso es tu barra de vida.",
+    "ref_es": "Baldur's Gate"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "yawning-portal",
+   "name": "D&D: The Yawning Portal",
+   "bgg": 367820,
+   "year": 2023,
+   "category": "family",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    90
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Avalon Hill",
+   "analogy": {
+    "kind": "board",
+    "ref": "coffee-rush",
+    "text": "Coffee Rush in the D&D world: serve the tavern's adventurers and get paid in gems.",
+    "text_es": "Coffee Rush en el mundo de D&D: atiendes a los aventureros de la taberna y te pagan con gemas."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "flamecraft",
+   "name": "Flamecraft",
+   "bgg": 336986,
+   "year": 2022,
+   "category": "family",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    60,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Cardboard Alchemy",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "Stardew Valley with dragons: wander a cozy town, help the shops grow, and quietly race to be the most famous.",
+    "text_es": "Stardew Valley con dragones: recorres un pueblo acogedor, ayudas a las tiendas a crecer y compites en silencio por ser el más famoso.",
+    "ref_es": "Stardew Valley"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
   }
  ]
 }

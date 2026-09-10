@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 63 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 67 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -25,10 +25,11 @@ Browsers block `fetch()` of local JSON, so double-clicking the file shows the er
 - **50 of 50 covers**, eye-checked twice (small contact sheet, then a large-format pass).
 - Responsive to 375px; on phones game cards switch to a horizontal layout.
 
-## The 20 — in progress (8 of 20)
+## The 20 — in progress (12 of 20)
 
 Paleo, Catan, Coffee Rush, Unstable Unicorns, Sleeping Gods, Eldritch Horror, Keep the Heroes Out!,
-Décorum (2026-09-10). Facts Franco asks to check get checked: Sleeping Gods has 13 endings (not ~20);
+Décorum, Earthborne Rangers, Heroes of Barcadia, D&D: The Yawning Portal, Flamecraft (2026-09-10).
+The byline is just "Games I've played" — no role line, at Franco's request. Facts Franco asks to check get checked: Sleeping Gods has 13 endings (not ~20);
 Keep the Heroes Out! has 20 scenarios and 3 difficulties; Décorum has 30 scenarios (20 for two, 10 for 3–4). Franco sends each game
 with a long description; it gets condensed to 3–4 first-person sentences in EN and ES, keeping his
 most characteristic lines and his honest complaints. Entries live in `the20` in
@@ -39,7 +40,7 @@ most characteristic lines and his honest complaints. Entries live in `the20` in
 ```
 
 **Every game of The 20 also goes into `games.json`** (so it can come up in the quiz and carries the
-"I played this" mark in the finder). That's why the catalogue is 57, not 50: seven of his games were added; Catan was already there. Copy that mentions the size
+"I played this" mark in the finder). That's why the catalogue is 61, not 50: eleven of his games were added; Catan was already there. Copy that mentions the size
 uses `{total}`, so it updates itself. For a new game: verify the BGG id with a web search (BGG's own
 search is behind a Cloudflare challenge now), players/time/age from retail listings, cover from the
 Shopify retailers below, checked by eye at full size.
@@ -61,7 +62,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 63.
+  it should be 67.
 
 ## Languages
 
