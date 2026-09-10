@@ -27,7 +27,7 @@ window.MM_I18N = {
     'quiz.doneLead': 'Your answers are set in the finder below.',
     'quiz.see': 'See my games', 'quiz.restart': 'Start over',
 
-    'step.a.q': 'What do you already play?', 'step.a.hint': 'Pick the closest one.', 'step.a.skip': 'None of these — skip',
+    'step.a.q': 'What do you like to play?', 'step.a.hint': 'Pick the closest one.', 'step.a.skip': 'None of these — skip',
     'step.p.q': "Who's usually playing?",
     'opt.p.0': 'Just me|Solo', 'opt.p.1': 'The two of us|Partner, roommate', 'opt.p.2': 'Three or four|A few friends', 'opt.p.3': 'A big group|Five or more',
     'step.t.q': 'How long have you got?',
@@ -133,7 +133,7 @@ window.MM_I18N = {
     'quiz.doneLead': 'Tus respuestas ya están en el buscador.',
     'quiz.see': 'Ver mis juegos', 'quiz.restart': 'Empezar de nuevo',
 
-    'step.a.q': '¿A qué juegas ya?', 'step.a.hint': 'Elige el más parecido.', 'step.a.skip': 'Ninguno de estos — saltar',
+    'step.a.q': '¿A qué te gusta jugar?', 'step.a.hint': 'Elige el más parecido.', 'step.a.skip': 'Ninguno de estos — saltar',
     'step.p.q': '¿Quién suele jugar?',
     'opt.p.0': 'Solo yo|En solitario', 'opt.p.1': 'Nosotros dos|Pareja, compañero de piso', 'opt.p.2': 'Tres o cuatro|Unos pocos amigos', 'opt.p.3': 'Un grupo grande|Cinco o más',
     'step.t.q': '¿Cuánto tiempo tienes?',
