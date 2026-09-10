@@ -149,8 +149,29 @@
    "slug": "sleeping-gods",
    "standout": "a campaign where every choice counts",
    "standout_es": "una campaña donde cada decisión pesa",
-   "note": "A campaign of about 20 hours, and I love campaigns for how replayable they are. You're always deciding — five, six, seven options every couple of minutes — and you're free to explore wherever you want. The combat is interesting, and the story comes from a book that branches with your choices. One person ends up reading a lot, but if you like Dungeons & Dragons, it's perfect.",
-   "note_es": "Una campaña de unas 20 horas, y las campañas me encantan por lo rejugables que son. Siempre estás decidiendo —cinco, seis, siete opciones cada par de minutos— y tienes libertad total para explorar por donde quieras. El combate es interesante y la historia sale de un libro que cambia según lo que elijas. Alguien termina leyendo mucho, pero si te gusta Dungeons & Dragons, es ideal."
+   "note": "A campaign of up to 20 hours with 13 different endings, and I love campaigns for how replayable they are. You're always deciding — five, six, seven options every couple of minutes — and you're free to explore wherever you want. The combat is interesting, and the story comes from a book that branches with your choices. One person ends up reading a lot, but if you like Dungeons & Dragons, it's perfect.",
+   "note_es": "Una campaña de hasta 20 horas con 13 finales distintos, y las campañas me encantan por lo rejugables que son. Siempre estás decidiendo —cinco, seis, siete opciones cada par de minutos— y tienes libertad total para explorar por donde quieras. El combate es interesante y la historia sale de un libro que cambia según lo que elijas. Alguien termina leyendo mucho, pero si te gusta Dungeons & Dragons, es ideal."
+  },
+  {
+   "slug": "eldritch-horror",
+   "standout": "teamwork against a cosmic horror",
+   "standout_es": "trabajo en equipo contra un horror cósmico",
+   "note": "Co-op taken up a level. You face one of four Ancient Ones, and you have to investigate and think strategically: spread out across the map so one of you closes gates while another hunts clues and mysteries — all while watching your sanity, your health and the weapons you find. Great investigation, great combat.",
+   "note_es": "El cooperativo llevado a otro nivel. Te enfrentas a uno de cuatro Primigenios y hay que investigar y pensar con estrategia: repartirse por el mapa para que uno cierre portales mientras otro busca pistas y misterios, sin descuidar la cordura, la salud y las armas que consigas. Muy buena investigación y muy buen combate."
+  },
+  {
+   "slug": "keep-the-heroes-out",
+   "standout": "for once, you're the monsters",
+   "standout_es": "por una vez, los monstruos somos nosotros",
+   "note": "Fairly new for me — the theme hooked me. In most RPGs you're the hero raiding a dungeon for loot. Here you're the monsters guarding it, and if the heroes win, you lose. It's co-op, every race plays differently, and it mixes deck building with modular rooms. Twenty scenarios and three difficulty levels mean a lot of replay. Excellent.",
+   "note_es": "Es bastante nuevo para mí; me atrapó la temática. En casi todos los juegos de rol eres el héroe que entra a una mazmorra a lootear. Aquí eres los monstruos que protegen el botín, y si ganan los héroes, pierdes tú. Es cooperativo, cada raza funciona distinto y mezcla construcción de mazos con salas modulares. Veinte escenarios y tres dificultades le dan muchísima rejugabilidad. Excelente."
+  },
+  {
+   "slug": "decorum",
+   "standout": "cooperative chess, with secrets",
+   "standout_es": "un ajedrez cooperativo, con secretos",
+   "note": "A kind of cooperative chess: your moves affect your friends and theirs affect you, and you have to work together to crack each scenario's puzzle. It makes you think a lot. There are 30 scenarios, and in every one, if you can't agree on how to arrange the house around everyone's secrets, you all lose.",
+   "note_es": "Una especie de ajedrez cooperativo: tus decisiones afectan a tus amigos y las suyas a ti, y hay que trabajar juntos para resolver el puzle de cada escenario. Te hace pensar muchísimo. Trae 30 escenarios, y en todos pasa lo mismo: si no hay acuerdo sobre cómo organizar la casa según los secretos de cada uno, pierden todos."
   }
  ]
 }
