@@ -313,7 +313,7 @@ button{font:inherit; color:inherit; cursor:pointer}
   padding:6px 34px 6px 14px; font:inherit; font-size:var(--t-sm); font-weight:500; color:var(--ink-2); cursor:pointer;
 }
 .select:hover{border-color:var(--accent)}
-.filters-toggle{display:none}
+.filters-toggle{display:none; white-space:nowrap}
 .active{display:flex; flex-wrap:wrap; gap:var(--s1); margin-bottom:var(--s3)}
 .active:empty{display:none}
 
@@ -391,8 +391,8 @@ button{font:inherit; color:inherit; cursor:pointer}
 /* Complexity — 5 bars, accent fill. No new hue. */
 .weight{display:flex; align-items:center; gap:6px}
 .weight__bars{display:flex; gap:2px}
-.weight i{width:5px; height:11px; border-radius:1px; background:var(--border)}
-.weight i.on{background:var(--accent)}
+.weight__bars i{width:5px; height:11px; border-radius:1px; background:var(--border)}   /* not .weight i: the quiz uses the bars without the wrapper */
+.weight__bars i.on{background:var(--accent)}
 .weight__txt{font-size:var(--t-caption); color:var(--muted)}
 
 /* Cross-reference mark. Applied only when a game is genuinely one of the 20. */
@@ -412,7 +412,6 @@ button{font:inherit; color:inherit; cursor:pointer}
   transform:rotate(-3deg);
 }
 .tag-luchi::before{content:"✓"; font-size:11px; font-weight:800}
-.rec .tag-luchi{margin:12px 0 0 8px}
 
 /* ---------- Empty state ---------- */
 .empty{
@@ -465,8 +464,9 @@ button{font:inherit; color:inherit; cursor:pointer}
 .rec__cover img{width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply}
 .rec__title{font-size:var(--t-sub); font-weight:700; line-height:1.25}
 .rec__meta{font-size:var(--t-caption); color:var(--faint); margin-top:2px}
+.rec__tags{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px}
 .standout{
-  display:inline-block; margin-top:12px; border:1px solid var(--accent); color:var(--accent);
+  display:inline-block; border:1px solid var(--accent); color:var(--accent);
   border-radius:var(--r-pill); padding:4px 14px; font-size:var(--t-caption); font-weight:600;
 }
 .rec__note{font-size:var(--t-body); color:var(--ink-2); line-height:1.6; margin-top:12px; max-width:62ch}
@@ -507,6 +507,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 .pick__thumb img{width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply}
 .pick__name{font-size:var(--t-sm); font-weight:600; line-height:1.3; transition:color .14s var(--ease)}
 .pick__sub{font-size:var(--t-caption); color:var(--faint)}
+.pick__sub .nw{white-space:nowrap}   /* never "30–" / "60 min" */
 .pick__all{margin-top:var(--s2); font-size:var(--t-sm)}
 .arrow{
   position:absolute; top:calc(50% - 32px); z-index:2; width:40px; height:40px; border-radius:50%;
@@ -654,6 +655,16 @@ button{font:inherit; color:inherit; cursor:pointer}
   .quiz__head{max-width:min(var(--w),560px)}
   .quiz__grid--a{grid-template-columns:repeat(4,1fr); max-width:640px}   /* seven games: 4 + 3, not 3 + 3 + 1 */
 }
+@media (min-width:561px) and (max-width:1000px){
+  /* Four answers sit in one row, not 3 + 1 */
+  .quiz__step[data-n="4"] .quiz__grid, .quiz__step[data-n="4"] .quiz__head{max-width:640px}
+  .quiz__step[data-n="4"] .quiz__grid{grid-template-columns:repeat(4,1fr)}
+}
+/* Landscape phones: a stacked dialog puts the cover on the whole screen. Side by side instead. */
+@media (max-width:900px) and (max-height:500px) and (orientation:landscape){
+  .dlg .dlg__in{grid-template-columns:200px 1fr; gap:var(--s3)}   /* .dlg: outranks the ≤900px stack below */
+  .dlg .dlg__cover{max-width:none}
+}
 @media (max-width:900px){
   .finder{grid-template-columns:1fr}
   .filters{position:static; max-height:none}
@@ -688,7 +699,7 @@ button{font:inherit; color:inherit; cursor:pointer}
 }
 @media (max-width:560px){
   .quiz__grid{grid-template-columns:repeat(2,1fr); max-width:360px}
-  .quiz__grid--a .opt:last-child:nth-child(odd){grid-column:1 / -1; justify-self:center; width:calc(50% - 8px)}
+  .quiz__grid .opt:last-child:nth-child(odd){grid-column:1 / -1; justify-self:center; width:calc(50% - 8px)}   /* 7 games, 3 brain levels */
   .quiz__head{max-width:360px}
   .quiz__back{position:static; display:block; margin:0 auto 8px}
   .section{padding-block:var(--s6)}
@@ -705,6 +716,14 @@ button{font:inherit; color:inherit; cursor:pointer}
   .game .like{grid-area:l}
   .game .facts{grid-area:f}
   .game .game__foot{grid-area:o}
+  /* The 20: cover + title side by side, then the tags and the note at full width.
+     Three columns left the note about 12 characters wide at 360px. */
+  .rec{grid-template-columns:56px 1fr; grid-template-areas:"c n" "c t" "c m" "g g" "x x"; column-gap:14px; row-gap:0}
+  .rec__body{display:contents}
+  .rec__n{grid-area:n; font-size:var(--t-caption); font-weight:600; color:var(--faint); line-height:1.4}
+  .rec__cover{grid-area:c; align-self:start}
+  .rec__title{grid-area:t} .rec__meta{grid-area:m}
+  .rec__tags{grid-area:g} .rec__note{grid-area:x}
   .game .marks{top:8px; left:8px; gap:4px}
   .game .marks > span{font-size:10px; padding:2px 7px}
   .cats{grid-template-columns:1fr}

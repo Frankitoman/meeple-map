@@ -327,7 +327,7 @@ function renderQuiz() {
   const step = STEPS[quiz.step], opts = stepOptions(step), n = opts.length;
   const w = n >= 6 ? Math.min(n * 165, 1150) : n * 190;
   const hint = step.key === 'a' ? t('step.a.hint') : '';
-  el.innerHTML = `<div class="quiz__step" style="--n:${n};--w:${w}px">
+  el.innerHTML = `<div class="quiz__step" data-n="${n}" style="--n:${n};--w:${w}px">
     <div class="quiz__head">
       ${quiz.step ? `<button class="quiz__back" type="button" data-back>${t('quiz.back')}</button>` : ''}
       <div class="quiz__top">
@@ -379,7 +379,20 @@ function finishQuiz() {
 function resetQuiz() {
   quiz.step = 0; quiz.answers = {};
   clearAll(); renderQuiz(); renderFinder();
-  scrollToEl($('#quiz'));
+  showQuiz();
+}
+/* "Find my game" always means the test. A finished quiz collapses to a small
+   results card, so start a fresh one (the finder keeps its results until the
+   new answers replace them), then centre the step in the view. */
+function goQuiz() {
+  if (state.quizDone) { state.quizDone = false; quiz.step = 0; quiz.answers = {}; renderQuiz(); }
+  showQuiz(); focusQuiz();
+}
+function showQuiz() {
+  const el = $('#quiz .quiz__step') || $('#quiz'), navH = $('.nav').offsetHeight;
+  const r = el.getBoundingClientRect(), room = innerHeight - navH;
+  const gap = r.height < room ? (room - r.height) / 2 : 16;     // taller than the screen: top-align
+  window.scrollTo({ top: r.top + scrollY - navH - gap, behavior: reduceMotion ? 'auto' : 'smooth' });
 }
 
 function scrollToEl(el) {
@@ -414,7 +427,7 @@ function renderPicks() {
         <button class="pick__row" type="button" data-open="${g.slug}">
           <span class="pick__n">${String(i + 1).padStart(2, '0')}</span>
           <span class="pick__thumb cover--${g.category}">${cover(g)}</span>
-          <span><span class="pick__name">${esc(g.name)}</span><br><span class="pick__sub">${players(g)} · ${minutes(g)}</span></span>
+          <span><span class="pick__name">${esc(g.name)}</span><br><span class="pick__sub"><span class="nw">${players(g)}</span> · <span class="nw">${minutes(g)}</span></span></span>
         </button></li>`).join('')}</ol>
       <button class="link-btn pick__all" type="button" data-cat="${p.category}">${t('picks.all', { n: countCat(p.category), cat: t(`catp.${p.category}`) })}</button></div>
     </div>`;
@@ -443,11 +456,10 @@ function renderThe20() {
     return `<article class="rec">
       <div class="rec__n">${num(i)}</div>
       <div class="rec__cover">${g ? cover(g) : ''}</div>
-      <div>
+      <div class="rec__body">
         <h3 class="rec__title">${esc(e.name || (g && g.name) || '')}</h3>
         <p class="rec__meta">${esc(e.year || (g && g.year) || '')}</p>
-        ${standout ? `<span class="standout">${esc(t('twenty.standout', { x: standout }))}</span>` : ''}
-        ${e.luchi ? luchiHTML() : ''}
+        ${standout || e.luchi ? `<div class="rec__tags">${standout ? `<span class="standout">${esc(t('twenty.standout', { x: standout }))}</span>` : ''}${e.luchi ? luchiHTML() : ''}</div>` : ''}
         ${note ? `<p class="rec__note">${esc(note)}</p>` : ''}
       </div>
     </article>`;
@@ -455,10 +467,10 @@ function renderThe20() {
   const example = i => `<article class="rec">
       <div class="rec__n">${num(i)}</div>
       <div class="rec__cover" aria-hidden="true"></div>
-      <div>
+      <div class="rec__body">
         <h3 class="rec__title">${t('twenty.soon')}</h3>
         <p class="rec__meta">${t('twenty.reserved')}</p>
-        <span class="standout">${esc(t('twenty.standout', { x: t('twenty.standoutPh') }))}</span>
+        <div class="rec__tags"><span class="standout">${esc(t('twenty.standout', { x: t('twenty.standoutPh') }))}</span></div>
         <p class="rec__note rec__note--empty">${t(i === 0 ? 'twenty.note0' : 'twenty.note1')}</p>
       </div>
     </article>`;
@@ -526,6 +538,7 @@ function onClick(e) {
   if (d.skip !== undefined) { answer(STEPS[quiz.step].key === 'a' ? null : []); return; }
   if (d.back !== undefined) { quiz.step = Math.max(0, quiz.step - 1); renderQuiz(); focusQuiz(); return; }
   if (d.resetQuiz !== undefined) { resetQuiz(); return; }
+  if (d.goQuiz !== undefined) { e.preventDefault(); goQuiz(); return; }
   if (tg.getAttribute('href') === '#finder' && state.quizDone) { e.preventDefault(); scrollToEl($('#finder')); }
 }
 

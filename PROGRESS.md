@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 71 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 81 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -40,7 +40,7 @@ most characteristic lines and his honest complaints. Entries live in `the20` in
 ```
 
 **Every game of The 20 also goes into `games.json`** (so it can come up in the quiz and carries the
-"I played this" mark in the finder). That's why the catalogue is 65, not 50: fifteen of his games were added; Catan was already there. Copy that mentions the size
+"I played this" mark in the finder). That's why the catalogue grew past 50: fifteen of his games were added; Catan was already there. Copy that mentions the size
 uses `{total}`, so it updates itself. For a new game: verify the BGG id with a web search (BGG's own
 search is behind a Cloudflare challenge now), players/time/age from retail listings, cover from the
 Shopify retailers below, checked by eye at full size.
@@ -57,11 +57,35 @@ Unstable Unicorns, Not Enough Mana and Heroes of Barcadia (2026-09-10).
 hidden roles are all "against each other". "Compete" sets three finder chips at once; the finder keeps
 all four, since there you're refining, not answering.
 
+## Growing the catalogue to 100 (started 2026-09-10)
+
+Franco asked to go from the top 50 to the top 100, ten at a time. 75 games now: the original 50, 15 from
+The 20, and **batch 1 (51–60)**: King of Tokyo, Exploding Kittens, Coup, Forbidden Island, Lords of
+Waterdeep, Viticulture Essential Edition, Dead of Winter, Slay the Spire: The Board Game, Stardew
+Valley: The Board Game, Blokus. Facts come from Board Game Bliss product pages (their body lists the BGG
+id, players, time and age); covers from the Shopify retailers below, checked on rendered cards.
+Video-game adaptations (Slay the Spire, Stardew Valley — and Valheim in The 20) suit the site's
+premise, so the plan leans on them where the game is good. Small World appears in the old cover notes
+but not in the data; left out until Franco confirms whether it was cut on purpose.
+
+## Phone and tablet audit (2026-09-10)
+
+`audit.js` + `cdp.js` in the session scratchpad drive headless Edge over the DevTools protocol:
+8 viewports (360–1024, portrait and landscape) × EN/ES × every state (each quiz step, done panel,
+finder with filters open, The 20, picks, footer, dialog). It reports sideways scroll, clipped text and
+overlaps, and saves section clips. Fixed from it: difficulty bars were 0×0 everywhere (`.weight i`
+needed the wrapper — quiz step 5 showed empty boxes), odd last quiz option centred, four options in one
+row on tablets, The 20 note at full width on phones, landscape dialog side by side, "30–60 min" no
+longer splits, shorter Spanish sort labels. All 16 combinations come back clean.
+
+"Find my game" (nav) and "Take the quiz" (footer) go through `goQuiz()`: a finished quiz restarts at
+step 1 (finder results stay until new answers replace them) and the step is centred on screen.
+
 ## Quiz anchors
 
 Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, League of Legends,
 **ARK** (survival — Paleo, Sleeping Gods, Nemesis, Stonesaga, Valheim). Franco plans more survival games; tag them
-`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 13.
+`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 15.
 
 ## Portfolio and repo
 
@@ -74,7 +98,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 71.
+  it should be 81.
 
 ## Languages
 

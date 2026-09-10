@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 65,
+  "count": 75,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -1860,6 +1860,287 @@
     "text": "Hearthstone at a party: cast spells at your friends, and drink to refill your mana.",
     "text_es": "Hearthstone en una fiesta: lanzas hechizos a tus amigos y bebes para recargar tu maná.",
     "ref_es": "Hearthstone"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "king-of-tokyo",
+   "name": "King of Tokyo",
+   "bgg": 70323,
+   "year": 2011,
+   "category": "family",
+   "players": [
+    2,
+    6
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "IELLO",
+   "analogy": {
+    "kind": "video",
+    "ref": "Super Smash Bros",
+    "text": "Super Smash Bros with giant monsters: roll dice, punch whoever holds Tokyo, and be the last one standing.",
+    "text_es": "Super Smash Bros con monstruos gigantes: tiras dados, golpeas a quien tenga Tokio y ganas si eres el último en pie.",
+    "ref_es": "Super Smash Bros"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "exploding-kittens",
+   "name": "Exploding Kittens",
+   "bgg": 172225,
+   "year": 2015,
+   "category": "party",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 7,
+   "complexity": 1,
+   "publisher": "Exploding Kittens",
+   "analogy": {
+    "kind": "video",
+    "ref": "Minesweeper",
+    "text": "Minesweeper with friends: any card you draw could be the one that blows up.",
+    "text_es": "Buscaminas con amigos: cualquier carta que robes puede ser la que explota.",
+    "ref_es": "Buscaminas"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "coup",
+   "name": "Coup",
+   "bgg": 131357,
+   "year": 2012,
+   "category": "party",
+   "players": [
+    2,
+    6
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Indie Boards & Cards",
+   "analogy": {
+    "kind": "board",
+    "ref": "skull",
+    "text": "Skull with characters: claim any role you like, bluff it, and hope nobody calls you on it.",
+    "text_es": "Skull con personajes: dices tener el rol que quieras, faroleas y rezas para que nadie te descubra."
+   },
+   "mode": "hidden",
+   "anchors": [
+    "amongus"
+   ]
+  },
+  {
+   "slug": "forbidden-island",
+   "name": "Forbidden Island",
+   "bgg": 65244,
+   "year": 2010,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "Gamewright",
+   "analogy": {
+    "kind": "board",
+    "ref": "pandemic",
+    "text": "Pandemic's little sibling: rescue four treasures together before the island sinks.",
+    "text_es": "El hermano menor de Pandemic: entre todos rescatan cuatro tesoros antes de que la isla se hunda."
+   },
+   "mode": "coop",
+   "anchors": []
+  },
+  {
+   "slug": "lords-of-waterdeep",
+   "name": "Lords of Waterdeep",
+   "bgg": 110327,
+   "year": 2012,
+   "category": "strategy",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 12,
+   "complexity": 2,
+   "publisher": "Renegade Game Studios",
+   "analogy": {
+    "kind": "video",
+    "ref": "World of Warcraft",
+    "text": "World of Warcraft from the guild master's chair: hire adventurers, send them on quests, cash in the rewards.",
+    "text_es": "World of Warcraft desde la silla del jefe del gremio: contratas aventureros, los mandas a misiones y cobras las recompensas.",
+    "ref_es": "World of Warcraft"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "viticulture",
+   "name": "Viticulture Essential Edition",
+   "bgg": 183394,
+   "year": 2015,
+   "category": "strategy",
+   "players": [
+    1,
+    6
+   ],
+   "minutes": [
+    45,
+    90
+   ],
+   "age": 13,
+   "complexity": 3,
+   "publisher": "Stonemaier Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "Stardew Valley's vineyard, with rivals: plant, harvest and make wine before the other estates do.",
+    "text_es": "El viñedo de Stardew Valley, con rivales: plantas, cosechas y haces vino antes que las otras bodegas.",
+    "ref_es": "Stardew Valley"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "dead-of-winter",
+   "name": "Dead of Winter: A Crossroads Game",
+   "bgg": 150376,
+   "year": 2014,
+   "category": "thematic",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    60,
+    120
+   ],
+   "age": 13,
+   "complexity": 3,
+   "publisher": "Plaid Hat Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "The Walking Dead",
+    "text": "The Walking Dead with a traitor: keep the colony alive through winter — while someone at the table may be working against it.",
+    "text_es": "The Walking Dead con un traidor: mantienes viva la colonia durante el invierno, aunque alguien en la mesa quizá juegue en contra.",
+    "ref_es": "The Walking Dead"
+   },
+   "mode": "hidden",
+   "anchors": [
+    "ark",
+    "amongus"
+   ]
+  },
+  {
+   "slug": "slay-the-spire",
+   "name": "Slay the Spire: The Board Game",
+   "bgg": 338960,
+   "year": 2024,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    150
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "Contention Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Slay the Spire",
+    "text": "It's Slay the Spire, as a co-op: build your deck as you climb, and reach the top together.",
+    "text_es": "Es Slay the Spire, en cooperativo: construyes tu mazo mientras escalas y llegas a la cima con tus amigos.",
+    "ref_es": "Slay the Spire"
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls"
+   ]
+  },
+  {
+   "slug": "stardew-valley",
+   "name": "Stardew Valley: The Board Game",
+   "bgg": 332290,
+   "year": 2021,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    45,
+    200
+   ],
+   "age": 13,
+   "complexity": 3,
+   "publisher": "ConcernedApe",
+   "analogy": {
+    "kind": "video",
+    "ref": "Stardew Valley",
+    "text": "It's Stardew Valley, together: farm, fish, mine and fix up the town before the year is out.",
+    "text_es": "Es Stardew Valley, en equipo: cultivas, pescas, minas y arreglas el pueblo antes de que termine el año.",
+    "ref_es": "Stardew Valley"
+   },
+   "mode": "coop",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "blokus",
+   "name": "Blokus",
+   "bgg": 2453,
+   "year": 2000,
+   "category": "abstract",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    20,
+    20
+   ],
+   "age": 5,
+   "complexity": 1,
+   "publisher": "Mattel",
+   "analogy": {
+    "kind": "video",
+    "ref": "Tetris",
+    "text": "Tetris against your friends: fit your pieces in, and box everyone else out.",
+    "text_es": "Tetris contra tus amigos: encajas tus piezas y dejas a los demás sin espacio.",
+    "ref_es": "Tetris"
    },
    "mode": "competitive",
    "anchors": []

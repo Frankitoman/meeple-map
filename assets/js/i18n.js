@@ -95,7 +95,7 @@ window.MM_I18N = {
     'twenty.soon': 'Coming soon', 'twenty.reserved': 'One of my twenty',
     'twenty.standout': 'Stands out for: {x}', 'twenty.standoutPh': 'the one thing',
     'twenty.note0': 'Why I play it and what makes it different.',
-    'twenty.note1': 'What I think — coming soon.', 'twenty.slot': 'Reserved',
+    'twenty.note1': 'What I think — coming soon.', 'twenty.slot': 'Coming soon',
 
     'picks.eyebrow': 'Our picks', 'picks.title': 'Top 5 by type',
     'picks.lead': 'Hand-picked, easiest first.',
@@ -157,7 +157,7 @@ window.MM_I18N = {
     'finder.lead': 'La lista se actualiza sola.',
     'filters.aria': 'Filtros', 'filters.title': 'Filtros', 'filters.clear': 'Borrar todo', 'filters.toggle': 'Filtros', 'filters.toggleN': 'Filtros ({n})',
     'active.aria': 'Filtros activos',
-    'sort.label': 'Ordenar juegos', 'sort.match': 'Orden: Mejor coincidencia', 'sort.easy': 'Orden: Más fáciles primero', 'sort.short': 'Orden: Más cortos primero', 'sort.az': 'Orden: A–Z',
+    'sort.label': 'Ordenar juegos', 'sort.match': 'Orden: Más parecidos', 'sort.easy': 'Orden: Más fáciles', 'sort.short': 'Orden: Más cortos', 'sort.az': 'Orden: A–Z',
     'count.loading': 'Cargando juegos…', 'count.all': '<b>{n}</b> juegos', 'count.some': '<b>{n}</b> de {total} juegos coinciden',
 
     'group.p': 'Cuántas personas', 'group.t': 'Cuánto dura', 'group.m': 'Juntos o en contra', 'group.b': 'Cuánto hay que pensar', 'group.g': 'Ideal para', 'group.c': 'Tipo de juego',
@@ -201,7 +201,7 @@ window.MM_I18N = {
     'twenty.soon': 'Próximamente', 'twenty.reserved': 'Uno de mis veinte',
     'twenty.standout': 'Destaca por: {x}', 'twenty.standoutPh': 'esa única cosa',
     'twenty.note0': 'Por qué lo juego y qué lo hace distinto.',
-    'twenty.note1': 'Lo que pienso — próximamente.', 'twenty.slot': 'Reservado',
+    'twenty.note1': 'Lo que pienso — próximamente.', 'twenty.slot': 'Próximamente',
 
     'picks.eyebrow': 'Nuestra selección', 'picks.title': 'Top 5 por tipo',
     'picks.lead': 'Elegidos a mano, los más fáciles primero.',
