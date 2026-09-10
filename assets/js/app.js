@@ -55,7 +55,8 @@ const STEPS = [
   { key: 'a' },
   { key: 'p', options: [ { v: ['1'], mark: '1' }, { v: ['2'], mark: '2' }, { v: ['3-4'], mark: '3–4' }, { v: ['5-6', '7+'], mark: '5+' } ]},
   { key: 't', options: [ { v: ['u30'], mark: '½ h' }, { v: ['30-60'], mark: '1 h' }, { v: ['1-2h'], mark: '2 h' }, { v: ['eve'], mark: '3 h+' } ]},
-  { key: 'm', options: [ { v: ['coop'], mark: 'We' }, { v: ['competitive'], mark: 'Me' }, { v: ['teams'], mark: 'vs' }, { v: ['hidden'], mark: '?' } ]},
+  // Two answers, not four: free-for-all, teams and hidden roles are all "against each other".
+  { key: 'm', options: [ { v: ['coop'], mark: 'We' }, { v: ['competitive', 'teams', 'hidden'], mark: 'vs' } ]},
   { key: 'b', options: [ { v: ['light'], bars: 2 }, { v: ['medium'], bars: 3 }, { v: ['heavy'], bars: 5 } ]},
 ];
 const ANCHOR_MARK = { aoe: 'AoE', amongus: 'AU', darksouls: 'DS', stardew: 'SV', wow: 'WoW', lol: 'LoL', ark: 'ARK' };
@@ -65,7 +66,7 @@ const STEP_COLORS = ['--c-family', '--c-party', '--c-strategy', '--c-thematic'];
 const RELAX_ORDER = ['b', 't', 'm', 'p'];   // least to most important for a beginner
 
 /* ---------- State ---------- */
-let games = [], bySlug = {}, editorial = {}, played = new Set();
+let games = [], bySlug = {}, editorial = {}, played = new Set(), luchi = new Set();
 const sel = Object.fromEntries(GROUPS.map(g => [g.key, new Set()]));
 const state = { anchor: null, q: '', sort: 'easy', relaxed: [], quizDone: false };
 const quiz = { step: 0, answers: {} };
@@ -189,11 +190,16 @@ function likeHTML(g) {
   return `<p class="like">${s}</p>`;
 }
 
+const luchiHTML = () => `<span class="tag-luchi">${t('twenty.luchi')}</span>`;
+const marksHTML = slug => (played.has(slug) ? `<span class="tag-played">${t('twenty.played')}</span>` : '')
+  + (luchi.has(slug) ? luchiHTML() : '');
+
 function cardHTML(g) {
   const feels = state.anchor && g.anchors.includes(state.anchor)
     ? `<span class="tag tag--feels">${esc(t('card.feels', { x: editorial.anchors[state.anchor].name }))}</span>` : '';
+  const marks = marksHTML(g.slug);
   return `<article class="game" id="g-${g.slug}">
-    ${played.has(g.slug) ? `<span class="tag-played">${t('twenty.played')}</span>` : ''}
+    ${marks ? `<div class="marks">${marks}</div>` : ''}
     <div class="cover cover--${g.category}">${cover(g)}</div>
     <button class="game__open" type="button" data-open="${g.slug}"><span class="sr-only">${esc(t('card.open', { x: g.name }))}</span></button>
     <div class="game__head">
@@ -429,6 +435,7 @@ function renderPicks() {
 function renderThe20() {
   const entries = (editorial.the20 || []).slice(0, 20);
   played = new Set(entries.map(e => e.slug).filter(s => bySlug[s]));
+  luchi = new Set(entries.filter(e => e.luchi && bySlug[e.slug]).map(e => e.slug));   // a friend's seal of approval
   const num = i => String(i + 1).padStart(2, '0');
   const rec = (e, i) => {
     const g = e.slug && bySlug[e.slug];
@@ -440,6 +447,7 @@ function renderThe20() {
         <h3 class="rec__title">${esc(e.name || (g && g.name) || '')}</h3>
         <p class="rec__meta">${esc(e.year || (g && g.year) || '')}</p>
         ${standout ? `<span class="standout">${esc(t('twenty.standout', { x: standout }))}</span>` : ''}
+        ${e.luchi ? luchiHTML() : ''}
         ${note ? `<p class="rec__note">${esc(note)}</p>` : ''}
       </div>
     </article>`;
@@ -475,7 +483,7 @@ function openGame(slug) {
       <div>
         <div class="game__tags"><span class="tag tag--${g.category}">${t(`cat.${g.category}`)}</span><span class="tag tag--feels">${t(`mode.${g.mode}`)}</span></div>
         <h2 id="dlg-title" style="margin-top:12px">${esc(g.name)}</h2>
-        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ` · <span class="tag-played">${t('twenty.played')}</span>` : ''}</p>
+        <p class="dlg__meta">${g.year}${played.has(g.slug) ? ` · <span class="tag-played">${t('twenty.played')}</span>` : ''}${luchi.has(g.slug) ? ` ${luchiHTML()}` : ''}</p>
         ${likeHTML(g)}
         <dl class="dlg__facts">
           <div class="fact"><dt>${t('dlg.players')}</dt><dd>${range(g.players)}</dd></div>

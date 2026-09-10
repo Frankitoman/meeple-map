@@ -402,7 +402,17 @@ button{font:inherit; color:inherit; cursor:pointer}
   padding:3px 10px; font-size:var(--t-caption); font-weight:600; line-height:1.4;
 }
 .tag-played::before{content:"◆"; font-size:8px; opacity:.85}
-.game .tag-played{position:absolute; top:24px; left:24px; z-index:2}
+.game .marks{position:absolute; top:24px; left:24px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:6px}
+
+/* A friend's seal of approval — a rubber stamp, deliberately a little crooked. */
+.tag-luchi{
+  display:inline-flex; align-items:center; gap:5px; vertical-align:middle;
+  background:var(--c-party); color:var(--ink); border-radius:var(--r-pill);
+  padding:3px 10px; font-size:var(--t-caption); font-weight:700; line-height:1.4;
+  transform:rotate(-3deg);
+}
+.tag-luchi::before{content:"✓"; font-size:11px; font-weight:800}
+.rec .tag-luchi{margin:12px 0 0 8px}
 
 /* ---------- Empty state ---------- */
 .empty{
@@ -695,7 +705,8 @@ button{font:inherit; color:inherit; cursor:pointer}
   .game .like{grid-area:l}
   .game .facts{grid-area:f}
   .game .game__foot{grid-area:o}
-  .game .tag-played{top:8px; left:8px; font-size:10px; padding:2px 7px}
+  .game .marks{top:8px; left:8px; gap:4px}
+  .game .marks > span{font-size:10px; padding:2px 7px}
   .cats{grid-template-columns:1fr}
   .cat{min-height:0}
   .dlg__facts{grid-template-columns:1fr 1fr}

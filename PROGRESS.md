@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 68 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 70 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -25,10 +25,10 @@ Browsers block `fetch()` of local JSON, so double-clicking the file shows the er
 - **50 of 50 covers**, eye-checked twice (small contact sheet, then a large-format pass).
 - Responsive to 375px; on phones game cards switch to a horizontal layout.
 
-## The 20 — in progress (13 of 20)
+## The 20 — in progress (15 of 20)
 
 Paleo, Catan, Coffee Rush, Unstable Unicorns, Sleeping Gods, Eldritch Horror, Keep the Heroes Out!,
-Décorum, Earthborne Rangers, Heroes of Barcadia, D&D: The Yawning Portal, Flamecraft, Stonesaga (2026-09-10).
+Décorum, Earthborne Rangers, Heroes of Barcadia, D&D: The Yawning Portal, Flamecraft, Stonesaga, Valheim: The Board Game, Casting Shadows (2026-09-10).
 The byline is just "Games I've played" — no role line, at Franco's request. Facts Franco asks to check get checked: Sleeping Gods has 13 endings (not ~20);
 Keep the Heroes Out! has 20 scenarios and 3 difficulties; Décorum has 30 scenarios (20 for two, 10 for 3–4). Franco sends each game
 with a long description; it gets condensed to 3–4 first-person sentences in EN and ES, keeping his
@@ -40,7 +40,7 @@ most characteristic lines and his honest complaints. Entries live in `the20` in
 ```
 
 **Every game of The 20 also goes into `games.json`** (so it can come up in the quiz and carries the
-"I played this" mark in the finder). That's why the catalogue is 62, not 50: twelve of his games were added; Catan was already there. Copy that mentions the size
+"I played this" mark in the finder). That's why the catalogue is 64, not 50: fourteen of his games were added; Catan was already there. Copy that mentions the size
 uses `{total}`, so it updates itself. For a new game: verify the BGG id with a web search (BGG's own
 search is behind a Cloudflare challenge now), players/time/age from retail listings, cover from the
 Shopify retailers below, checked by eye at full size.
@@ -48,11 +48,20 @@ Shopify retailers below, checked by eye at full size.
 **Static HTML fallbacks** (what crawlers and link previews read) are generated from the EN
 dictionary by `sync_fallbacks.js` (session scratchpad). Re-run it whenever EN copy or the game count changes.
 
+**Luchi approves.** A friend of Franco's; the joke is that nobody knows who he is, so the site never
+explains. Add `"luchi": true` to an entry in `the20` and a crooked pink stamp shows on that entry, on its
+finder card (under "I played this") and in its dialog. Built 2026-09-10, no games flagged yet — Franco
+is sending the list.
+
+**Quiz step 4 has two answers** (Team up / Compete), not four: Franco's call — free-for-all, teams and
+hidden roles are all "against each other". "Compete" sets three finder chips at once; the finder keeps
+all four, since there you're refining, not answering.
+
 ## Quiz anchors
 
 Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, League of Legends,
-**ARK** (survival — Paleo, Sleeping Gods, Nemesis, Stonesaga). Franco plans more survival games; tag them
-`"anchors": ["ark"]` in `games.json`. Simulator: 4,000 combinations, none empty, median 10.
+**ARK** (survival — Paleo, Sleeping Gods, Nemesis, Stonesaga, Valheim). Franco plans more survival games; tag them
+`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 12.
 
 ## Portfolio and repo
 
@@ -65,7 +74,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 68.
+  it should be 70.
 
 ## Languages
 
@@ -89,8 +98,8 @@ If the answers leave fewer than 3 games, or none that feel like the chosen video
 drops the **fewest answers possible** (tie-break order: brain → time → together → players) and the
 results banner says which ones it dropped.
 
-Tested against every combination — 3,500 of them — with a simulator that evaluates the real
-config block from `app.js`: zero dead ends, median 9 results, only 56 combinations need three
+Tested against every combination — 2,400 of them since step 4 went down to two answers — with a simulator that evaluates the real
+config block from `app.js`: zero dead ends, median 12 results, only 9 combinations need three
 answers dropped. (It was 960 with the first greedy version.) The simulator is in the session
 scratchpad as `quizsim.js`; it's worth re-running after any change to filters or anchors.
 
