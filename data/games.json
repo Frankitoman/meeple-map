@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 105,
+  "count": 115,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -3003,6 +3003,290 @@
    },
    "mode": "competitive",
    "anchors": []
+  },
+  {
+   "slug": "minecraft",
+   "name": "Minecraft: Builders & Biomes",
+   "bgg": 269603,
+   "year": 2019,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Ravensburger",
+   "analogy": {
+    "kind": "video",
+    "ref": "Minecraft",
+    "text": "It's Minecraft: mine blocks from a big cube, build on your land, and fight mobs along the way.",
+    "text_es": "Es Minecraft: sacas bloques de un gran cubo, construyes en tu terreno y peleas contra mobs por el camino.",
+    "ref_es": "Minecraft"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "ark",
+    "stardew"
+   ]
+  },
+  {
+   "slug": "deep-rock-galactic",
+   "name": "Deep Rock Galactic: The Board Game",
+   "bgg": 348220,
+   "year": 2022,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    60,
+    150
+   ],
+   "age": 12,
+   "complexity": 3,
+   "publisher": "MOOD Publishing",
+   "analogy": {
+    "kind": "video",
+    "ref": "Deep Rock Galactic",
+    "text": "It's Deep Rock Galactic: a team of space dwarves, a cave full of bugs, and a mission to finish before the swarm arrives. Rock and stone!",
+    "text_es": "Es Deep Rock Galactic: un equipo de enanos espaciales, una cueva llena de bichos y una misión que terminar antes de que llegue el enjambre. ¡Roca y piedra!",
+    "ref_es": "Deep Rock Galactic"
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol",
+    "ark"
+   ]
+  },
+  {
+   "slug": "this-war-of-mine",
+   "name": "This War of Mine: The Board Game",
+   "bgg": 188920,
+   "year": 2017,
+   "category": "thematic",
+   "players": [
+    1,
+    6
+   ],
+   "minutes": [
+    45,
+    120
+   ],
+   "age": 18,
+   "complexity": 3,
+   "publisher": "Galakta",
+   "analogy": {
+    "kind": "video",
+    "ref": "This War of Mine",
+    "text": "It's This War of Mine: keep a group of civilians alive in a city under siege, and live with the choices it takes.",
+    "text_es": "Es This War of Mine: mantienes con vida a un grupo de civiles en una ciudad sitiada y cargas con las decisiones que eso exige.",
+    "ref_es": "This War of Mine"
+   },
+   "mode": "coop",
+   "anchors": [
+    "ark",
+    "darksouls"
+   ]
+  },
+  {
+   "slug": "hues-and-cues",
+   "name": "Hues and Cues",
+   "bgg": 302520,
+   "year": 2020,
+   "category": "party",
+   "players": [
+    3,
+    10
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "The Op",
+   "analogy": {
+    "kind": "board",
+    "ref": "codenames",
+    "text": "Codenames with colours: describe one shade out of 480 in a word or two, and see who lands closest.",
+    "text_es": "Codenames con colores: describes un tono entre 480 con una o dos palabras y ves quién se acerca más."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "sea-salt-paper",
+   "name": "Sea Salt & Paper",
+   "bgg": 367220,
+   "year": 2022,
+   "category": "family",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Bombyx",
+   "analogy": {
+    "kind": "board",
+    "ref": "sushi-go",
+    "text": "Sushi Go! folded into origami: collect paper boats, fish and shells, then gamble on ending the round before anyone else.",
+    "text_es": "Sushi Go! hecho origami: juntas barcos, peces y conchas de papel, y te la juegas a cerrar la ronda antes que nadie."
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "cthulhu-death-may-die",
+   "name": "Cthulhu: Death May Die",
+   "bgg": 253344,
+   "year": 2019,
+   "category": "thematic",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    90,
+    120
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "CMON",
+   "analogy": {
+    "kind": "video",
+    "ref": "Bloodborne",
+    "text": "Bloodborne as a co-op: go mad on purpose to get stronger, and punch an Elder God in the face.",
+    "text_es": "Bloodborne en cooperativo: te vuelves loco a propósito para hacerte más fuerte y le pegas a un Dios Primigenio.",
+    "ref_es": "Bloodborne"
+   },
+   "mode": "coop",
+   "anchors": [
+    "darksouls",
+    "lol"
+   ]
+  },
+  {
+   "slug": "wits-and-wagers",
+   "name": "Wits & Wagers",
+   "bgg": 20100,
+   "year": 2005,
+   "category": "party",
+   "players": [
+    3,
+    7
+   ],
+   "minutes": [
+    25,
+    25
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "North Star Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Trivia Crack",
+    "text": "Trivia Crack where you bet on your friends: nobody needs to know the answer — just who's closest.",
+    "text_es": "Preguntados, pero apostando por tus amigos: nadie necesita saber la respuesta, solo quién se acerca más.",
+    "ref_es": "Preguntados"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "great-western-trail",
+   "name": "Great Western Trail",
+   "bgg": 341169,
+   "year": 2021,
+   "category": "strategy",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    75,
+    150
+   ],
+   "age": 12,
+   "complexity": 4,
+   "publisher": "eggertspiele",
+   "analogy": {
+    "kind": "video",
+    "ref": "Red Dead Redemption",
+    "text": "Red Dead Redemption as an economic puzzle: drive your herd to Kansas City again and again, and make every trip pay better than the last.",
+    "text_es": "Red Dead Redemption como puzle económico: llevas tu ganado a Kansas City una y otra vez, y haces que cada viaje rinda más que el anterior.",
+    "ref_es": "Red Dead Redemption"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "hanabi",
+   "name": "Hanabi",
+   "bgg": 98778,
+   "year": 2010,
+   "category": "family",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    25,
+    25
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "R&R Games",
+   "analogy": {
+    "kind": "board",
+    "ref": "the-mind",
+    "text": "The Mind's older sibling: put on a fireworks show together — but you can see everyone's cards except your own.",
+    "text_es": "El hermano mayor de The Mind: entre todos arman un espectáculo de fuegos artificiales, pero ves las cartas de todos menos las tuyas."
+   },
+   "mode": "coop",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "jaipur",
+   "name": "Jaipur",
+   "bgg": 54043,
+   "year": 2009,
+   "category": "family",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 12,
+   "complexity": 1,
+   "publisher": "Space Cowboys",
+   "analogy": {
+    "kind": "board",
+    "ref": "splendor",
+    "text": "Splendor for two in a bazaar: trade spices and silk, herd camels, and sell before your rival floods the market.",
+    "text_es": "Splendor para dos en un bazar: cambias especias y seda, juntas camellos y vendes antes de que tu rival inunde el mercado."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
   }
  ]
 }
