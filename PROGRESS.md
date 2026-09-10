@@ -6,7 +6,7 @@ _Last updated: 2026-09-10_
 
 **https://meeple-map.francojmansilla.workers.dev** — deployed 2026-09-10 as a Cloudflare Worker with
 static assets, from Franco's logged-in wrangler session (OAuth, no token needed on this machine).
-Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 101 files; dev files
+Redeploy after any change: `npx wrangler deploy` from this folder. It uploads 111 files; dev files
 return 404 in production (checked).
 
 Open `index.html` through the preview server (`.claude/launch.json` → `meeple-map`, port 4173).
@@ -59,21 +59,21 @@ all four, since there you're refining, not answering.
 
 ## Growing the catalogue to 100 (started 2026-09-10)
 
-Franco asked to go from the top 50 to the top 100, ten at a time. 95 games now: the original 50, 15 from
-The 20, **batch 3 (71–80)**: Deception, Werewords, The Mind, Captain Sonar, Tokaido (Stonemaier new edition),
+Franco asked to go from the top 50 to the top 100, ten at a time. 105 games now: the original 50, 15 from
+The 20, **batch 4 (81–90)**: Small World, Marvel Champions, Unmatched, Zombicide (2nd ed.), The Witcher:
+Old World, Tsuro, Harmonies, Dorfromantik, Cartographers, Lost Cities — **batch 3 (71–80)**: Deception, Werewords, The Mind, Captain Sonar, Tokaido (Stonemaier new edition),
 Photosynthesis, Calico, Quoridor, Stone Age, Blood Rage — **batch 2 (61–70)**: Love Letter, Mysterium, Takenoko, Machi Koro, Century: Spice Road, Horrified,
 Mansions of Madness: Second Edition, Qwirkle, Clank!, Sheriff of Nottingham (2nd ed.) — and **batch 1 (51–60)**: King of Tokyo, Exploding Kittens, Coup, Forbidden Island, Lords of
 Waterdeep, Viticulture Essential Edition, Dead of Winter, Slay the Spire: The Board Game, Stardew
 Valley: The Board Game, Blokus. Facts come from Board Game Bliss product pages (their body lists the BGG
 id, players, time and age); covers from the Shopify retailers below, checked on rendered cards.
 Video-game adaptations (Slay the Spire, Stardew Valley — and Valheim in The 20) suit the site's
-premise, so the plan leans on them where the game is good. Small World appears in the old cover notes
-but not in the data; left out until Franco confirms whether it was cut on purpose.
+premise, so the plan leans on them where the game is good. Small World was never in the first 50 — its cover was downloaded by accident from the publisher's site and
+deleted as an orphan. Added in batch 4.
 
-Still to add (proposed list): 81–90 Great Western Trail, Star Wars:
-Rebellion, Marvel Champions, Unmatched, Robinson Crusoe, Zombicide, Too Many Bones, The Witcher: Old World,
-Tsuro, Harmonies · 91–100 Minecraft: Builders & Biomes, Deep Rock Galactic, This War of Mine, Dorfromantik,
-Cartographers, Hues and Cues, Sea Salt & Paper, Lost Cities, Cthulhu: Death May Die, Wits & Wagers.
+Still to add (proposed): 91–100 Minecraft: Builders & Biomes, Deep Rock Galactic, This War of Mine, Hues and
+Cues, Sea Salt & Paper, Cthulhu: Death May Die, Wits & Wagers, Great Western Trail + two light picks. Star Wars:
+Rebellion, Robinson Crusoe and Too Many Bones were dropped as too heavy for beginners (Franco agreed).
 Watch the retailer's BGG id: it can point at an old edition (Mansions of Madness listed the 1st edition's).
 
 ## Animation review (2026-09-10, review-animations skill)
@@ -102,7 +102,7 @@ step 1 (finder results stay until new answers replace them) and the step is cent
 
 Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, League of Legends,
 **ARK** (survival — Paleo, Sleeping Gods, Nemesis, Stonesaga, Valheim). Franco plans more survival games; tag them
-`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 17.
+`"anchors": ["ark"]` in `games.json`. Simulator: 2,400 combinations, none empty, median 18.
 
 ## Portfolio and repo
 
@@ -115,7 +115,7 @@ Seven: Age of Empires, Among Us, Dark Souls, Stardew Valley, World of Warcraft, 
 - `.assetsignore` must keep listing `.git` — for a few minutes on 2026-09-10 the `.git` folder was
   published with the site, because the repo was created after the first deploy. Nothing sensitive
   was in it (no remote, no credentials), but check the "Uploaded N files" count on every deploy:
-  it should be 101.
+  it should be 111.
 
 ## Languages
 

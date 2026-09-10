@@ -4,7 +4,7 @@
   "complexity": "1 = explained in two minutes · 5 = read the rulebook twice",
   "analogy.kind": "video = a video game the reader may know · board = another game in this list (renders as an internal link) · null = no honest comparison exists, field stays empty",
   "publisher": "kept for cover-art sourcing only — never displayed",
-  "count": 95,
+  "count": 105,
   "mode": "competitive · coop (everyone vs the game) · teams · hidden (secret roles / a traitor)",
   "anchors": "quiz step 1 keys: aoe · amongus · darksouls · stardew · wow · lol · ark — editorial",
   "analogy.text_es": "Spanish (neutral 'tú'). Board comparisons keep the other game's exact name so the internal link still works; ref_es is the word highlighted."
@@ -2716,6 +2716,293 @@
    "anchors": [
     "aoe"
    ]
+  },
+  {
+   "slug": "small-world",
+   "name": "Small World",
+   "bgg": 40692,
+   "year": 2009,
+   "category": "strategy",
+   "players": [
+    2,
+    5
+   ],
+   "minutes": [
+    40,
+    80
+   ],
+   "age": 8,
+   "complexity": 2,
+   "publisher": "Days of Wonder",
+   "analogy": {
+    "kind": "video",
+    "ref": "Age of Empires",
+    "text": "Age of Empires on a map that's too small: pick a fantasy race, conquer, and when it runs out of steam, let it decline and pick another.",
+    "text_es": "Age of Empires en un mapa demasiado pequeño: eliges una raza fantástica, conquistas y, cuando se agota, la dejas decaer y eliges otra.",
+    "ref_es": "Age of Empires"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "aoe"
+   ]
+  },
+  {
+   "slug": "marvel-champions",
+   "name": "Marvel Champions: The Card Game",
+   "bgg": 285774,
+   "year": 2019,
+   "category": "thematic",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    45,
+    90
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Fantasy Flight Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Marvel Ultimate Alliance",
+    "text": "Marvel Ultimate Alliance with cards: pick a hero, build their deck, and team up against the villain.",
+    "text_es": "Marvel Ultimate Alliance con cartas: eliges un héroe, armas su mazo y te unes a los demás contra el villano.",
+    "ref_es": "Marvel Ultimate Alliance"
+   },
+   "mode": "coop",
+   "anchors": [
+    "wow",
+    "lol"
+   ]
+  },
+  {
+   "slug": "unmatched",
+   "name": "Unmatched: Battle of Legends, Volume One",
+   "bgg": 274637,
+   "year": 2019,
+   "category": "thematic",
+   "players": [
+    2,
+    4
+   ],
+   "minutes": [
+    20,
+    40
+   ],
+   "age": 9,
+   "complexity": 2,
+   "publisher": "Restoration Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Street Fighter",
+    "text": "Street Fighter with legends: Medusa, King Arthur, Alice and Sinbad fight it out, each with their own deck.",
+    "text_es": "Street Fighter con leyendas: Medusa, el Rey Arturo, Alicia y Simbad se enfrentan, cada uno con su propio mazo.",
+    "ref_es": "Street Fighter"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "lol"
+   ]
+  },
+  {
+   "slug": "zombicide",
+   "name": "Zombicide: 2nd Edition",
+   "bgg": 286751,
+   "year": 2021,
+   "category": "thematic",
+   "players": [
+    1,
+    6
+   ],
+   "minutes": [
+    60,
+    60
+   ],
+   "age": 14,
+   "complexity": 2,
+   "publisher": "CMON",
+   "analogy": {
+    "kind": "video",
+    "ref": "Left 4 Dead",
+    "text": "Left 4 Dead on a table: a team of survivors, a street full of zombies, and more coming the louder you get.",
+    "text_es": "Left 4 Dead en la mesa: un equipo de supervivientes, una calle llena de zombis y más que llegan cuanto más ruido haces.",
+    "ref_es": "Left 4 Dead"
+   },
+   "mode": "coop",
+   "anchors": [
+    "ark",
+    "lol"
+   ]
+  },
+  {
+   "slug": "witcher-old-world",
+   "name": "The Witcher: Old World",
+   "bgg": 331106,
+   "year": 2023,
+   "category": "thematic",
+   "players": [
+    1,
+    5
+   ],
+   "minutes": [
+    90,
+    150
+   ],
+   "age": 14,
+   "complexity": 3,
+   "publisher": "Go On Board",
+   "analogy": {
+    "kind": "video",
+    "ref": "The Witcher",
+    "text": "It's The Witcher as a race: train your witcher, hunt monsters across the Continent, and outdo your rivals.",
+    "text_es": "Es The Witcher como carrera: entrenas a tu brujo, cazas monstruos por el Continente y superas a tus rivales.",
+    "ref_es": "The Witcher"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "wow"
+   ]
+  },
+  {
+   "slug": "tsuro",
+   "name": "Tsuro",
+   "bgg": 16992,
+   "year": 2004,
+   "category": "abstract",
+   "players": [
+    2,
+    8
+   ],
+   "minutes": [
+    15,
+    15
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Calliope Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Snake",
+    "text": "Snake with dragons: lay a tile, follow the path, and don't be the one who runs off the board.",
+    "text_es": "Snake con dragones: pones una ficha, sigues el camino y tratas de no ser quien se sale del tablero.",
+    "ref_es": "Snake"
+   },
+   "mode": "competitive",
+   "anchors": []
+  },
+  {
+   "slug": "harmonies",
+   "name": "Harmonies",
+   "bgg": 414317,
+   "year": 2024,
+   "category": "abstract",
+   "players": [
+    1,
+    4
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Libellud",
+   "analogy": {
+    "kind": "board",
+    "ref": "cascadia",
+    "text": "Cascadia's cousin: stack landscapes into hills, rivers and forests so the animals you adopt have a home.",
+    "text_es": "Primo de Cascadia: apilas paisajes en colinas, ríos y bosques para que los animales que adoptas tengan hogar."
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "dorfromantik",
+   "name": "Dorfromantik: The Board Game",
+   "bgg": 370591,
+   "year": 2022,
+   "category": "family",
+   "players": [
+    1,
+    6
+   ],
+   "minutes": [
+    30,
+    60
+   ],
+   "age": 8,
+   "complexity": 1,
+   "publisher": "Pegasus Spiele",
+   "analogy": {
+    "kind": "video",
+    "ref": "Dorfromantik",
+    "text": "It's Dorfromantik, the calm video game, played together: lay landscape tiles and grow a countryside that keeps getting prettier.",
+    "text_es": "Es Dorfromantik, el videojuego tranquilo, jugado en equipo: colocas losetas de paisaje y armas un campo cada vez más bonito.",
+    "ref_es": "Dorfromantik"
+   },
+   "mode": "coop",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "cartographers",
+   "name": "Cartographers",
+   "bgg": 263918,
+   "year": 2019,
+   "category": "family",
+   "players": [
+    1,
+    100
+   ],
+   "minutes": [
+    30,
+    45
+   ],
+   "age": 10,
+   "complexity": 2,
+   "publisher": "Thunderworks Games",
+   "analogy": {
+    "kind": "video",
+    "ref": "Tetris",
+    "text": "Tetris on graph paper: draw the shapes onto your map, fence out monsters, and score what the queen asks for.",
+    "text_es": "Tetris en papel cuadriculado: dibujas las formas en tu mapa, cercas a los monstruos y sumas lo que pide la reina.",
+    "ref_es": "Tetris"
+   },
+   "mode": "competitive",
+   "anchors": [
+    "stardew"
+   ]
+  },
+  {
+   "slug": "lost-cities",
+   "name": "Lost Cities",
+   "bgg": 50,
+   "year": 1999,
+   "category": "family",
+   "players": [
+    2,
+    2
+   ],
+   "minutes": [
+    30,
+    30
+   ],
+   "age": 10,
+   "complexity": 1,
+   "publisher": "KOSMOS",
+   "analogy": {
+    "kind": "video",
+    "ref": "Uncharted",
+    "text": "Uncharted for two: fund expeditions one card at a time — and don't start one you can't finish.",
+    "text_es": "Uncharted para dos: financias expediciones carta a carta, y mejor no empezar una que no puedas terminar.",
+    "ref_es": "Uncharted"
+   },
+   "mode": "competitive",
+   "anchors": []
   }
  ]
 }
